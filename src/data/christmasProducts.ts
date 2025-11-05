@@ -26,8 +26,8 @@ export const christmasProducts: ChristmasProduct[] = [
       "Moño satinado"
     ],
     images: [
-      "/src/assets/products/christmas/kit-bienestar-1.png",
-      "/src/assets/products/christmas/kit-bienestar-2.png"
+      "/assets/products/christmas/kit-bienestar-1.png",
+      "/assets/products/christmas/kit-bienestar-2.png"
     ]
   },
   {
@@ -50,8 +50,8 @@ export const christmasProducts: ChristmasProduct[] = [
       "Madera certificada"
     ],
     images: [
-      "/src/assets/products/christmas/kit-spa-1.png",
-      "/src/assets/products/christmas/kit-spa-2.png"
+      "/assets/products/christmas/kit-spa-1.png",
+      "/assets/products/christmas/kit-spa-2.png"
     ]
   },
   {
@@ -75,8 +75,8 @@ export const christmasProducts: ChristmasProduct[] = [
       "Empaque ecológico"
     ],
     images: [
-      "/src/assets/products/christmas/kit-aromaterapia-1.png",
-      "/src/assets/products/christmas/kit-aromaterapia-2.png"
+      "/assets/products/christmas/kit-aromaterapia-1.png",
+      "/assets/products/christmas/kit-aromaterapia-2.png"
     ]
   },
   {
@@ -99,8 +99,8 @@ export const christmasProducts: ChristmasProduct[] = [
       "Grabado en hot stamping dorado"
     ],
     images: [
-      "/src/assets/products/christmas/kit-descanso-1.png",
-      "/src/assets/products/christmas/kit-descanso-2.png"
+      "/assets/products/christmas/kit-descanso-1.png",
+      "/assets/products/christmas/kit-descanso-2.png"
     ]
   },
   {
@@ -122,7 +122,7 @@ export const christmasProducts: ChristmasProduct[] = [
     "Moño satinado decorativo"
   ],
   images: [
-    "/src/assets/products/christmas/kit-bar.png"
+    "/assets/products/christmas/kit-bar.png"
   ]
 },
 {
@@ -139,7 +139,7 @@ export const christmasProducts: ChristmasProduct[] = [
     
   ],
   images: [
-    "/src/assets/products/christmas/kit-yoga-beige.png"
+    "/assets/products/christmas/kit-yoga-beige.png"
   ]
 },
 {
@@ -158,8 +158,8 @@ export const christmasProducts: ChristmasProduct[] = [
     
   ],
   images: [
-    "/src/assets/products/christmas/Set-calma1.png",
-    "/src/assets/products/christmas/Set-calma_2.png"
+    "/assets/products/christmas/Set-calma1.png",
+    "/assets/products/christmas/Set-calma_2.png"
   ]
 },
 {
@@ -178,7 +178,7 @@ export const christmasProducts: ChristmasProduct[] = [
     
   ],
   images: [
-    "/src/assets/products/christmas/Noche-velitas.png",
+    "/assets/products/christmas/Noche-velitas.png",
     
   ]
 },
@@ -199,8 +199,8 @@ export const christmasProducts: ChristmasProduct[] = [
     
   ],
   images: [
-    "/src/assets/products/christmas/Kit-Vino-Caliente_1.png",
-    "/src/assets/products/christmas/Kit-Vino-Caliente_2.png",
+    "/assets/products/christmas/Kit-Vino-Caliente_1.png",
+    "/assets/products/christmas/Kit-Vino-Caliente_2.png",
     
   ]
 },
@@ -223,7 +223,7 @@ export const christmasProducts: ChristmasProduct[] = [
     
   ],
   images: [
-    "/src/assets/products/christmas/Kit-Tabla-Quesos.png",
+    "/assets/products/christmas/Kit-Tabla-Quesos.png",
   ]
 },
 {
@@ -244,7 +244,7 @@ export const christmasProducts: ChristmasProduct[] = [
     
   ],
   images: [
-    "/src/assets/products/christmas/Kit-Gym.png",
+    "/assets/products/christmas/Kit-Gym.png",
   ]
 },
 {
@@ -265,7 +265,7 @@ export const christmasProducts: ChristmasProduct[] = [
     
   ],
   images: [
-    "/src/assets/products/christmas/Kit-Entretenimiento.png",
+    "/assets/products/christmas/Kit-Entretenimiento.png",
   ]
 },
 
