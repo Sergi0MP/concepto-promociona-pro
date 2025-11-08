@@ -199,7 +199,7 @@ export const christmasProducts: ChristmasProduct[] = [
     
   ],
   images: [
-    "/assets/products/christmas/Kit-Vino-Caliente_1.png",
+    "/public/assets/products/christmas/Kit-Vino-Caliente_1.png",
     "/assets/products/christmas/Kit-Vino-Caliente_2.png",
     
   ]
