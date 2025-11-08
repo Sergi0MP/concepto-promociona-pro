@@ -21,7 +21,7 @@ import kitCocteleria1 from "@/assets/products/christmas/Kit-bar.png";
 import Kityogabeige1 from "@/assets/products/christmas/Kit-yoga-beige.png";
 import Setcalma1 from "@/assets/products/christmas/Set-calma1.png";
 import NocheVelitas1 from "@/assets/products/christmas/Noche-velitas.png";
-import VinoCaliente1 from "@//assets/products/christmas/Kit-Vino-Caliente_1.png";
+import VinoCaliente1 from "@/assets/products/christmas/Kit-Vino-Caliente_1.png";
 import TablaQuesos1 from "@/assets/products/christmas/Kit-Tabla-Quesos.png";
 import KitGym1 from "@/assets/products/christmas/Kit-Gym.png";
 import KitEntretenimiento1 from "@/assets/products/christmas/Kit-Entretenimiento.png";
