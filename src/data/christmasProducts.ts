@@ -1,10 +1,15 @@
+import kitBienestar1 from "@/assets/christmas/kit-bienestar-1.png";
+import kitBienestar2 from "@/assets/christmas/kit-bienestar-2.png";
+
+// Si tienes más imágenes para más productos navideños, impórtalas aquí...
+
 export interface ChristmasProduct {
   id: string;
   name: string;
   description: string;
   kitContents: string[];
   materials: string[];
-  images: string[];
+  images: string[]; // puede ser string[] o string, según tu lógica; los imports son válidos
 }
 
 export const christmasProducts: ChristmasProduct[] = [
@@ -26,10 +31,12 @@ export const christmasProducts: ChristmasProduct[] = [
       "Moño satinado"
     ],
     images: [
-      "/assets/christmas/kit-bienestar-1.png",
-      "/assets/christmas/kit-bienestar-2.png"
+      kitBienestar1, // ← Import directo, no ruta string
+      kitBienestar2
     ]
   },
+
+
   {
     id: "kit-spa",
     name: "Kit Spa Navideño",
