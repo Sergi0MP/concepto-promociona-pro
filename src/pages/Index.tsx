@@ -13,7 +13,7 @@ import CatalogoNavideno from "@/components/CatalogoNavideno";
 
 
 
-import kitBienestar1 from "@/assets/products/christmas/kit-bienestar-1.png";
+import kitBienestar1 from "@/assets/christmas/kit-bienestar-1.png";
 import kitSpa1 from "@/assets/products/christmas/kit-spa-1.png";
 import kitAromaterapia1 from "@/assets/products/christmas/kit-aromaterapia-1.png";
 import kitDescanso1 from "@/assets/products/christmas/kit-descanso-1.png";

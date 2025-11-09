@@ -26,8 +26,8 @@ export const christmasProducts: ChristmasProduct[] = [
       "Moño satinado"
     ],
     images: [
-      "/assets/products/christmas/kit-bienestar-1.png",
-      "/assets/products/christmas/kit-bienestar-2.png"
+      "/assets/christmas/kit-bienestar-1.png",
+      "/assets/christmas/kit-bienestar-2.png"
     ]
   },
   {
