@@ -14,17 +14,17 @@ import CatalogoNavideno from "@/components/CatalogoNavideno";
 
 
 import kitBienestar1 from "@/assets/christmas/kit-bienestar-1.png";
-import kitSpa1 from "@/assets/products/christmas/kit-spa-1.png";
-import kitAromaterapia1 from "@/assets/products/christmas/kit-aromaterapia-1.png";
-import kitDescanso1 from "@/assets/products/christmas/kit-descanso-1.png";
-import kitCocteleria1 from "@/assets/products/christmas/Kit-bar.png";
-import Kityogabeige1 from "@/assets/products/christmas/Kit-yoga-beige.png";
-import Setcalma1 from "@/assets/products/christmas/Set-calma1.png";
-import NocheVelitas1 from "@/assets/products/christmas/Noche-velitas.png";
-import VinoCaliente1 from "@/assets/products/christmas/Kit-Vino-Caliente_1.png";
-import TablaQuesos1 from "@/assets/productos1/Kit-Tabla-Quesos.png";
-import KitGym1 from "@/assets/products/christmas/Kit-Gym.png";
-import KitEntretenimiento1 from "@/assets/products/christmas/Kit-Entretenimiento.png";
+import kitSpa1 from "@/assets/christmas/kit-spa-1.png";
+import kitAromaterapia1 from "@/assets/christmas/kit-aromaterapia-1.png";
+import kitDescanso1 from "@/assets/christmas/kit-descanso-1.png";
+import kitCocteleria1 from "@/assets/christmas/Kit-bar.png";
+import Kityogabeige1 from "@/assets/christmas/Kit-yoga-beige.png";
+import Setcalma1 from "@/assets/christmas/Set-calma1.png";
+import NocheVelitas1 from "@/assets/christmas/Noche-velitas.png";
+import VinoCaliente1 from "@/assets/christmas/Kit-Vino-Caliente_1.png";
+import TablaQuesos1 from "@/assets/christmas/Kit-Tabla-Quesos.png";
+import KitGym1 from "@/assets/christmas/Kit-Gym.png";
+import KitEntretenimiento1 from "@/assets/christmas/Kit-Entretenimiento.png";
 import Prensa1 from "@/assets/productos1/kit-prensa-francesa.png";
 import tazaceramica1 from "@/assets/productos1/taza.ceramica.png";
 import maquillaje1 from "@/assets/productos1/set-motivacional.png";
