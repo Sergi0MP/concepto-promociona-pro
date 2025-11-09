@@ -22,7 +22,7 @@ import Kityogabeige1 from "@/assets/products/christmas/Kit-yoga-beige.png";
 import Setcalma1 from "@/assets/products/christmas/Set-calma1.png";
 import NocheVelitas1 from "@/assets/products/christmas/Noche-velitas.png";
 import VinoCaliente1 from "@/assets/products/christmas/Kit-Vino-Caliente_1.png";
-import TablaQuesos1 from "@/assets/products/christmas/Kit-Tabla-Quesos.png";
+
 import KitGym1 from "@/assets/products/christmas/Kit-Gym.png";
 import KitEntretenimiento1 from "@/assets/products/christmas/Kit-Entretenimiento.png";
 import Prensa1 from "@/assets/productos1/kit-prensa-francesa.png";
@@ -63,7 +63,8 @@ const Index = () => {
     "Set-calma-lujo": Setcalma1,
     "Noche-Velitas": NocheVelitas1,
     "Vino-caliente": VinoCaliente1,
-    "Tabla-quesos": TablaQuesos1,
+    "Tabla-quesos": "/assets/products/christmas/kit-tabla-quesos.png",
+
     "Kit-Gym": KitGym1,
     "Kit-Entretenimiento": KitEntretenimiento1,
     //productos
