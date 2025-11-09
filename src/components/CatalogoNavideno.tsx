@@ -120,7 +120,7 @@ const CatalogoNavideno = ({ isOpen, onClose }: CatalogoNavidenoProps) => {
           {/* Título */}
           <div className="text-center mb-6">
             <h2 className="text-white text-3xl font-bold mb-2">
-              🎄 Catálogo Navideño 2024 🎁
+              🎄 Catálogo Navideño 2025 🎁
             </h2>
             <span className="text-white/80 text-lg font-semibold bg-black/50 px-6 py-2 rounded-full">
               Página {currentPage + 1} de {totalPages}

@@ -223,7 +223,7 @@ export const christmasProducts: ChristmasProduct[] = [
     
   ],
   images: [
-    "/assets/products/christmas/Kit-Tabla-Quesos.png",
+    "/assets/productos1/Kit-Tabla-Quesos.png",
   ]
 },
 {
