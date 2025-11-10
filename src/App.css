@@ -53,4 +53,25 @@
 }
 /* 🎄 Tira de caramelo entre secciones */
 
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ajuste clave para forzar fondo completo en About */
+.fondo-quienes-somos {
+  position: fixed; /* Cambia a fixed para cubrir absolutamente todo */
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #2563eb 0%, #3b82f6 50%, #b4e1fa 100%);
+  z-index: -1;
+  overflow-x: hidden;
+}
+
+
+
+
 
