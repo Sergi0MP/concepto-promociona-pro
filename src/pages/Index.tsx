@@ -29,6 +29,14 @@ import Prensa1 from "@/assets/productos1/kit-prensa-francesa.png";
 import tazaceramica1 from "@/assets/productos1/taza.ceramica.png";
 import maquillaje1 from "@/assets/productos1/set-motivacional.png";
 import termo1 from "@/assets/productos1/botella-motivador.png";
+import KitGalletas1 from "@/assets/christmas/Kit-Galletas.png";
+import KitCuidadoPersonal1 from "@/assets/christmas/Kit-cuidado1.png";
+import KitCorporativo1 from "@/assets/christmas/Kit-Corporativo1.png";
+import KitAñoViejo1 from "@/assets/christmas/Kit-Año-Viejo.png";
+import KitCorporativoPremium1 from "@/assets/christmas/Kit-Corporativo-Premium.png";
+import KitBrindis1 from "@/assets/christmas/Kit-Brindis.png";
+import KitCafe1 from "@/assets/christmas/Kit-Cafe.png";
+import KitChocolate1 from "@/assets/christmas/Kit-Chocolate.png";
 const Index = () => {
   const [selectedProduct, setSelectedProduct] = useState<ChristmasProduct | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -64,9 +72,16 @@ const Index = () => {
     "Noche-Velitas": NocheVelitas1,
     "Vino-caliente": VinoCaliente1,
     "Tabla-quesos": TablaQuesos1,
-
     "Kit-Gym": KitGym1,
     "Kit-Entretenimiento": KitEntretenimiento1,
+    "Kit-Galletas": KitGalletas1,
+    "Kit-Cuidado-Personal": KitCuidadoPersonal1,
+    "Kit-Corporativo": KitCorporativo1,
+    "Kit-Año-Viejo": KitAñoViejo1,
+    "Kit-Corporativo-Premium": KitCorporativoPremium1,
+    "Kit-Brindis": KitBrindis1,
+    "Kit-Cafe": KitCafe1,
+    "Kit-Chocolate": KitChocolate1,
     //productos
     "prensa1": Prensa1,
     "taza2": tazaceramica1,
@@ -181,7 +196,8 @@ const Index = () => {
       
       {/* ========== PRIMERA FILA: 4 productos (1-4) ========== */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {christmasProducts.slice(0, 4).map((product, index) => (
+        {christmasProducts.map((product, index) => (
+
           <article
             key={product.id}
             onClick={() => handleProductClick(product)}

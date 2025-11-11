@@ -16,6 +16,17 @@ import vinoCaliente2 from "@/assets/christmas/Kit-Vino-Caliente_2.png";
 import tablaQuesos1 from "@/assets/christmas/Kit-Tabla-Quesos.png";
 import kitGym1 from "@/assets/christmas/Kit-Gym.png";
 import kitEntretenimiento1 from "@/assets/christmas/Kit-Entretenimiento.png";
+import KitGalletas1 from "@/assets/christmas/Kit-Galletas.png";
+import KitCuidadoPersonal1 from "@/assets/christmas/Kit-cuidado1.png";
+import KitCuidadoPersonal2 from "@/assets/christmas/Kit-Cuidado2.png";
+import KitCorporativo1 from "@/assets/christmas/Kit-Corporativo1.png";
+import KitCorporativo2 from "@/assets/christmas/Kit-Corporativo2.png";
+import KitAñoViejo1 from "@/assets/christmas/Kit-Año-Viejo.png";
+import KitCorporativoPremium1 from "@/assets/christmas/Kit-Corporativo-Premium.png";
+import KitBrindis1 from "@/assets/christmas/Kit-Brindis.png";
+import KitCafe1 from "@/assets/christmas/Kit-Cafe.png";
+import KitChocolate1 from "@/assets/christmas/Kit-Chocolate.png";
+
 
 export interface ChristmasProduct {
   id: string;
@@ -255,6 +266,148 @@ export const christmasProducts: ChristmasProduct[] = [
     images: [
       kitEntretenimiento1
     ]
-  }
+  },
+    {
+    id: "Kit-Galletas",
+    name: "Kit Galletas Navidad",
+    description: "Un detalle cálido y perfecto para vivir la magia de la Navidad en familia. Este set está diseñado para inspirar momentos dulces, creativos y llenos de tradición en la cocina.",
+    kitContents: [
+      "Mezcla para galletas con chips de chocolate",
+      "Molde cortador en forma de árbol",
+      "Molde cortador en forma de estrella",
+      "Molde cortador en forma de muñeco de jengibre",
+      "Paño navideño decorativo",
+      "Caja rígida premium en tono vino con moño dorado",
+    ],
+    materials: [],
+    images: [
+      KitGalletas1,
+    ]
+  },
+  {
+    id: "Kit-Cuidado-Personal",
+    name: "Set de Cuidado Personal",
+    description: "Un regalo pensado para consentir, relajar y renovar. Este set invita a crear un momento de bienestar en casa, perfecto para disfrutar durante la temporada navideña y comenzar el nuevo año con equilibrio y calma.",
+    kitContents: [
+      "Bata suave y cómoda para descanso",
+      "Guantes exfoliantes para el cuidado de la piel",
+      "Rodillo facial relajante",
+      "Maderoterapia corporal manual",
+      "Sales de baño aromáticas",
+      "Aceite esencial para relajación",
+      "Caja decorativa premium con mensaje navideño y moño dorado"
+    ],
+    materials: [],
+    images: [
+      KitCuidadoPersonal1,
+      KitCuidadoPersonal2
+    ]
+  },
+  {
+    id: "Kit-Corporativo",
+    name: "Set Corporativo",
+    description: "Un detalle moderno y funcional, ideal para sorprender en esta temporada. Perfecto para colaboradores, clientes o aliados estratégicos, combinando utilidad, estilo y una presentación premium que transmite cuidado y profesionalismo.",
+    kitContents: [
+      "Termo minimalista de doble pared",
+      "Libreta tipo planificador “Daily To Do’s",
+      "Esfero metálico elegante",
+      "Estuche portaesfero en acabado premium",
+      "Caja rígida negra con mensaje dorado y cinta decorativa",
+      
+    ],
+    materials: [],
+    images: [
+      KitCorporativo1,
+      KitCorporativo2
+    ]
+  },
+  {
+    id: "Kit-Año-Viejo",
+    name: "Kit Año Viejo",
+    description: "Un detalle lleno de simbolismo y tradición para despedir el año con alegría. Este set celebra las costumbres que inspiran buena energía, esperanza y prosperidad, perfecto para regalar y compartir en familia.",
+    kitContents: [
+      "Muñeco de Año Viejo en tela",
+      "Lata metálica decorativa “Feliz Navidad",
+      "Fósforos en presentación especial",
+      "Bolsas con elementos tradicionales para el ritual (lentejas y harina amarilla)",
+      "Tarjeta con mensaje inspirador y espacio para dedicatoria",
+      
+    ],
+    materials: [],
+    images: [
+      KitAñoViejo1,
+      
+    ]
+  },
+  {
+    id: "Kit-Corporativo-Premium",
+    name: "Kit Corporativo Premium",
+    description: "Set elegante y funcional diseñado para profesionales que valoran la organización y el estilo. Ideal como obsequio empresarial en esta temporada.",
+    kitContents: [
+      "Maletín ejecutivo acolchado para laptop",
+      "Termo tipo mug con tapa y pitillo metálico",
+      "Libreta profesional de tapa dura",
+      "Bolígrafo metálico de lujo en estuche individual",
+      "Caja de presentación con detalles festivos",
+      
+    ],
+    materials: [],
+    images: [
+      KitCorporativoPremium1,
+      
+    ]
+  },
+  {
+    id: "Kit-Brindis",
+    name: "Kit de Brindis Navideño",
+    description: "Set clásico y elegante ideal para celebrar los momentos especiales de la temporada con un toque de distinción.",
+    kitContents: [
+      "Botella de vino tinto Gato Negro Cabernet Sauvignon",
+      "Copa de vino de cristal grabada con mensaje festivo",
+      "Caja decorativa con diseño navideño y moño rojo de regalo",
+      
+    ],
+    materials: [],
+    images: [
+      KitBrindis1
+      
+    ]
+  },
+  {
+    id: "Kit-Cafe",
+    name: "Kit de Cafe Premium",
+    description: "Set elegante para los amantes del café, ideal para regalar en esta temporada y disfrutar momentos cálidos con aroma y sabor excepcionales.",
+    kitContents: [
+      "Café Juan Valdez Molido Premium",
+      "Prensa francesa con detalles en madera",
+      "Termo metálico para bebidas calientes",
+      "Caja rígida decorativa con mensaje “Feliz Navidad” y moño rojo",
+      "Tarjeta personalizada de felicitación"
+      
+    ],
+    materials: [],
+    images: [
+      KitCafe1
+      
+    ]
+  },
+   {
+    id: "Kit-Chocolate",
+    name: "Kit de Chocolate Caliente Navideño",
+    description: "Set encantador con diseño inspirado en la magia de la Navidad, perfecto para regalar y disfrutar en familia durante las noches festivas.",
+    kitContents: [
+      "Taza metálica con diseño navideño de renos",
+      "Frasco con mezcla para preparar chocolate caliente con malvaviscos",
+      "Buzón decorativo “Letters to Santa” en color rojo",
+      "Tarjeta personalizada con mensaje de felicitación navideña",
+    
+      
+    ],
+    materials: [],
+    images: [
+      KitChocolate1
+      
+    ]
+  },
 ];
 

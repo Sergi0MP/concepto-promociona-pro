@@ -95,7 +95,7 @@ const Contact = () => {
                   <Mail className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="font-heading font-semibold mb-2">Email</h3>
-                <p className="text-sm text-muted-foreground">info@conceptocreativo.com</p>
+                <p className="text-sm text-muted-foreground">administrativo@conceptopym.com</p>
               </CardContent>
             </Card>
 
@@ -105,7 +105,7 @@ const Contact = () => {
                   <Phone className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="font-heading font-semibold mb-2">Teléfono</h3>
-                <p className="text-sm text-muted-foreground">+57 300 123 4567</p>
+                <p className="text-sm text-muted-foreground">+57 333 7013642</p>
               </CardContent>
             </Card>
 
