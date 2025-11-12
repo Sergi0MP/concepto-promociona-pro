@@ -150,6 +150,38 @@ const Index = () => {
   <div className="relative z-10 container px-4">
 
     {/* 🎄 BOTÓN DEL CATÁLOGO NAVIDEÑO */}
+    {/* 🎄 BOTÓN DEL CATÁLOGO NAVIDEÑO - Versión Elegante Dorada */}
+<div className="flex justify-center mb-8 animate-fade-up">
+  <button
+    onClick={() => setIsCatalogOpen(true)}
+    className="group relative bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-white font-bold px-10 py-5 rounded-2xl shadow-2xl hover:shadow-amber-500/50 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 overflow-hidden"
+  >
+    {/* Efecto de brillo animado */}
+    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+    
+    {/* Nieve cayendo (decoración) */}
+    <div className="absolute inset-0 opacity-30">
+      <div className="absolute top-0 left-[10%] w-1 h-1 bg-white rounded-full animate-ping"></div>
+      <div className="absolute top-0 left-[30%] w-1 h-1 bg-white rounded-full animate-ping" style={{ animationDelay: '0.5s' }}></div>
+      <div className="absolute top-0 left-[50%] w-1 h-1 bg-white rounded-full animate-ping" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute top-0 left-[70%] w-1 h-1 bg-white rounded-full animate-ping" style={{ animationDelay: '1.5s' }}></div>
+      <div className="absolute top-0 left-[90%] w-1 h-1 bg-white rounded-full animate-ping" style={{ animationDelay: '2s' }}></div>
+    </div>
+    
+    {/* Contenido del botón */}
+    <div className="relative flex items-center gap-3">
+      <span className="text-3xl animate-bounce">🎄</span>
+      <div className="text-2xl font-extrabold tracking-wider">
+        Ver Catálogo Navideño
+      </div>
+      <span className="text-3xl animate-bounce" style={{ animationDelay: '0.3s' }}>🎁</span>
+    </div>
+    
+    {/* Borde brillante dorado */}
+    <div className="absolute inset-0 rounded-2xl ring-2 ring-yellow-300/50 group-hover:ring-4 group-hover:ring-yellow-400 transition-all duration-300"></div>
+  </button>
+</div>
+
     {/* ...botón, título y descripción igual que antes ... */}
 
     <div className="max-w-7xl mx-auto space-y-6">
