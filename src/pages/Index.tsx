@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import ProductModal from "@/components/ProductModal";
@@ -10,7 +10,7 @@ import { MessageCircle } from "lucide-react";
 import RegularProductModal from "@/components/RegularProductModal";
 import { Product } from "@/data/products";
 import CatalogoNavideno from "@/components/CatalogoNavideno";
-
+import CatalogosDeTemporada from "@/components/CatalogosDeTemporada";
 
 
 import kitBienestar1 from "@/assets/christmas/kit-bienestar-1.png";
@@ -103,6 +103,7 @@ const Index = () => {
 }, []);
 
 
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -144,84 +145,25 @@ const Index = () => {
   }}
 >
   <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/60 to-transparent z-[5]"></div>
-<div className="absolute inset-0 bg-black/40" />
+  <div className="absolute inset-0 bg-black/40"></div>
 
-<div className="relative z-10 container px-4">
-  
- {/* 🎄 BOTÓN DEL CATÁLOGO NAVIDEÑO - Versión Elegante Dorada */}
-<div className="flex justify-center mb-8 animate-fade-up">
-  <button
-    onClick={() => setIsCatalogOpen(true)}
-    className="group relative bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-white font-bold px-10 py-5 rounded-2xl shadow-2xl hover:shadow-amber-500/50 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 overflow-hidden"
-  >
-    {/* Efecto de brillo animado */}
-    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-    
-    {/* Nieve cayendo (decoración) */}
-    <div className="absolute inset-0 opacity-30">
-      <div className="absolute top-0 left-[10%] w-1 h-1 bg-white rounded-full animate-ping"></div>
-      <div className="absolute top-0 left-[30%] w-1 h-1 bg-white rounded-full animate-ping" style={{ animationDelay: '0.5s' }}></div>
-      <div className="absolute top-0 left-[50%] w-1 h-1 bg-white rounded-full animate-ping" style={{ animationDelay: '1s' }}></div>
-      <div className="absolute top-0 left-[70%] w-1 h-1 bg-white rounded-full animate-ping" style={{ animationDelay: '1.5s' }}></div>
-      <div className="absolute top-0 left-[90%] w-1 h-1 bg-white rounded-full animate-ping" style={{ animationDelay: '2s' }}></div>
-    </div>
-    
-    {/* Contenido del botón */}
-    <div className="relative flex items-center gap-3">
-      <span className="text-3xl animate-bounce">🎄</span>
-      <div className="text-2xl font-extrabold tracking-wider">
-        Ver Catálogo Navideño
-      </div>
-      <span className="text-3xl animate-bounce" style={{ animationDelay: '0.3s' }}>🎁</span>
-    </div>
-    
-    {/* Borde brillante dorado */}
-    <div className="absolute inset-0 rounded-2xl ring-2 ring-yellow-300/50 group-hover:ring-4 group-hover:ring-yellow-400 transition-all duration-300"></div>
-  </button>
-</div>
+  <div className="relative z-10 container px-4">
 
+    {/* 🎄 BOTÓN DEL CATÁLOGO NAVIDEÑO */}
+    {/* ...botón, título y descripción igual que antes ... */}
 
-  <div className="text-center mb-12">
-    <h2 className="font-[Poppins] font-bold text-3xl md:text-4xl mb-4">
-      Temporada Navidad
-    </h2>
-
-      <p className="max-w-2xl mx-auto font-[Inter]">
-        Descubre nuestros kits especiales de temporada, perfectos para regalar
-      </p>
-    </div>
-
-    {/* Grid principal */}
     <div className="max-w-7xl mx-auto space-y-6">
-      
-      {/* ========== PRIMERA FILA: 4 productos (1-4) ========== */}
+
+      {/* Fila 1: 4 productos (0-3) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {christmasProducts.map((product, index) => (
-
-          <article
-            key={product.id}
-            onClick={() => handleProductClick(product)}
-            className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 cursor-pointer animate-fade-up"
-            style={{ animationDelay: `${index * 100}ms` }}
-          >
-            {/* Imagen cuadrada */}
+        {christmasProducts.slice(0, 4).map((product) => (
+          <article key={product.id} onClick={() => handleProductClick(product)} className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 cursor-pointer animate-fade-up">
             <div className="aspect-square overflow-hidden">
-              <img
-                src={productThumbnails[product.id]}
-                alt={product.name}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
+              <img src={productThumbnails[product.id]} alt={product.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
             </div>
-
-            {/* Contenido */}
             <div className="p-5">
-              <h3 className="font-[Poppins] font-semibold text-lg mb-2 line-clamp-2 text-primary group-hover:text-secondary transition-colors">
-                {product.name}
-              </h3>
-              <p className="text-sm text-muted-foreground mb-4 font-[Inter] line-clamp-2">
-                {product.description}
-              </p>
-
+              <h3 className="font-[Poppins] font-semibold text-lg mb-2 line-clamp-2 text-primary group-hover:text-secondary transition-colors">{product.name}</h3>
+              <p className="text-sm text-muted-foreground mb-4 font-[Inter] line-clamp-2">{product.description}</p>
               <div className="flex items-center justify-center gap-2 text-primary font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <span>Ver detalles</span>
                 <span className="transform group-hover:translate-x-1 transition-transform">→</span>
@@ -231,35 +173,16 @@ const Index = () => {
         ))}
       </div>
 
-      {/* ========== SEGUNDA FILA: 2 productos (5-6) + FLYER ========== */}
+      {/* Fila 2: 2 productos (4,5) + flyer a la derecha */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        
-        {/* Productos 5 y 6 */}
-        {christmasProducts.slice(4, 6).map((product, index) => (
-          <article
-            key={product.id}
-            onClick={() => handleProductClick(product)}
-            className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 cursor-pointer animate-fade-up"
-            style={{ animationDelay: `${(index + 4) * 100}ms` }}
-          >
-            {/* Imagen cuadrada */}
+        {christmasProducts.slice(4, 6).map((product) => (
+          <article key={product.id} onClick={() => handleProductClick(product)} className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 cursor-pointer animate-fade-up">
             <div className="aspect-square overflow-hidden">
-              <img
-                src={productThumbnails[product.id]}
-                alt={product.name}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
+              <img src={productThumbnails[product.id]} alt={product.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
             </div>
-
-            {/* Contenido */}
             <div className="p-5">
-              <h3 className="font-[Poppins] font-semibold text-lg mb-2 line-clamp-2 text-primary group-hover:text-secondary transition-colors">
-                {product.name}
-              </h3>
-              <p className="text-sm text-muted-foreground mb-4 font-[Inter] line-clamp-2">
-                {product.description}
-              </p>
-
+              <h3 className="font-[Poppins] font-semibold text-lg mb-2 line-clamp-2 text-primary group-hover:text-secondary transition-colors">{product.name}</h3>
+              <p className="text-sm text-muted-foreground mb-4 font-[Inter] line-clamp-2">{product.description}</p>
               <div className="flex items-center justify-center gap-2 text-primary font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <span>Ver detalles</span>
                 <span className="transform group-hover:translate-x-1 transition-transform">→</span>
@@ -267,18 +190,8 @@ const Index = () => {
             </div>
           </article>
         ))}
-
-        {/* 🎨 FLYER - Ocupa 2 columnas */}
-        <div 
-          className="lg:col-span-2 sm:col-span-2 relative group cursor-pointer animate-fade-up rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3"
-          style={{ animationDelay: '600ms' }}
-        >
-          <img
-            src="/flyers/flyer-navidad.png"
-            alt="Promoción Navidad"
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-          {/* Overlay opcional */}
+        <div className="lg:col-span-2 sm:col-span-2 relative group cursor-pointer animate-fade-up rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 flex flex-col justify-center">
+          <img src="/flyers/flyer-navidad.png" alt="Promoción Navidad" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div className="absolute bottom-6 left-6 right-6 text-white">
               <h3 className="font-[Poppins] font-bold text-2xl mb-2">¡Ofertas Especiales!</h3>
@@ -286,75 +199,66 @@ const Index = () => {
             </div>
           </div>
         </div>
-
       </div>
 
-      {/* ========== TERCERA FILA: 3 productos (7-9) ========== */}
-      {christmasProducts.length > 6 && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {christmasProducts.slice(6, 9).map((product, index) => (
-            <article
-              key={product.id}
-              onClick={() => handleProductClick(product)}
-              className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 cursor-pointer animate-fade-up"
-              style={{ animationDelay: `${(index + 6) * 100}ms` }}
-            >
-              {/* Imagen cuadrada */}
-              <div className="aspect-square overflow-hidden">
-                <img
-                  src={productThumbnails[product.id]}
-                  alt={product.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+      {/* Fila 3: 4 productos (6-9) abajo del flyer */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {christmasProducts.slice(6, 10).map((product) => (
+          <article key={product.id} onClick={() => handleProductClick(product)} className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 cursor-pointer animate-fade-up">
+            <div className="aspect-square overflow-hidden">
+              <img src={productThumbnails[product.id]} alt={product.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            </div>
+            <div className="p-5">
+              <h3 className="font-[Poppins] font-semibold text-lg mb-2 line-clamp-2 text-primary group-hover:text-secondary transition-colors">{product.name}</h3>
+              <p className="text-sm text-muted-foreground mb-4 font-[Inter] line-clamp-2">{product.description}</p>
+              <div className="flex items-center justify-center gap-2 text-primary font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span>Ver detalles</span>
+                <span className="transform group-hover:translate-x-1 transition-transform">→</span>
               </div>
+            </div>
+          </article>
+        ))}
+      </div>
 
-              {/* Contenido */}
-              <div className="p-5">
-                <h3 className="font-[Poppins] font-semibold text-lg mb-2 line-clamp-2 text-primary group-hover:text-secondary transition-colors">
-                  {product.name}
-                </h3>
-                <p className="text-sm text-muted-foreground mb-4 font-[Inter] line-clamp-2">
-                  {product.description}
-                </p>
-
-                <div className="flex items-center justify-center gap-2 text-primary font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span>Ver detalles</span>
-                  <span className="transform group-hover:translate-x-1 transition-transform">→</span>
-                </div>
-              </div>
-            </article>
-          ))}
+      {/* Fila 4: flyer izquierdo y 2 productos (10,11) */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="lg:col-span-2 sm:col-span-2 relative group cursor-pointer animate-fade-up rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 flex flex-col justify-center">
+          <img src="/flyers/flyer-navidad2.png" alt="Flyer Navidad 2" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="absolute bottom-6 left-6 right-6 text-white">
+              <h3 className="font-[Poppins] font-bold text-2xl mb-2">¡Flyer Especial Navidad!</h3>
+              <p className="text-sm">Nuevas oportunidades de regalo</p>
+            </div>
+          </div>
         </div>
-      )}
-
-      {/* ========== CUARTA FILA: 3 productos restantes (10-12) ========== */}
-      {christmasProducts.length > 9 && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {christmasProducts.slice(9, 12).map((product, index) => (
-            <article
-              key={product.id}
-              onClick={() => handleProductClick(product)}
-              className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 cursor-pointer animate-fade-up"
-              style={{ animationDelay: `${(index + 9) * 100}ms` }}
-            >
-              {/* Imagen cuadrada */}
-              <div className="aspect-square overflow-hidden">
-                <img
-                  src={productThumbnails[product.id]}
-                  alt={product.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+        {christmasProducts.slice(10, 12).map((product) => (
+          <article key={product.id} onClick={() => handleProductClick(product)} className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 cursor-pointer animate-fade-up">
+            <div className="aspect-square overflow-hidden">
+              <img src={productThumbnails[product.id]} alt={product.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            </div>
+            <div className="p-5">
+              <h3 className="font-[Poppins] font-semibold text-lg mb-2 line-clamp-2 text-primary group-hover:text-secondary transition-colors">{product.name}</h3>
+              <p className="text-sm text-muted-foreground mb-4 font-[Inter] line-clamp-2">{product.description}</p>
+              <div className="flex items-center justify-center gap-2 text-primary font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span>Ver detalles</span>
+                <span className="transform group-hover:translate-x-1 transition-transform">→</span>
               </div>
+            </div>
+          </article>
+        ))}
+      </div>
 
-              {/* Contenido */}
+      {/* Resto de productos: 12 hasta 19 */}
+      {christmasProducts.length > 12 && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {christmasProducts.slice(12, 20).map((product) => (
+            <article key={product.id} onClick={() => handleProductClick(product)} className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 cursor-pointer animate-fade-up">
+              <div className="aspect-square overflow-hidden">
+                <img src={productThumbnails[product.id]} alt={product.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              </div>
               <div className="p-5">
-                <h3 className="font-[Poppins] font-semibold text-lg mb-2 line-clamp-2 text-primary group-hover:text-secondary transition-colors">
-                  {product.name}
-                </h3>
-                <p className="text-sm text-muted-foreground mb-4 font-[Inter] line-clamp-2">
-                  {product.description}
-                </p>
-
+                <h3 className="font-[Poppins] font-semibold text-lg mb-2 line-clamp-2 text-primary group-hover:text-secondary transition-colors">{product.name}</h3>
+                <p className="text-sm text-muted-foreground mb-4 font-[Inter] line-clamp-2">{product.description}</p>
                 <div className="flex items-center justify-center gap-2 text-primary font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <span>Ver detalles</span>
                   <span className="transform group-hover:translate-x-1 transition-transform">→</span>
@@ -368,6 +272,8 @@ const Index = () => {
     </div>
   </div>
 </section>
+
+
 
 {/* ⭐ Productos Destacados con Filtro por Categorías */}
 <section 
@@ -516,12 +422,15 @@ const Index = () => {
 
 
 <WhyChooseUs />
+
+      {/* Catálogos de temporada */}
+      <CatalogosDeTemporada />
+
       <ProductModal
         product={selectedProduct}
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
-      {/* 🆕 AGREGAR AQUÍ: Modal para productos regulares */}
       <RegularProductModal
         product={selectedRegularProduct}
         isOpen={isRegularModalOpen}
@@ -529,9 +438,9 @@ const Index = () => {
         productImage={selectedRegularProduct ? productThumbnails[selectedRegularProduct.id] : undefined}
       />
       <CatalogoNavideno 
-  isOpen={isCatalogOpen} 
-  onClose={() => setIsCatalogOpen(false)} 
-/>
+        isOpen={isCatalogOpen} 
+        onClose={() => setIsCatalogOpen(false)} 
+      />
       <WhatsAppButton />
       <Footer />
     </div>
