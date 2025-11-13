@@ -12,6 +12,7 @@ import { Product } from "@/data/products";
 import CatalogoNavideno from "@/components/CatalogoNavideno";
 import CatalogosDeTemporada from "@/components/CatalogosDeTemporada";
 import CatalogoHalloween from "@/components/CatalogoHalloween";
+import Catalogo2025 from "@/components/Catalogo2025";
 
 
 
@@ -46,9 +47,11 @@ const Index = () => {
   const [selectedRegularProduct, setSelectedRegularProduct] = useState<Product | null>(null);
   const [isRegularModalOpen, setIsRegularModalOpen] = useState(false);
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
+  <CatalogoNavideno isOpen={isCatalogOpen} onClose={() => setIsCatalogOpen(false)} />
+
    
   const [showCatalogoHalloween, setShowCatalogoHalloween] = useState(false);
-
+const [showCatalogo2025, setShowCatalogo2025] = useState(false);
 
 
   const handleWhatsAppClick = (productName: string) => {
@@ -322,6 +325,15 @@ const Index = () => {
 
 
 
+
+
+<CatalogosDeTemporada onOpenHalloween={() => setShowCatalogoHalloween(true)}
+onOpen2025={() => setShowCatalogo2025(true)} />
+<div className="w-full h-10 relative -mb-4 z-20 pointer-events-none">
+  <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent"></div>
+</div>
+
+
 {/* ⭐ Productos Destacados con Filtro por Categorías */}
 <section 
   id="catalogo-productos"
@@ -476,7 +488,7 @@ const Index = () => {
 
 
 {/* Catálogos de temporada */}
-<CatalogosDeTemporada onOpenHalloween={() => setShowCatalogoHalloween(true)} />
+
 
 {/* ...resto del código... */}
 
@@ -517,6 +529,10 @@ const Index = () => {
 <CatalogoNavideno 
   isOpen={isCatalogOpen} 
   onClose={() => setIsCatalogOpen(false)} 
+/>
+<Catalogo2025
+  isOpen={showCatalogo2025}
+  onClose={() => setShowCatalogo2025(false)}
 />
 <WhatsAppButton />
 <Footer />
