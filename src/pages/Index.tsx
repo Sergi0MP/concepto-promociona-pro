@@ -11,6 +11,8 @@ import RegularProductModal from "@/components/RegularProductModal";
 import { Product } from "@/data/products";
 import CatalogoNavideno from "@/components/CatalogoNavideno";
 import CatalogosDeTemporada from "@/components/CatalogosDeTemporada";
+import CatalogoHalloween from "@/components/CatalogoHalloween";
+
 
 
 import kitBienestar1 from "@/assets/christmas/kit-bienestar-1.png";
@@ -44,6 +46,10 @@ const Index = () => {
   const [selectedRegularProduct, setSelectedRegularProduct] = useState<Product | null>(null);
   const [isRegularModalOpen, setIsRegularModalOpen] = useState(false);
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
+   
+  const [showCatalogoHalloween, setShowCatalogoHalloween] = useState(false);
+
+
 
   const handleWhatsAppClick = (productName: string) => {
     const message = encodeURIComponent(`Hola!, quiero cotizar el producto: ${productName}`);
@@ -60,6 +66,15 @@ const Index = () => {
     setSelectedRegularProduct(product);
     setIsRegularModalOpen(true);
   };
+  const catalogos = [
+  {
+    titulo: "Catálogo Halloween",
+    portada: "/catalogo/halloween/page1.png",
+    // Asegúrate de tener algún identificador único si hay muchos catálogos
+  },
+  // otros catálogos...
+]
+
 
   const productThumbnails: { [key: string]: string } = {
     "kit-bienestar": kitBienestar1,
@@ -455,26 +470,58 @@ const Index = () => {
 
 <WhyChooseUs />
 
-      {/* Catálogos de temporada */}
-      <CatalogosDeTemporada />
 
-      <ProductModal
-        product={selectedProduct}
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
+
+{/* Catálogos de temporada */}
+
+
+{/* Catálogos de temporada */}
+<CatalogosDeTemporada onOpenHalloween={() => setShowCatalogoHalloween(true)} />
+
+{/* ...resto del código... */}
+
+
+{/* MODAL FLIPBOOK DE HALLOWEEN - SOLO SE ABRE CON CLICK */}
+{showCatalogoHalloween && (
+  <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 backdrop-blur-sm">
+    <div className="relative bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col items-center">
+      <button
+        onClick={() => setShowCatalogoHalloween(false)}
+        className="absolute top-3 right-3 px-3 py-1 bg-red-600 text-white rounded-full font-semibold hover:bg-red-700 z-10"
+      >
+        ✕
+      </button>
+      <iframe
+        src="https://online.anyflip.com/qqfoi/niee/index.html"
+        style={{ width: "90vw", height: "80vh", border: "none" }}
+        allowFullScreen
+        scrolling="no"
+        title="Catálogo Halloween"
+        className="rounded-xl"
       />
-      <RegularProductModal
-        product={selectedRegularProduct}
-        isOpen={isRegularModalOpen}
-        onClose={() => setIsRegularModalOpen(false)}
-        productImage={selectedRegularProduct ? productThumbnails[selectedRegularProduct.id] : undefined}
-      />
-      <CatalogoNavideno 
-        isOpen={isCatalogOpen} 
-        onClose={() => setIsCatalogOpen(false)} 
-      />
-      <WhatsAppButton />
-      <Footer />
+    </div>
+  </div>
+)}
+
+<ProductModal
+  product={selectedProduct}
+  isOpen={isModalOpen}
+  onClose={() => setIsModalOpen(false)}
+/>
+<RegularProductModal
+  product={selectedRegularProduct}
+  isOpen={isRegularModalOpen}
+  onClose={() => setIsRegularModalOpen(false)}
+  productImage={selectedRegularProduct ? productThumbnails[selectedRegularProduct.id] : undefined}
+/>
+<CatalogoNavideno 
+  isOpen={isCatalogOpen} 
+  onClose={() => setIsCatalogOpen(false)} 
+/>
+<WhatsAppButton />
+<Footer />
+
+
     </div>
   );
 };
