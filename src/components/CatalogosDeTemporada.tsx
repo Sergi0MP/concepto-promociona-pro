@@ -68,7 +68,7 @@ const CatalogosDeTemporada = ({ onOpenHalloween, onOpen2025 }) => (
   <section
     className="w-full py-10 flex flex-col items-center relative"
     style={{
-      backgroundImage: "url('/images/textura.jpg')",
+      backgroundImage: "url('/images/blanco.jpg')",
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
