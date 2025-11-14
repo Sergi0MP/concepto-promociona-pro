@@ -137,7 +137,7 @@ const [showCatalogo2025, setShowCatalogo2025] = useState(false);
           id="background-video"
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/videos/fondonavidad.mp4" type="video/mp4" />
+          <source src="/videos/fondo.mp4" type="video/mp4" />
         </video>
 
         {/* 🌙 Capa oscura para que el texto resalte */}
