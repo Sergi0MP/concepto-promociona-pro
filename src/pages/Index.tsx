@@ -13,6 +13,10 @@ import CatalogoNavideno from "@/components/CatalogoNavideno";
 import CatalogosDeTemporada from "@/components/CatalogosDeTemporada";
 import CatalogoHalloween from "@/components/CatalogoHalloween";
 import Catalogo2025 from "@/components/Catalogo2025";
+import CatalogoAmor from "@/components/CatalogoAmor";
+import About from "./About";
+
+
 
 
 
@@ -52,6 +56,7 @@ const Index = () => {
    
   const [showCatalogoHalloween, setShowCatalogoHalloween] = useState(false);
 const [showCatalogo2025, setShowCatalogo2025] = useState(false);
+const [showCatalogoAmor, setShowCatalogoAmor] = useState(false);
 
 
   const handleWhatsAppClick = (productName: string) => {
@@ -137,7 +142,7 @@ const [showCatalogo2025, setShowCatalogo2025] = useState(false);
           id="background-video"
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/videos/fondo.mp4" type="video/mp4" />
+          <source src="/videos/fondoazul.mp4" type="video/mp4" />
         </video>
 
         {/* 🌙 Capa oscura para que el texto resalte */}
@@ -327,13 +332,16 @@ const [showCatalogo2025, setShowCatalogo2025] = useState(false);
 
 
 
-<CatalogosDeTemporada onOpenHalloween={() => setShowCatalogoHalloween(true)}
-onOpen2025={() => setShowCatalogo2025(true)} />
+ <CatalogosDeTemporada
+        onOpenHalloween={() => setShowCatalogoHalloween(true)}
+        onOpen2025={() => setShowCatalogo2025(true)}
+        onOpenAmor={() => setShowCatalogoAmor(true)}
+      />
 <div className="w-full h-10 relative -mb-4 z-20 pointer-events-none">
   <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent"></div>
 </div>
 
-
+<About />
 {/* ⭐ Productos Destacados con Filtro por Categorías */}
 <section 
   id="catalogo-productos"
@@ -344,6 +352,9 @@ onOpen2025={() => setShowCatalogo2025(true)} />
 
 
 >
+  <div className="absolute inset-0 z-0 pointer-events-none">
+    <div className="h-1/2 w-full bg-gradient-to-b from-[#e6f0ff]/95 via-white/80 to-transparent" />
+  </div>
   <div className="container px-4 relative z-10">
     <div className="text-center mb-12">
       <h2 className="font-[Poppins] font-bold text-3xl md:text-4xl text-primary mb-4">
@@ -533,6 +544,10 @@ onOpen2025={() => setShowCatalogo2025(true)} />
 <Catalogo2025
   isOpen={showCatalogo2025}
   onClose={() => setShowCatalogo2025(false)}
+/>
+<CatalogoAmor
+  isOpen={showCatalogoAmor}
+  onClose={() => setShowCatalogoAmor(false)}
 />
 <WhatsAppButton />
 <Footer />

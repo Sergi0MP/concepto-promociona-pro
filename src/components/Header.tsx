@@ -1,13 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
-// Cambia esto: const Header = () => {
 type HeaderProps = {
   className?: string;
 };
+
 const Header = ({ className = "" }: HeaderProps) => {
   const navigate = useNavigate();
 
+  // Scroll animado para Productos Destacados
   const scrollToCatalog = (e: React.MouseEvent) => {
     e.preventDefault();
     if (window.location.pathname === '/') {
@@ -26,7 +27,44 @@ const Header = ({ className = "" }: HeaderProps) => {
     }
   };
 
-  // Cambia la línea del header:
+  // Scroll animado para Catálogos de Temporada
+  const scrollToCatalogosTemporada = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (window.location.pathname === '/') {
+      const section = document.getElementById('catalogos-temporada');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      navigate('/');
+      setTimeout(() => {
+        const section = document.getElementById('catalogos-temporada');
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  };
+
+  // Scroll animado para Quiénes Somos
+  const scrollToQuienesSomos = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (window.location.pathname === '/') {
+      const section = document.getElementById('quienes-somos');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      navigate('/');
+      setTimeout(() => {
+        const section = document.getElementById('quienes-somos');
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  };
+
   return (
     <header className={`absolute top-0 z-50 w-full bg-transparent ${className}`}>
       <div className="container flex h-16 items-center justify-between px-4">
@@ -37,16 +75,27 @@ const Header = ({ className = "" }: HeaderProps) => {
           <Link to="/" className="text-sm font-medium text-white hover:text-white/80 transition-colors">
             Inicio
           </Link>
-          <a 
+          <a
             href="#catalogo-productos"
             onClick={scrollToCatalog}
             className="text-sm font-medium text-white hover:text-white/80 transition-colors cursor-pointer"
           >
-            Catálogo
+            Productos Destacados
           </a>
-          <Link to="/nosotros" className="text-sm font-medium text-white hover:text-white/80 transition-colors">
+          <a
+            href="#catalogos-temporada"
+            onClick={scrollToCatalogosTemporada}
+            className="text-sm font-medium text-white hover:text-white/80 transition-colors cursor-pointer"
+          >
+            Catálogos de Temporada
+          </a>
+          <a
+            href="#quienes-somos"
+            onClick={scrollToQuienesSomos}
+            className="text-sm font-medium text-white hover:text-white/80 transition-colors cursor-pointer"
+          >
             Quiénes Somos
-          </Link>
+          </a>
         </nav>
         <div className="flex items-center">
           <Link to="/contacto">
@@ -61,5 +110,6 @@ const Header = ({ className = "" }: HeaderProps) => {
 };
 
 export default Header;
+
 
 

@@ -12,11 +12,11 @@ const catalogos = [
     enlace: "/pdfs/catalogo_2025.pdf",
   },
   {
-    titulo: "Catálogo Día del Padre",
-    portada: "/assets/catalogos/dia_padre.jpg",
-    enlace: "/pdfs/catalogo_dia_padre.pdf",
+    titulo: "Catálogo Amor y Amistad",
+    portada: "/catalogo/amor.png.png",  // Cambia la ruta de portada si hace falta
+    enlace: "/pdfs/catalogo_amor_amistad.pdf",      // Pon el PDF real si tienes
   },
-  // Más catálogos...
+  // Agrega más catálogos si quieres...
 ];
 
 const LibroCatalogo = ({
@@ -26,7 +26,7 @@ const LibroCatalogo = ({
   onClick,
 }: typeof catalogos[0] & { onClick?: (e: React.MouseEvent) => void }) => {
   if (onClick) {
-    // SOLO para catálogo interactivo (abre modal)
+    // SOLO para catálogos interactivos/modal
     return (
       <div
         className="group flex flex-col items-center mx-4 my-6 cursor-pointer transition-transform duration-300 hover:-translate-y-2"
@@ -64,8 +64,9 @@ const LibroCatalogo = ({
   );
 };
 
-const CatalogosDeTemporada = ({ onOpenHalloween, onOpen2025 }) => (
+const CatalogosDeTemporada = ({ onOpenHalloween, onOpen2025, onOpenAmor }) => (
   <section
+    id="catalogos-temporada"
     className="w-full py-10 flex flex-col items-center relative"
     style={{
       backgroundImage: "url('/images/blanco.jpg')",
@@ -98,6 +99,16 @@ const CatalogosDeTemporada = ({ onOpenHalloween, onOpen2025 }) => (
             />
           );
         }
+        if (cat.titulo === "Catálogo Amor y Amistad") {
+          return (
+            <LibroCatalogo
+              key={idx}
+              {...cat}
+              onClick={onOpenAmor}
+            />
+          );
+        }
+        // Otros catálogos normales (con enlace)
         return (
           <LibroCatalogo
             key={idx}
@@ -109,7 +120,9 @@ const CatalogosDeTemporada = ({ onOpenHalloween, onOpen2025 }) => (
   </section>
 );
 
+
 export default CatalogosDeTemporada;
+
 
 
 
