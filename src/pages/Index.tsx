@@ -14,6 +14,8 @@ import CatalogosDeTemporada from "@/components/CatalogosDeTemporada";
 import CatalogoHalloween from "@/components/CatalogoHalloween";
 import Catalogo2025 from "@/components/Catalogo2025";
 import CatalogoAmor from "@/components/CatalogoAmor";
+import CatalogoMundial from "@/components/CatalogoMundial";
+
 import About from "./About";
 
 
@@ -57,6 +59,8 @@ const Index = () => {
   const [showCatalogoHalloween, setShowCatalogoHalloween] = useState(false);
 const [showCatalogo2025, setShowCatalogo2025] = useState(false);
 const [showCatalogoAmor, setShowCatalogoAmor] = useState(false);
+const [showCatalogoMundial, setShowCatalogoMundial] = useState(false);
+
 
 
   const handleWhatsAppClick = (productName: string) => {
@@ -142,7 +146,7 @@ const [showCatalogoAmor, setShowCatalogoAmor] = useState(false);
           id="background-video"
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/videos/fondoazul.mp4" type="video/mp4" />
+          <source src="/videos/fondo.mp4" type="video/mp4" />
         </video>
 
         {/* 🌙 Capa oscura para que el texto resalte */}
@@ -336,7 +340,8 @@ const [showCatalogoAmor, setShowCatalogoAmor] = useState(false);
         onOpenHalloween={() => setShowCatalogoHalloween(true)}
         onOpen2025={() => setShowCatalogo2025(true)}
         onOpenAmor={() => setShowCatalogoAmor(true)}
-      />
+        onOpenMundial={(e) => { e.preventDefault(); setShowCatalogoMundial(true); }
+    }/>
 <div className="w-full h-10 relative -mb-4 z-20 pointer-events-none">
   <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent"></div>
 </div>
@@ -549,6 +554,11 @@ const [showCatalogoAmor, setShowCatalogoAmor] = useState(false);
   isOpen={showCatalogoAmor}
   onClose={() => setShowCatalogoAmor(false)}
 />
+<CatalogoMundial
+  isOpen={showCatalogoMundial}
+  onClose={() => setShowCatalogoMundial(false)}
+/>
+
 <WhatsAppButton />
 <Footer />
 

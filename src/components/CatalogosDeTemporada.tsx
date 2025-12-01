@@ -13,10 +13,15 @@ const catalogos = [
   },
   {
     titulo: "Catálogo Amor y Amistad",
-    portada: "/catalogo/amor.png.png",  // Cambia la ruta de portada si hace falta
-    enlace: "/pdfs/catalogo_amor_amistad.pdf",      // Pon el PDF real si tienes
+    portada: "/catalogo/amor.png.png", // corrige doble .png
+    enlace: "/pdfs/catalogo_amor_amistad.pdf",
   },
-  // Agrega más catálogos si quieres...
+  {
+    titulo: "Catálogo Mundial",
+    portada: "/catalogo/Mundial.png", // pon aquí la portada real del mundial
+    enlace: "/pdfs/catalogo_mundial.pdf", // no se usará si abres modal, pero lo dejamos por consistencia
+  },
+  // Más catálogos si quieres...
 ];
 
 const LibroCatalogo = ({
@@ -26,7 +31,7 @@ const LibroCatalogo = ({
   onClick,
 }: typeof catalogos[0] & { onClick?: (e: React.MouseEvent) => void }) => {
   if (onClick) {
-    // SOLO para catálogos interactivos/modal
+    // SOLO para catálogos que abren modal (Anyflip)
     return (
       <div
         className="group flex flex-col items-center mx-4 my-6 cursor-pointer transition-transform duration-300 hover:-translate-y-2"
@@ -43,6 +48,7 @@ const LibroCatalogo = ({
       </div>
     );
   }
+
   // Otros catálogos normales (con <a>)
   return (
     <a
@@ -64,7 +70,19 @@ const LibroCatalogo = ({
   );
 };
 
-const CatalogosDeTemporada = ({ onOpenHalloween, onOpen2025, onOpenAmor }) => (
+interface CatalogosDeTemporadaProps {
+  onOpenHalloween: (e: React.MouseEvent) => void;
+  onOpen2025: (e: React.MouseEvent) => void;
+  onOpenAmor: (e: React.MouseEvent) => void;
+  onOpenMundial: (e: React.MouseEvent) => void;
+}
+
+const CatalogosDeTemporada = ({
+  onOpenHalloween,
+  onOpen2025,
+  onOpenAmor,
+  onOpenMundial,
+}: CatalogosDeTemporadaProps) => (
   <section
     id="catalogos-temporada"
     className="w-full py-10 flex flex-col items-center relative"
@@ -108,6 +126,15 @@ const CatalogosDeTemporada = ({ onOpenHalloween, onOpen2025, onOpenAmor }) => (
             />
           );
         }
+        if (cat.titulo === "Catálogo Mundial") {
+          return (
+            <LibroCatalogo
+              key={idx}
+              {...cat}
+              onClick={onOpenMundial}
+            />
+          );
+        }
         // Otros catálogos normales (con enlace)
         return (
           <LibroCatalogo
@@ -120,9 +147,4 @@ const CatalogosDeTemporada = ({ onOpenHalloween, onOpen2025, onOpenAmor }) => (
   </section>
 );
 
-
 export default CatalogosDeTemporada;
-
-
-
-
