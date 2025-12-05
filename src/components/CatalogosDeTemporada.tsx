@@ -22,6 +22,11 @@ const catalogos = [
     enlace: "/pdfs/catalogo_mundial.pdf", // no se usará si abres modal, pero lo dejamos por consistencia
   },
   // Más catálogos si quieres...
+   {
+    titulo: "Catálogo Navideño 2025",
+    portada: "/catalogo/pagina-1.png", // usa la portada que tengas
+    enlace: "/pdfs/catalogo_navidad_2025.pdf",
+  },
 ];
 
 const LibroCatalogo = ({
@@ -75,6 +80,7 @@ interface CatalogosDeTemporadaProps {
   onOpen2025: (e: React.MouseEvent) => void;
   onOpenAmor: (e: React.MouseEvent) => void;
   onOpenMundial: (e: React.MouseEvent) => void;
+  onOpenNavidad: (e: React.MouseEvent) => void;
 }
 
 const CatalogosDeTemporada = ({
@@ -82,6 +88,7 @@ const CatalogosDeTemporada = ({
   onOpen2025,
   onOpenAmor,
   onOpenMundial,
+  onOpenNavidad,
 }: CatalogosDeTemporadaProps) => (
   <section
     id="catalogos-temporada"
@@ -135,6 +142,17 @@ const CatalogosDeTemporada = ({
             />
           );
         }
+        if (cat.titulo === "Catálogo Navideño 2025") {
+  return (
+    <div key={idx} className="w-full flex justify-center">
+      <LibroCatalogo
+        {...cat}
+        onClick={onOpenNavidad}
+      />
+    </div>
+  );
+}
+
         // Otros catálogos normales (con enlace)
         return (
           <LibroCatalogo

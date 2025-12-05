@@ -56,10 +56,11 @@ const Index = () => {
   <CatalogoNavideno isOpen={isCatalogOpen} onClose={() => setIsCatalogOpen(false)} />
 
    
-  const [showCatalogoHalloween, setShowCatalogoHalloween] = useState(false);
+const [showCatalogoHalloween, setShowCatalogoHalloween] = useState(false);
 const [showCatalogo2025, setShowCatalogo2025] = useState(false);
 const [showCatalogoAmor, setShowCatalogoAmor] = useState(false);
 const [showCatalogoMundial, setShowCatalogoMundial] = useState(false);
+const [showCatalogoNavideno, setShowCatalogoNavideno] = useState(false);
 
 
 
@@ -162,6 +163,23 @@ const [showCatalogoMundial, setShowCatalogoMundial] = useState(false);
     {/* 🎨 NUEVO: Degradado de transición en la parte inferior */}
     <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-black/60 z-[5]"></div>
       </section>
+      <CatalogosDeTemporada
+  onOpenHalloween={() => setShowCatalogoHalloween(true)}
+  onOpen2025={() => setShowCatalogo2025(true)}
+  onOpenAmor={() => setShowCatalogoAmor(true)}
+  onOpenMundial={(e) => {
+    e.preventDefault();
+    setShowCatalogoMundial(true);
+  }}
+  onOpenNavidad={(e) => {
+    e.preventDefault();
+    setIsCatalogOpen(true);
+  }}
+/>
+
+<div className="w-full h-10 relative -mb-4 z-20 pointer-events-none">
+  <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent"></div>
+</div>
   
 {/* 🎄 Christmas Products Section */}
 <section
@@ -171,47 +189,27 @@ const [showCatalogoMundial, setShowCatalogoMundial] = useState(false);
     color: "#b8860b",
   }}
 >
-  <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/60 to-transparent z-[5]"></div>
-  <div className="absolute inset-0 bg-black/40"></div>
+  <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/60 to-transparent z-[5]" />
+  <div className="absolute inset-0 bg-black/40" />
+
+  <div className="relative z-10 container px-4 text-center mb-10">
+    <h2 className="font-[Poppins] font-bold text-3xl md:text-4xl text-white mb-3">
+      Colección Navideña 2025
+    </h2>
+    <p className="max-w-2xl mx-auto font-[Inter] text-white/80">
+      Descubre nuestros kits y regalos especiales para esta temporada.
+    </p>
+  </div>
+
+  {/* 🎄 BOTÓN DEL CATÁLOGO NAVIDEÑO */}
+  {/* 🎄 BOTÓN DEL CATÁLOGO NAVIDEÑO - Versión Elegante Dorada */}
+
+  {/* ...botón, título y descripción igual que antes ... */}
 
   <div className="relative z-10 container px-4">
-
-    {/* 🎄 BOTÓN DEL CATÁLOGO NAVIDEÑO */}
-    {/* 🎄 BOTÓN DEL CATÁLOGO NAVIDEÑO - Versión Elegante Dorada */}
-<div className="flex justify-center mb-8 animate-fade-up">
-  <button
-    onClick={() => setIsCatalogOpen(true)}
-    className="group relative bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-white font-bold px-10 py-5 rounded-2xl shadow-2xl hover:shadow-amber-500/50 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 overflow-hidden"
-  >
-    {/* Efecto de brillo animado */}
-    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-    
-    {/* Nieve cayendo (decoración) */}
-    <div className="absolute inset-0 opacity-30">
-      <div className="absolute top-0 left-[10%] w-1 h-1 bg-white rounded-full animate-ping"></div>
-      <div className="absolute top-0 left-[30%] w-1 h-1 bg-white rounded-full animate-ping" style={{ animationDelay: '0.5s' }}></div>
-      <div className="absolute top-0 left-[50%] w-1 h-1 bg-white rounded-full animate-ping" style={{ animationDelay: '1s' }}></div>
-      <div className="absolute top-0 left-[70%] w-1 h-1 bg-white rounded-full animate-ping" style={{ animationDelay: '1.5s' }}></div>
-      <div className="absolute top-0 left-[90%] w-1 h-1 bg-white rounded-full animate-ping" style={{ animationDelay: '2s' }}></div>
-    </div>
-    
-    {/* Contenido del botón */}
-    <div className="relative flex items-center gap-3">
-      <span className="text-3xl animate-bounce">🎄</span>
-      <div className="text-2xl font-extrabold tracking-wider">
-        Ver Catálogo Navideño
-      </div>
-      <span className="text-3xl animate-bounce" style={{ animationDelay: '0.3s' }}>🎁</span>
-    </div>
-    
-    {/* Borde brillante dorado */}
-    <div className="absolute inset-0 rounded-2xl ring-2 ring-yellow-300/50 group-hover:ring-4 group-hover:ring-yellow-400 transition-all duration-300"></div>
-  </button>
-</div>
-
-    {/* ...botón, título y descripción igual que antes ... */}
-
     <div className="max-w-7xl mx-auto space-y-6">
+      {/* aquí sigue tu contenido de navidad */}
+
 
       {/* Fila 1: 4 productos (0-3) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -336,15 +334,7 @@ const [showCatalogoMundial, setShowCatalogoMundial] = useState(false);
 
 
 
- <CatalogosDeTemporada
-        onOpenHalloween={() => setShowCatalogoHalloween(true)}
-        onOpen2025={() => setShowCatalogo2025(true)}
-        onOpenAmor={() => setShowCatalogoAmor(true)}
-        onOpenMundial={(e) => { e.preventDefault(); setShowCatalogoMundial(true); }
-    }/>
-<div className="w-full h-10 relative -mb-4 z-20 pointer-events-none">
-  <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent"></div>
-</div>
+
 
 <About />
 {/* ⭐ Productos Destacados con Filtro por Categorías */}
