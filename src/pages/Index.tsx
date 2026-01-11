@@ -147,7 +147,7 @@ const [showCatalogoNavideno, setShowCatalogoNavideno] = useState(false);
           id="background-video"
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/videos/fondo.mp4" type="video/mp4" />
+          <source src="/videos/Bienvenida.mp4" type="video/mp4" />
         </video>
 
         {/* 🌙 Capa oscura para que el texto resalte */}
@@ -156,7 +156,8 @@ const [showCatalogoNavideno, setShowCatalogoNavideno] = useState(false);
         {/* ✨ Contenido sobre el video */}
         <div className="relative z-10 container px-4 text-center">
           <h1 className="font-[Poppins] font-bold text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-2xl">
-            Bienvenido a Concepto Creativo
+            
+            
           </h1>
         </div>
         
@@ -185,7 +186,7 @@ const [showCatalogoNavideno, setShowCatalogoNavideno] = useState(false);
 <section
   className="relative py-20 bg-cover bg-center bg-no-repeat"
   style={{
-    backgroundImage: "url('/images/seccion-navidad.jpg')",
+    backgroundImage: "url('/images/escolar.jpg')",
     color: "#b8860b",
   }}
 >
@@ -194,10 +195,10 @@ const [showCatalogoNavideno, setShowCatalogoNavideno] = useState(false);
 
   <div className="relative z-10 container px-4 text-center mb-10">
     <h2 className="font-[Poppins] font-bold text-3xl md:text-4xl text-white mb-3">
-      Colección Navideña 2025
+      Temporada Escolar 2026
     </h2>
     <p className="max-w-2xl mx-auto font-[Inter] text-white/80">
-      Descubre nuestros kits y regalos especiales para esta temporada.
+      Descubre nuestros kits escolares para el regreso a clases.
     </p>
   </div>
 
