@@ -4,65 +4,50 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import ProductModal from "@/components/ProductModal";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Footer from "@/components/Footer";
-import { products } from "@/data/products";
-import { christmasProducts, ChristmasProduct } from "@/data/christmasProducts";
+import { products, Product } from "@/data/products";
 import { MessageCircle } from "lucide-react";
 import RegularProductModal from "@/components/RegularProductModal";
-import { Product } from "@/data/products";
 import CatalogoNavideno from "@/components/CatalogoNavideno";
 import CatalogosDeTemporada from "@/components/CatalogosDeTemporada";
 import CatalogoHalloween from "@/components/CatalogoHalloween";
 import Catalogo2025 from "@/components/Catalogo2025";
 import CatalogoAmor from "@/components/CatalogoAmor";
 import CatalogoMundial from "@/components/CatalogoMundial";
-
 import About from "./About";
 
+// 🔹 Nueva data de temporada escolar
+import {
+  productosEscolares,
+  ProductoEscolar,
+} from "@/data/productosEscolares";
 
-
-
-
-import kitBienestar1 from "@/assets/christmas/kit-bienestar-1.png";
-import kitSpa1 from "@/assets/christmas/kit-spa-1.png";
-import kitAromaterapia1 from "@/assets/christmas/kit-aromaterapia-1.png";
-import kitDescanso1 from "@/assets/christmas/kit-descanso-1.png";
-import kitCocteleria1 from "@/assets/christmas/Kit-bar.png";
-import Kityogabeige1 from "@/assets/christmas/Kit-yoga-beige.png";
-import Setcalma1 from "@/assets/christmas/Set-calma1.png";
-import NocheVelitas1 from "@/assets/christmas/Noche-velitas.png";
-import VinoCaliente1 from "@/assets/christmas/Kit-Vino-Caliente_1.png";
-import TablaQuesos1 from "@/assets/christmas/Kit-Tabla-Quesos.png";
-import KitGym1 from "@/assets/christmas/Kit-Gym.png";
-import KitEntretenimiento1 from "@/assets/christmas/Kit-Entretenimiento.png";
+// 🔹 Imágenes usadas como thumbnails (escolares + productos generales)
 import Prensa1 from "@/assets/productos1/kit-prensa-francesa.png";
 import tazaceramica1 from "@/assets/productos1/taza.ceramica.png";
 import maquillaje1 from "@/assets/productos1/set-motivacional.png";
 import termo1 from "@/assets/productos1/botella-motivador.png";
-import KitGalletas1 from "@/assets/christmas/Kit-Galletas.png";
-import KitCuidadoPersonal1 from "@/assets/christmas/Kit-cuidado1.png";
-import KitCorporativo1 from "@/assets/christmas/Kit-Corporativo1.png";
-import KitAñoViejo1 from "@/assets/christmas/Kit-Año-Viejo.png";
-import KitCorporativoPremium1 from "@/assets/christmas/Kit-Corporativo-Premium.png";
-import KitBrindis1 from "@/assets/christmas/Kit-Brindis.png";
-import KitCafe1 from "@/assets/christmas/Kit-Cafe.png";
-import KitChocolate1 from "@/assets/christmas/Kit-Chocolate.png";
+
+// si tienes imágenes específicas para escolar, impórtalas aquí
+// import morral1 from "@/assets/escolar/morral-1.png";
+// import lonchera1 from "@/assets/escolar/lonchera-1.png";
+// ...
+
 const Index = () => {
-  const [selectedProduct, setSelectedProduct] = useState<ChristmasProduct | null>(null);
+  // 🔹 Ya no usamos ChristmasProduct aquí
+  const [selectedProduct, setSelectedProduct] = useState<ProductoEscolar | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   const [selectedCategory, setSelectedCategory] = useState<string>("Todos");
   const [selectedRegularProduct, setSelectedRegularProduct] = useState<Product | null>(null);
   const [isRegularModalOpen, setIsRegularModalOpen] = useState(false);
+
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
-  <CatalogoNavideno isOpen={isCatalogOpen} onClose={() => setIsCatalogOpen(false)} />
 
-   
-const [showCatalogoHalloween, setShowCatalogoHalloween] = useState(false);
-const [showCatalogo2025, setShowCatalogo2025] = useState(false);
-const [showCatalogoAmor, setShowCatalogoAmor] = useState(false);
-const [showCatalogoMundial, setShowCatalogoMundial] = useState(false);
-const [showCatalogoNavideno, setShowCatalogoNavideno] = useState(false);
-
-
+  const [showCatalogoHalloween, setShowCatalogoHalloween] = useState(false);
+  const [showCatalogo2025, setShowCatalogo2025] = useState(false);
+  const [showCatalogoAmor, setShowCatalogoAmor] = useState(false);
+  const [showCatalogoMundial, setShowCatalogoMundial] = useState(false);
+  const [showCatalogoNavideno, setShowCatalogoNavideno] = useState(false);
 
   const handleWhatsAppClick = (productName: string) => {
     const message = encodeURIComponent(`Hola!, quiero cotizar el producto: ${productName}`);
@@ -70,7 +55,8 @@ const [showCatalogoNavideno, setShowCatalogoNavideno] = useState(false);
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
   };
 
-  const handleProductClick = (product: ChristmasProduct) => {
+  // ahora este click es para productos de la temporada escolar
+  const handleProductClick = (product: ProductoEscolar) => {
     setSelectedProduct(product);
     setIsModalOpen(true);
   };
@@ -79,56 +65,38 @@ const [showCatalogoNavideno, setShowCatalogoNavideno] = useState(false);
     setSelectedRegularProduct(product);
     setIsRegularModalOpen(true);
   };
+
   const catalogos = [
-  {
-    titulo: "Catálogo Halloween",
-    portada: "/catalogo/halloween/page1.png",
-    // Asegúrate de tener algún identificador único si hay muchos catálogos
-  },
-  // otros catálogos...
-]
+    {
+      titulo: "Catálogo Halloween",
+      portada: "/catalogo/halloween/page1.png",
+    },
+    // otros catálogos...
+  ];
 
-
+  // 🔹 Thumbnails: dejamos solo los que realmente se usan (productos generales + escolares)
   const productThumbnails: { [key: string]: string } = {
-    "kit-bienestar": kitBienestar1,
-    "kit-spa": kitSpa1,
-    "kit-aromaterapia": kitAromaterapia1,
-    "kit-descanso": kitDescanso1,
-    "kit-cocteleria": kitCocteleria1,
-    "kit-yoga-beige": Kityogabeige1,
-    "Set-calma-lujo": Setcalma1,
-    "Noche-Velitas": NocheVelitas1,
-    "Vino-caliente": VinoCaliente1,
-    "Tabla-quesos": TablaQuesos1,
-    "Kit-Gym": KitGym1,
-    "Kit-Entretenimiento": KitEntretenimiento1,
-    "Kit-Galletas": KitGalletas1,
-    "Kit-Cuidado-Personal": KitCuidadoPersonal1,
-    "Kit-Corporativo": KitCorporativo1,
-    "Kit-Año-Viejo": KitAñoViejo1,
-    "Kit-Corporativo-Premium": KitCorporativoPremium1,
-    "Kit-Brindis": KitBrindis1,
-    "Kit-Cafe": KitCafe1,
-    "Kit-Chocolate": KitChocolate1,
-    //productos
-    "prensa1": Prensa1,
-    "taza2": tazaceramica1,
-    "maquillaje1": maquillaje1,
-    "botella1": termo1,
+    // productos destacados generales
+    prensa1: Prensa1,
+    taza2: tazaceramica1,
+    maquillaje1: maquillaje1,
+    botella1: termo1,
+
+    // ejemplo escolar (cuando tengas las imágenes)
+    // "morral-escolar": morral1,
+    // "lonchera-termica": lonchera1,
   };
+
   useEffect(() => {
-  const disableContext = (e: MouseEvent) => {
-    e.preventDefault();
-  };
+    const disableContext = (e: MouseEvent) => {
+      e.preventDefault();
+    };
 
-  // Bloquea el menú contextual en toda la página
-  document.addEventListener("contextmenu", disableContext);
-
-  // limpieza al desmontar
-  return () => {
-    document.removeEventListener("contextmenu", disableContext);
-  };
-}, []);
+    document.addEventListener("contextmenu", disableContext);
+    return () => {
+      document.removeEventListener("contextmenu", disableContext);
+    };
+  }, []);
 
 
 
@@ -182,7 +150,7 @@ const [showCatalogoNavideno, setShowCatalogoNavideno] = useState(false);
   <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent"></div>
 </div>
   
-{/* 🎄 Christmas Products Section */}
+{/* ✏️ Temporada Escolar 2026 */}
 <section
   className="relative py-20 bg-cover bg-center bg-no-repeat"
   style={{
@@ -202,26 +170,30 @@ const [showCatalogoNavideno, setShowCatalogoNavideno] = useState(false);
     </p>
   </div>
 
-  {/* 🎄 BOTÓN DEL CATÁLOGO NAVIDEÑO */}
-  {/* 🎄 BOTÓN DEL CATÁLOGO NAVIDEÑO - Versión Elegante Dorada */}
-
-  {/* ...botón, título y descripción igual que antes ... */}
-
   <div className="relative z-10 container px-4">
     <div className="max-w-7xl mx-auto space-y-6">
-      {/* aquí sigue tu contenido de navidad */}
-
-
       {/* Fila 1: 4 productos (0-3) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {christmasProducts.slice(0, 4).map((product) => (
-          <article key={product.id} onClick={() => handleProductClick(product)} className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 cursor-pointer animate-fade-up">
+        {productosEscolares.slice(0, 4).map((product) => (
+          <article
+            key={product.id}
+            onClick={() => handleProductClick(product)}
+            className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 cursor-pointer animate-fade-up"
+          >
             <div className="aspect-square overflow-hidden">
-              <img src={productThumbnails[product.id]} alt={product.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <img
+                src={productThumbnails[product.id] ?? product.images[0]}
+                alt={product.name}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
             </div>
             <div className="p-5">
-              <h3 className="font-[Poppins] font-semibold text-lg mb-2 line-clamp-2 text-primary group-hover:text-secondary transition-colors">{product.name}</h3>
-              <p className="text-sm text-muted-foreground mb-4 font-[Inter] line-clamp-2">{product.description}</p>
+              <h3 className="font-[Poppins] font-semibold text-lg mb-2 line-clamp-2 text-primary group-hover:text-secondary transition-colors">
+                {product.name}
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4 font-[Inter] line-clamp-2">
+                {product.description}
+              </p>
               <div className="flex items-center justify-center gap-2 text-primary font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <span>Ver detalles</span>
                 <span className="transform group-hover:translate-x-1 transition-transform">→</span>
@@ -231,16 +203,28 @@ const [showCatalogoNavideno, setShowCatalogoNavideno] = useState(false);
         ))}
       </div>
 
-      {/* Fila 2: 2 productos (4,5) + flyer a la derecha */}
+      {/* Fila 2: 2 productos + flyer a la derecha */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {christmasProducts.slice(4, 6).map((product) => (
-          <article key={product.id} onClick={() => handleProductClick(product)} className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 cursor-pointer animate-fade-up">
+        {productosEscolares.slice(4, 6).map((product) => (
+          <article
+            key={product.id}
+            onClick={() => handleProductClick(product)}
+            className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 cursor-pointer animate-fade-up"
+          >
             <div className="aspect-square overflow-hidden">
-              <img src={productThumbnails[product.id]} alt={product.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <img
+                src={productThumbnails[product.id] ?? product.images[0]}
+                alt={product.name}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
             </div>
             <div className="p-5">
-              <h3 className="font-[Poppins] font-semibold text-lg mb-2 line-clamp-2 text-primary group-hover:text-secondary transition-colors">{product.name}</h3>
-              <p className="text-sm text-muted-foreground mb-4 font-[Inter] line-clamp-2">{product.description}</p>
+              <h3 className="font-[Poppins] font-semibold text-lg mb-2 line-clamp-2 text-primary group-hover:text-secondary transition-colors">
+                {product.name}
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4 font-[Inter] line-clamp-2">
+                {product.description}
+              </p>
               <div className="flex items-center justify-center gap-2 text-primary font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <span>Ver detalles</span>
                 <span className="transform group-hover:translate-x-1 transition-transform">→</span>
@@ -249,26 +233,44 @@ const [showCatalogoNavideno, setShowCatalogoNavideno] = useState(false);
           </article>
         ))}
         <div className="lg:col-span-2 sm:col-span-2 relative group cursor-pointer animate-fade-up rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 flex flex-col justify-center">
-          <img src="/flyers/flyer-navidad.png" alt="Promoción Navidad" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          <img
+            src="/flyers/flyer-escolar.png"
+            alt="Promoción Escolar"
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div className="absolute bottom-6 left-6 right-6 text-white">
-              <h3 className="font-[Poppins] font-bold text-2xl mb-2">¡Ofertas Especiales!</h3>
-              <p className="text-sm">Descubre nuestras promociones navideñas</p>
+              <h3 className="font-[Poppins] font-bold text-2xl mb-2">
+                ¡Ofertas Regreso a Clases!
+              </h3>
+              <p className="text-sm">Promociones especiales para temporada escolar</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Fila 3: 4 productos (6-9) abajo del flyer */}
+      {/* Fila 3: 4 productos (6-9) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {christmasProducts.slice(6, 10).map((product) => (
-          <article key={product.id} onClick={() => handleProductClick(product)} className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 cursor-pointer animate-fade-up">
+        {productosEscolares.slice(6, 10).map((product) => (
+          <article
+            key={product.id}
+            onClick={() => handleProductClick(product)}
+            className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 cursor-pointer animate-fade-up"
+          >
             <div className="aspect-square overflow-hidden">
-              <img src={productThumbnails[product.id]} alt={product.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <img
+                src={productThumbnails[product.id] ?? product.images[0]}
+                alt={product.name}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
             </div>
             <div className="p-5">
-              <h3 className="font-[Poppins] font-semibold text-lg mb-2 line-clamp-2 text-primary group-hover:text-secondary transition-colors">{product.name}</h3>
-              <p className="text-sm text-muted-foreground mb-4 font-[Inter] line-clamp-2">{product.description}</p>
+              <h3 className="font-[Poppins] font-semibold text-lg mb-2 line-clamp-2 text-primary group-hover:text-secondary transition-colors">
+                {product.name}
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4 font-[Inter] line-clamp-2">
+                {product.description}
+              </p>
               <div className="flex items-center justify-center gap-2 text-primary font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <span>Ver detalles</span>
                 <span className="transform group-hover:translate-x-1 transition-transform">→</span>
@@ -281,22 +283,40 @@ const [showCatalogoNavideno, setShowCatalogoNavideno] = useState(false);
       {/* Fila 4: flyer izquierdo y 2 productos (10,11) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="lg:col-span-2 sm:col-span-2 relative group cursor-pointer animate-fade-up rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 flex flex-col justify-center">
-          <img src="/flyers/flyer-navidad2.png" alt="Flyer Navidad 2" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          <img
+            src="/flyers/flyer-escolar2.png"
+            alt="Flyer Escolar 2"
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div className="absolute bottom-6 left-6 right-6 text-white">
-              <h3 className="font-[Poppins] font-bold text-2xl mb-2">¡Flyer Especial Navidad!</h3>
-              <p className="text-sm">Nuevas oportunidades de regalo</p>
+              <h3 className="font-[Poppins] font-bold text-2xl mb-2">
+                ¡Kits para todos los grados!
+              </h3>
+              <p className="text-sm">Opciones para niños, jóvenes y ejecutivos.</p>
             </div>
           </div>
         </div>
-        {christmasProducts.slice(10, 12).map((product) => (
-          <article key={product.id} onClick={() => handleProductClick(product)} className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 cursor-pointer animate-fade-up">
+        {productosEscolares.slice(10, 12).map((product) => (
+          <article
+            key={product.id}
+            onClick={() => handleProductClick(product)}
+            className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 cursor-pointer animate-fade-up"
+          >
             <div className="aspect-square overflow-hidden">
-              <img src={productThumbnails[product.id]} alt={product.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <img
+                src={productThumbnails[product.id] ?? product.images[0]}
+                alt={product.name}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
             </div>
             <div className="p-5">
-              <h3 className="font-[Poppins] font-semibold text-lg mb-2 line-clamp-2 text-primary group-hover:text-secondary transition-colors">{product.name}</h3>
-              <p className="text-sm text-muted-foreground mb-4 font-[Inter] line-clamp-2">{product.description}</p>
+              <h3 className="font-[Poppins] font-semibold text-lg mb-2 line-clamp-2 text-primary group-hover:text-secondary transition-colors">
+                {product.name}
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4 font-[Inter] line-clamp-2">
+                {product.description}
+              </p>
               <div className="flex items-center justify-center gap-2 text-primary font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <span>Ver detalles</span>
                 <span className="transform group-hover:translate-x-1 transition-transform">→</span>
@@ -306,17 +326,29 @@ const [showCatalogoNavideno, setShowCatalogoNavideno] = useState(false);
         ))}
       </div>
 
-      {/* Resto de productos: 12 hasta 19 */}
-      {christmasProducts.length > 12 && (
+      {/* Resto de productos: 12 en adelante */}
+      {productosEscolares.length > 12 && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {christmasProducts.slice(12, 20).map((product) => (
-            <article key={product.id} onClick={() => handleProductClick(product)} className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 cursor-pointer animate-fade-up">
+          {productosEscolares.slice(12, 20).map((product) => (
+            <article
+              key={product.id}
+              onClick={() => handleProductClick(product)}
+              className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 cursor-pointer animate-fade-up"
+            >
               <div className="aspect-square overflow-hidden">
-                <img src={productThumbnails[product.id]} alt={product.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <img
+                  src={productThumbnails[product.id] ?? product.images[0]}
+                  alt={product.name}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
               </div>
               <div className="p-5">
-                <h3 className="font-[Poppins] font-semibold text-lg mb-2 line-clamp-2 text-primary group-hover:text-secondary transition-colors">{product.name}</h3>
-                <p className="text-sm text-muted-foreground mb-4 font-[Inter] line-clamp-2">{product.description}</p>
+                <h3 className="font-[Poppins] font-semibold text-lg mb-2 line-clamp-2 text-primary group-hover:text-secondary transition-colors">
+                  {product.name}
+                </h3>
+                <p className="text-sm text-muted-foreground mb-4 font-[Inter] line-clamp-2">
+                  {product.description}
+                </p>
                 <div className="flex items-center justify-center gap-2 text-primary font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <span>Ver detalles</span>
                   <span className="transform group-hover:translate-x-1 transition-transform">→</span>
@@ -326,10 +358,10 @@ const [showCatalogoNavideno, setShowCatalogoNavideno] = useState(false);
           ))}
         </div>
       )}
-
     </div>
   </div>
 </section>
+
 
 
 
@@ -365,7 +397,7 @@ const [showCatalogoNavideno, setShowCatalogoNavideno] = useState(false);
 
     {/* 🎨 Barra de Filtros por Categoría */}
     <div className="flex flex-wrap justify-center gap-3 mb-8">
-      {["Todos", "Café", "Hogar", "Maquillaje", "Deportes", "Oficina"].map((category) => {
+      {["Todos", "Café", "Hogar", "Maquillaje", "Deportes", "Oficina", "Navidad"].map((category) => {
         const filteredCount = category === "Todos" 
           ? products.length 
           : products.filter(p => p.category === category).length;
@@ -417,27 +449,26 @@ const [showCatalogoNavideno, setShowCatalogoNavideno] = useState(false);
           >
             {/* Imagen del producto */}
             <div className="aspect-square bg-gradient-to-br from-secondary/10 to-primary/5 flex items-center justify-center relative overflow-hidden">
-              {productThumbnails[product.id] ? (
-                <img
-                  src={productThumbnails[product.id]}
-                  alt={product.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-              ) : (
-                // Fallback si no hay imagen
-                <>
-                  <div className="absolute inset-0 bg-gradient-to-br from-secondary/30 to-primary/10 group-hover:scale-105 transition-transform duration-500" />
-                  <span className="text-6xl relative z-10 group-hover:scale-110 transition-transform duration-300">
-                    📦
-                  </span>
-                </>
-              )}
-              
-              {/* Badge de categoría */}
-              <div className="absolute top-3 right-3 bg-primary/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold">
-                {product.category}
-              </div>
-            </div>
+  {productThumbnails[product.id] || product.image ? (
+    <img
+      src={productThumbnails[product.id] || product.image}
+      alt={product.name}
+      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+    />
+  ) : (
+    <>
+      <div className="absolute inset-0 bg-gradient-to-br from-secondary/30 to-primary/10 group-hover:scale-105 transition-transform duration-500" />
+      <span className="text-6xl relative z-10 group-hover:scale-110 transition-transform duration-300">
+        📦
+      </span>
+    </>
+  )}
+
+  <div className="absolute top-3 right-3 bg-primary/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold">
+    {product.category}
+  </div>
+</div>
+
 
             {/* Contenido */}
             <div className="p-5">

@@ -21,14 +21,14 @@ const Catalogo2025 = ({ isOpen, onClose }: Catalogo2025Props) => {
 
       <div className="max-w-[98vw] w-full flex flex-col items-center">
         <h2 className="text-black text-2xl font-extrabold mb-3 text-center">
-          Catálogo 2025
+          Catálogo 2026
         </h2>
         <iframe
           src="https://online.anyflip.com/qqfoi/noqa/index.html"
           style={{ width: '90vw', height: '80vh', border: 'none' }}
           allowFullScreen
           scrolling="no"
-          title="Catálogo 2025"
+          title="Catálogo 2026"
           className="rounded-xl bg-white shadow-xl"
         />
       </div>
