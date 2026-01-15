@@ -26,6 +26,19 @@ import Prensa1 from "@/assets/productos1/kit-prensa-francesa.png";
 import tazaceramica1 from "@/assets/productos1/taza.ceramica.png";
 import maquillaje1 from "@/assets/productos1/set-motivacional.png";
 import termo1 from "@/assets/productos1/botella-motivador.png";
+import rollerdeluxe1 from "@/assets/productos1/rollerdeluxe.png";
+import jaderoller1 from "@/assets/productos1/jaderoller1.png";
+import jaderoller2 from "@/assets/productos1/jaderoller2.jpeg";
+import peine1 from "@/assets/productos1/peine.png";
+import brochas1 from "@/assets/productos1/brochas.png";
+import cosmetiquera1 from "@/assets/productos1/cosmetiquera.png";
+import essence1 from "@/assets/productos1/essence.png";
+import joyero1 from "@/assets/productos1/joyero.png";
+import agendas1 from "@/assets/productos1/agendas.jpg";
+import pelota1 from "@/assets/productos1/antiestres.png";
+import asado1 from "@/assets/productos1/asado.png";
+import maletas1 from "@/assets/productos1/maletas.png";
+import mochila1 from "@/assets/productos1/mochila.png";
 
 // si tienes imágenes específicas para escolar, impórtalas aquí
 // import morral1 from "@/assets/escolar/morral-1.png";
@@ -81,6 +94,19 @@ const Index = () => {
     taza2: tazaceramica1,
     maquillaje1: maquillaje1,
     botella1: termo1,
+    rollerdeluxe1: rollerdeluxe1,
+    jaderoller1: jaderoller1,
+    jaderoller2: jaderoller2,
+    peine1: peine1,
+    brochas1: brochas1,
+    cosmetiquera1: cosmetiquera1,
+    essence1: essence1,
+    joyero1: joyero1,
+    agendas1: agendas1,
+    pelota1: pelota1,
+    asado1: asado1,
+    maletas1: maletas1,
+    mochila1: mochila1,
 
     // ejemplo escolar (cuando tengas las imágenes)
     // "morral-escolar": morral1,
@@ -146,15 +172,13 @@ const Index = () => {
   }}
 />
 
-<div className="w-full h-10 relative -mb-4 z-20 pointer-events-none">
-  <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent"></div>
-</div>
+
   
 {/* ✏️ Temporada Escolar 2026 */}
 <section
   className="relative py-20 bg-cover bg-center bg-no-repeat"
   style={{
-    backgroundImage: "url('/images/escolar.jpg')",
+    backgroundImage: "url('/images/azul.png')",
     color: "#b8860b",
   }}
 >
@@ -234,7 +258,7 @@ const Index = () => {
         ))}
         <div className="lg:col-span-2 sm:col-span-2 relative group cursor-pointer animate-fade-up rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 flex flex-col justify-center">
           <img
-            src="/flyers/flyer-escolar.png"
+            src="/flyers/escolar.png"
             alt="Promoción Escolar"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
@@ -284,7 +308,7 @@ const Index = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="lg:col-span-2 sm:col-span-2 relative group cursor-pointer animate-fade-up rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 flex flex-col justify-center">
           <img
-            src="/flyers/flyer-escolar2.png"
+            src="/flyers/escolar2.png"
             alt="Flyer Escolar 2"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
@@ -369,7 +393,7 @@ const Index = () => {
 
 
 
-<About />
+
 {/* ⭐ Productos Destacados con Filtro por Categorías */}
 <section 
   id="catalogo-productos"
@@ -397,7 +421,7 @@ const Index = () => {
 
     {/* 🎨 Barra de Filtros por Categoría */}
     <div className="flex flex-wrap justify-center gap-3 mb-8">
-      {["Todos", "Café", "Hogar", "Maquillaje", "Deportes", "Oficina", "Navidad"].map((category) => {
+      {["Todos", "Maletas", "Hogar", "Cosmetiqueras y Organizadores", "Deportes", "Agendas","Bebidas", "Navidad","Belleza y Cuidado Personal", "Antiestres"].map((category) => {
         const filteredCount = category === "Todos" 
           ? products.length 
           : products.filter(p => p.category === category).length;
@@ -515,6 +539,8 @@ const Index = () => {
     )}
   </div>
 </section>
+
+<About />
 
 
 

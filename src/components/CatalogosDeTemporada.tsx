@@ -109,7 +109,7 @@ const CatalogosDeTemporada = ({
     id="catalogos-temporada"
     className="w-full py-10 flex flex-col items-center relative"
     style={{
-      backgroundImage: "url('/images/blanco.jpg')",
+      backgroundImage: "url('/images/fondoblanco.jpg')",
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
