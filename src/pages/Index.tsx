@@ -171,7 +171,7 @@ const Index = () => {
           id="background-video"
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/videos/inicio.mp4" type="video/mp4" />
+          <source src="/videos/inicios.mp4" type="video/mp4" />
         </video>
 
         {/* 🌙 Capa oscura para que el texto resalte */}
