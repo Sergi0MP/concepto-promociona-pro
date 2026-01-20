@@ -15,8 +15,8 @@ export const productosEscolares: ProductoEscolar[] = [
     description:
       "Tapas de cartón ecológico gruesas, 80 hojas rayadas. Cartuchera en cambrel con cremallera. Bolígrafo de cartón. De 14.5 x 18 cm. Impresión en tampografía. Tamaño área impresa: 7 x 7 cm.",
     images: [
-      "/src/assets/escolar/cartuchera1.png",
-      "/src/assets/escolar/cartuchera2.jpg",
+      "/assets/escolar/cartuchera1.png",
+      "/assets/escolar/cartuchera2.jpg",
     ],
   },
   {
