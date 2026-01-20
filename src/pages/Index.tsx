@@ -40,6 +40,26 @@ import asado1 from "@/assets/productos1/asado.png";
 import maletas1 from "@/assets/productos1/maletas.png";
 import mochila1 from "@/assets/productos1/mochila.png";
 
+//escolar
+import cartuchera1 from "@/assets/escolar/cartuchera1.png";
+import cartuchera2 from "@/assets/escolar/cartuchera2.jpg";
+import lonchera1 from "@/assets/escolar/lonchera1.png";
+import lonchera2 from "@/assets/escolar/lonchera2.jpg";
+import crayolas1 from "@/assets/escolar/crayolas1.png";
+import crayolas2 from "@/assets/escolar/crayolas2.jpg";
+import tablero1 from "@/assets/escolar/tablero1.png";
+import tablero2 from "@/assets/escolar/tablero2.png";
+import lunch1 from "@/assets/escolar/lunch1.png";
+import lunch2 from "@/assets/escolar/lunch2.png";
+import libretas1 from "@/assets/escolar/libretas1.png";
+import libreta2 from "@/assets/escolar/libreta2.png";
+import kitlunch1 from "@/assets/escolar/kitlunch1.png";
+import kitlunch2 from "@/assets/escolar/kitlunch2.png";
+import termoo1 from "@/assets/escolar/termoo1.png";
+import termo2 from "@/assets/escolar/termo2.jpg";
+import kitarte from "@/assets/escolar/kitarte.png";
+import marcadores from "@/assets/escolar/marcadores.png";
+
 // si tienes imágenes específicas para escolar, impórtalas aquí
 // import morral1 from "@/assets/escolar/morral-1.png";
 // import lonchera1 from "@/assets/escolar/lonchera-1.png";
@@ -107,16 +127,16 @@ const Index = () => {
     asado1: asado1,
     maletas1: maletas1,
     mochila1: mochila1,
-    cartucuaderno1: "/assets/escolar/cartuchera1.png",
-    lonchera1: "/assets/escolar/lonchera1.png",
-    crayolas1: "/assets/escolar/crayolas1.png",
-    tablero1: "/assets/escolar/tablero1.png",
-    lunch1: "/assets/escolar/lunch1.png",
-    libreta1: "/assets/escolar/libretas1.png",
-    kitlunch1: "/assets/escolar/kitlunch1.png",
-    termo1: "/assets/escolar/termo1.png",
-    kitarte1: "/assets/escolar/kitarte.png",
-    marcadores1: "/assets/escolar/marcadores.png",
+      cartucuaderno1: cartuchera1,
+  lonchera1: lonchera1,
+  crayolas1: crayolas1,
+  tablero1: tablero1,
+  lunch1: lunch1,
+  libreta1: libretas1,
+  kitlunch1: kitlunch1,
+  termo1: termoo1,
+  kitarte1: kitarte,
+  marcadores1: marcadores,
 
     // ejemplo escolar (cuando tengas las imágenes)
     // "morral-escolar": morral1,
