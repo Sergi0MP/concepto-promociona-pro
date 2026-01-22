@@ -16,6 +16,14 @@ import termoo1 from "@/assets/escolar/termoo1.png";
 import termo2 from "@/assets/escolar/termo2.jpg";
 import kitarte from "@/assets/escolar/kitarte.png";
 import marcadores from "@/assets/escolar/marcadores.png";
+import kitescolar from "@/assets/escolar/kitescolar.png";
+import kitescolar2 from "@/assets/escolar/kitescolar2.png";
+import todoenuno from "@/assets/escolar/todoenuno.png";
+import todoenuno2 from "@/assets/escolar/todoenuno2.png";
+import escritura1 from "@/assets/escolar/escritura1.png";
+import escritura2 from "@/assets/escolar/escritura2.png";
+import post1 from "@/assets/escolar/post1.png";
+import post2 from "@/assets/escolar/post2.png";
 
 export interface ProductoEscolar {
   id: string;
@@ -94,6 +102,34 @@ export const productosEscolares: ProductoEscolar[] = [
     description:
       "Set cartuchera + 12 marcadores delgados Medidas  cartuchera : 24,6 X 10,8 cm. Material PVC",
     images: [marcadores],
+  },
+  {
+    id: "kitescolar",
+    name: "Kit Escolar",
+    description:
+      "Kit escolar práctico y funcional diseñado para el día a día en el colegio, que incluye una mochila escolar con compartimento principal, separador para laptop de hasta 14”, bolsillo frontal con cierre y dos bolsillos laterales para botellas u otros accesorios. Se complementa con un cuaderno argollado de 100 hojas (rayas o cuadriculado) con banderillas adheribles de colores y un estuche escolar multifuncional cuya tapa funciona como regla e incluye 12 colores, tajalápiz y borrador. Fabricado en poliéster, cartón, papel y plástico, es un set completo que combina organización, comodidad y practicidad para estudiantes.",
+    images: [kitescolar, kitescolar2],
+  },
+   {
+    id: "kittodoenuno",
+    name: "Kit Escolar Todo en Uno",
+    description:
+      "Set ideal para el regreso a clases, pensado para acompañar la rutina diaria del estudiante, que incluye una mochila con compartimento acolchado para laptop y lonchera térmica, un cilindro plástico de 800 ml con asa de silicona e indicador de medida, y un portaviandas ecológico de fibra de trigo con cierre seguro y asa plegable. Está fabricado en material Oxford, plástico y fibra de trigo, y es un kit práctico que integra clases, hidratación y alimentación en un solo set, con una capacidad de 1 L en el portaviandas.",
+    images: [todoenuno, todoenuno2],
+  },
+  {
+    id: "escritura1",
+    name: "Kit Escolar De Escritura Basica",
+    description:
+      "Set escolar práctico para el día a día en clases que incluye esfero, lápiz, regla, escuadra, borrador y tajalápiz, organizados en una cartuchera transparente con cremallera tipo ziploc, ideal para mantener los útiles visibles y ordenados. Fabricado en plástico, es perfecto para el uso diario en el colegio o como complemento en kits escolares, y cuenta con un tamaño de 10.4 × 20.4 cm.",
+    images: [escritura1, escritura2],
+  },
+  {
+    id: "post1",
+    name: "Set Post-it",
+    description:
+      "Set escolar práctico para clases y estudio, presentado en un estuche de cartón compacto que incluye un taco de papel para notas, bolígrafo, clips de colores, banderitas adhesivas y regla, ideales para tomar apuntes, marcar tareas y organizar cuadernos. Fabricado en cartón, papel y plástico, su tamaño compacto lo hace perfecto para llevar en la mochila y usarlo a diario en el colegio o la universidad, con dimensiones de 16.7 × 10.1 × 2.2 cm.",
+    images: [post1, post2],
   },
 ];
 

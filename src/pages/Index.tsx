@@ -14,6 +14,7 @@ import Catalogo2025 from "@/components/Catalogo2025";
 import CatalogoAmor from "@/components/CatalogoAmor";
 import CatalogoMundial from "@/components/CatalogoMundial";
 import About from "./About";
+import VideoIntroModal from "@/components/VideoIntroModal";
 
 // 🔹 Nueva data de temporada escolar
 import {
@@ -21,7 +22,7 @@ import {
   ProductoEscolar,
 } from "@/data/productosEscolares";
 
-// 🔹 Imágenes usadas como thumbnails (escolares + productos generales)
+// 🔹 Imágenes usadas como thumbnails (generales)
 import Prensa1 from "@/assets/productos1/kit-prensa-francesa.png";
 import tazaceramica1 from "@/assets/productos1/taza.ceramica.png";
 import maquillaje1 from "@/assets/productos1/set-motivacional.png";
@@ -40,7 +41,7 @@ import asado1 from "@/assets/productos1/asado.png";
 import maletas1 from "@/assets/productos1/maletas.png";
 import mochila1 from "@/assets/productos1/mochila.png";
 
-//escolar
+// 🔹 Escolar
 import cartuchera1 from "@/assets/escolar/cartuchera1.png";
 import cartuchera2 from "@/assets/escolar/cartuchera2.jpg";
 import lonchera1 from "@/assets/escolar/lonchera1.png";
@@ -59,28 +60,38 @@ import termoo1 from "@/assets/escolar/termoo1.png";
 import termo2 from "@/assets/escolar/termo2.jpg";
 import kitarte from "@/assets/escolar/kitarte.png";
 import marcadores from "@/assets/escolar/marcadores.png";
-
-// si tienes imágenes específicas para escolar, impórtalas aquí
-// import morral1 from "@/assets/escolar/morral-1.png";
-// import lonchera1 from "@/assets/escolar/lonchera-1.png";
-// ...
+import kitescolar from "@/assets/escolar/kitescolar.png";
+import kittodoenuno from "@/assets/escolar/todoenuno.png";
+import escritura1 from "@/assets/escolar/escritura1.png";
+import post1 from "@/assets/escolar/post1.png";
 
 const Index = () => {
-  // 🔹 Ya no usamos ChristmasProduct aquí
+  // 🔹 Estado modal temporada escolar
   const [selectedProduct, setSelectedProduct] = useState<ProductoEscolar | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // 🔹 Productos generales
   const [selectedCategory, setSelectedCategory] = useState<string>("Todos");
   const [selectedRegularProduct, setSelectedRegularProduct] = useState<Product | null>(null);
   const [isRegularModalOpen, setIsRegularModalOpen] = useState(false);
 
+  // 🔹 Catálogo navideño (flip / PDF)
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
 
+  // 🔹 Catálogos de temporada (modales)
   const [showCatalogoHalloween, setShowCatalogoHalloween] = useState(false);
   const [showCatalogo2025, setShowCatalogo2025] = useState(false);
   const [showCatalogoAmor, setShowCatalogoAmor] = useState(false);
   const [showCatalogoMundial, setShowCatalogoMundial] = useState(false);
   const [showCatalogoNavideno, setShowCatalogoNavideno] = useState(false);
+
+  // 🔹 Modal de video de bienvenida
+  const [showIntro, setShowIntro] = useState(false);
+
+  useEffect(() => {
+    // Se abre al cargar la página
+    setShowIntro(true);
+  }, []);
 
   const handleWhatsAppClick = (productName: string) => {
     const message = encodeURIComponent(`Hola!, quiero cotizar el producto: ${productName}`);
@@ -88,28 +99,21 @@ const Index = () => {
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
   };
 
-  // ahora este click es para productos de la temporada escolar
+  // Click para productos de temporada escolar
   const handleProductClick = (product: ProductoEscolar) => {
     setSelectedProduct(product);
     setIsModalOpen(true);
   };
 
+  // Click para productos generales
   const handleRegularProductClick = (product: Product) => {
     setSelectedRegularProduct(product);
     setIsRegularModalOpen(true);
   };
 
-  const catalogos = [
-    {
-      titulo: "Catálogo Halloween",
-      portada: "/catalogo/halloween/page1.png",
-    },
-    // otros catálogos...
-  ];
-
-  // 🔹 Thumbnails: dejamos solo los que realmente se usan (productos generales + escolares)
+  // 🔹 Thumbnails (generales + escolar)
   const productThumbnails: { [key: string]: string } = {
-    // productos destacados generales
+    // generales
     prensa1: Prensa1,
     taza2: tazaceramica1,
     maquillaje1: maquillaje1,
@@ -127,37 +131,41 @@ const Index = () => {
     asado1: asado1,
     maletas1: maletas1,
     mochila1: mochila1,
-      cartucuaderno1: cartuchera1,
-  lonchera1: lonchera1,
-  crayolas1: crayolas1,
-  tablero1: tablero1,
-  lunch1: lunch1,
-  libreta1: libretas1,
-  kitlunch1: kitlunch1,
-  termo1: termoo1,
-  kitarte1: kitarte,
-  marcadores1: marcadores,
 
-    // ejemplo escolar (cuando tengas las imágenes)
-    // "morral-escolar": morral1,
-    // "lonchera-termica": lonchera1,
+    // escolares
+    cartucuaderno1: cartuchera1,
+    lonchera1: lonchera1,
+    crayolas1: crayolas1,
+    tablero1: tablero1,
+    lunch1: lunch1,
+    libreta1: libretas1,
+    kitlunch1: kitlunch1,
+    termo1: termoo1,
+    kitarte1: kitarte,
+    marcadores1: marcadores,
+    kitescolar1: kitescolar,
+    kittodoenuno1: kittodoenuno,
+    escritura1: escritura1,
+    post1: post1,
   };
 
+  // 🔹 Desactivar clic derecho
   useEffect(() => {
     const disableContext = (e: MouseEvent) => {
       e.preventDefault();
     };
-
     document.addEventListener("contextmenu", disableContext);
-    return () => {
-      document.removeEventListener("contextmenu", disableContext);
-    };
+    return () => document.removeEventListener("contextmenu", disableContext);
   }, []);
-
-
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Modal de video de bienvenida */}
+      <VideoIntroModal
+        isOpen={showIntro}
+        onClose={() => setShowIntro(false)}
+      />
+
       <Header />
 
       {/* 🖼️ Hero Section con video de fondo */}
@@ -171,36 +179,36 @@ const Index = () => {
           id="background-video"
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/videos/inicios.mp4" type="video/mp4" />
+          <source src="/videos/definitivo.mp4" type="video/mp4" />
         </video>
 
-        {/* 🌙 Capa oscura para que el texto resalte */}
-        <div className="absolute inset-0 bg-black/20"></div>
+        {/* 🌙 Capa oscura */}
+        <div className="absolute inset-0 bg-black/20" />
 
         {/* ✨ Contenido sobre el video */}
         <div className="relative z-10 container px-4 text-center">
           <h1 className="font-[Poppins] font-bold text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-2xl">
-            
-            
+            {/* tu texto */}
           </h1>
         </div>
-        
-    {/* 🎨 NUEVO: Degradado de transición en la parte inferior */}
-    <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-black/60 z-[5]"></div>
+
+        {/* Degradado inferior */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-black/60 z-[5]" />
       </section>
+
       <CatalogosDeTemporada
-  onOpenHalloween={() => setShowCatalogoHalloween(true)}
-  onOpen2025={() => setShowCatalogo2025(true)}
-  onOpenAmor={() => setShowCatalogoAmor(true)}
-  onOpenMundial={(e) => {
-    e.preventDefault();
-    setShowCatalogoMundial(true);
-  }}
-  onOpenNavidad={(e) => {
-    e.preventDefault();
-    setIsCatalogOpen(true);
-  }}
-/>
+        onOpenHalloween={() => setShowCatalogoHalloween(true)}
+        onOpen2025={() => setShowCatalogo2025(true)}
+        onOpenAmor={() => setShowCatalogoAmor(true)}
+        onOpenMundial={(e) => {
+          e.preventDefault();
+          setShowCatalogoMundial(true);
+        }}
+        onOpenNavidad={(e) => {
+          e.preventDefault();
+          setIsCatalogOpen(true);
+        }}
+      />
 
 
   
@@ -288,7 +296,7 @@ const Index = () => {
         ))}
         <div className="lg:col-span-2 sm:col-span-2 relative group cursor-pointer animate-fade-up rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 flex flex-col justify-center">
           <img
-            src="/flyers/escolar.png"
+            src="/flyers/escolarnuevo.png"
             alt="Promoción Escolar"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />

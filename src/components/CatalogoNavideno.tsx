@@ -20,14 +20,14 @@ const CatalogoNavideno = ({ isOpen, onClose }: CatalogoNavidenoProps) => {
 
       <div className="max-w-[95vw] w-full flex flex-col items-center">
         <h2 className="text-white text-3xl font-bold mb-6">
-          🎄 Catálogo Navideño 2025 🎁
+          🎄 Catálogo Navideño 2026 🎁
         </h2>
         <iframe
           src="https://online.anyflip.com/qqfoi/rznr/index.html"
           style={{ width: "90vw", height: "80vh", border: "none" }}
           allowFullScreen
           scrolling="no"
-          title="Catálogo Navideño 2025"
+          title="Catálogo Navideño 2026"
           className="rounded-xl bg-white shadow-xl"
         />
       </div>
