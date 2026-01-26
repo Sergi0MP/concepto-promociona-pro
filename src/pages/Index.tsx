@@ -64,6 +64,8 @@ import kitescolar from "@/assets/escolar/kitescolar.png";
 import kittodoenuno from "@/assets/escolar/todoenuno.png";
 import escritura1 from "@/assets/escolar/escritura1.png";
 import post1 from "@/assets/escolar/post1.png";
+import organizador1 from "@/assets/escolar/organizador1.png";
+import cartucheraacolchada1 from "@/assets/escolar/cartucheraacolchada1.png";
 
 const Index = () => {
   // 🔹 Estado modal temporada escolar
@@ -147,6 +149,9 @@ const Index = () => {
     kittodoenuno1: kittodoenuno,
     escritura1: escritura1,
     post1: post1,
+    organizador1: organizador1,
+    cartucheraacolchada1: cartucheraacolchada1,
+
   };
 
   // 🔹 Desactivar clic derecho

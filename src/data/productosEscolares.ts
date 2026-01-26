@@ -24,6 +24,10 @@ import escritura1 from "@/assets/escolar/escritura1.png";
 import escritura2 from "@/assets/escolar/escritura2.png";
 import post1 from "@/assets/escolar/post1.png";
 import post2 from "@/assets/escolar/post2.png";
+import organizador1 from "@/assets/escolar/organizador1.png";
+import organizador2 from "@/assets/escolar/organizador2.png";
+import cartucheraacolchada1 from "@/assets/escolar/cartucheraacolchada1.png";
+import cartucheraacolchada2 from "@/assets/escolar/cartucheraacolchada2.png";
 
 export interface ProductoEscolar {
   id: string;
@@ -130,6 +134,20 @@ export const productosEscolares: ProductoEscolar[] = [
     description:
       "Set escolar práctico para clases y estudio, presentado en un estuche de cartón compacto que incluye un taco de papel para notas, bolígrafo, clips de colores, banderitas adhesivas y regla, ideales para tomar apuntes, marcar tareas y organizar cuadernos. Fabricado en cartón, papel y plástico, su tamaño compacto lo hace perfecto para llevar en la mochila y usarlo a diario en el colegio o la universidad, con dimensiones de 16.7 × 10.1 × 2.2 cm.",
     images: [post1, post2],
+  },
+  {
+    id: "organizador1",
+    name: "Organizador Escolar Colgante",
+    description:
+      "Organizador escolar colgante con múltiples bolsillos, ideal para guardar y clasificar útiles como lápices, colores y otros accesorios, ayudando a mantener el área de estudio ordenada y a aprovechar mejor los espacios en paredes o puertas. Está fabricado en fieltro, tiene un tamaño de 80 × 30 cm y viene en presentación multicolor.",
+    images: [organizador1, organizador2],
+  },
+  {
+    id: "cartucheraacolcahda1",
+    name: "Cartuchera Escolar Acolchada",
+    description:
+      "Cartuchera escolar con diseño acolchado tipo quilt, ideal para organizar lápices, colores, marcadores y útiles de uso diario. Cuenta con cierre resistente que mantiene el contenido seguro y un tamaño práctico para llevar en la mochila sin ocupar mucho espacio. Está fabricada en poliéster acolchado, mide 20 × 8 × 6 cm y se ofrece en colores surtidos.",
+    images: [cartucheraacolchada1, cartucheraacolchada2],
   },
 ];
 
