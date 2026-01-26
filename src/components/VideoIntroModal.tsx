@@ -32,6 +32,7 @@ const VideoIntroModal: React.FC<VideoIntroModalProps> = ({ isOpen, onClose }) =>
         src="/videos/gif.mp4"
         autoPlay
         muted
+        loop 
         playsInline
         className="w-full h-full object-contain bg-black"
       />
