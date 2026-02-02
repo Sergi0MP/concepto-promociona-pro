@@ -8,6 +8,19 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import { QrSitioCompleto } from "./components/QrSitioCompleto";
+
+function Home() {
+  return (
+    <main>
+      {/* ...tu contenido... */}
+      <section className="mt-10">
+        <QrSitioCompleto />
+      </section>
+    </main>
+  );
+}
+
 
 const queryClient = new QueryClient();
 
