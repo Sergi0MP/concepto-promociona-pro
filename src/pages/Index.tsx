@@ -24,7 +24,7 @@ import {
 
 // 🔹 Imágenes usadas como thumbnails (generales)
 import Prensa1 from "@/assets/productos1/kit-prensa-francesa.png";
-import tazaceramica1 from "@/assets/productos1/taza.ceramica.png";
+import tazaceramica1 from "@/assets/productos1/tazaceramica.png";
 import maquillaje1 from "@/assets/productos1/set-motivacional.png";
 import termo1 from "@/assets/productos1/botella-motivador.png";
 import rollerdeluxe1 from "@/assets/productos1/rollerdeluxe.png";
@@ -40,6 +40,16 @@ import pelota1 from "@/assets/productos1/antiestres.png";
 import asado1 from "@/assets/productos1/asado.png";
 import maletas1 from "@/assets/productos1/maletas.png";
 import mochila1 from "@/assets/productos1/mochila.png";
+import setherramientas1 from "@/assets/productos1/setherramientas.png";
+import setlinterna1 from "@/assets/productos1/setlinterna.png";
+import navaja1 from "@/assets/productos1/navaja.png";
+import metro1 from "@/assets/productos1/metro.png";
+import calibrador1 from "@/assets/productos1/calibrador.png";
+import mochilahielera1 from "@/assets/productos1/mochilahielera.png";
+import hielera1 from "@/assets/productos1/hielera.png";
+import setrecipientes1 from "@/assets/productos1/setrecipiente.png";
+import loncheratermica1 from "@/assets/productos1/loncheratermica.png";
+import sanduchera1 from "@/assets/productos1/sanduchera.png";
 
 // 🔹 Escolar
 import cartuchera1 from "@/assets/escolar/cartuchera1.png";
@@ -66,6 +76,8 @@ import escritura1 from "@/assets/escolar/escritura1.png";
 import post1 from "@/assets/escolar/post1.png";
 import organizador1 from "@/assets/escolar/organizador1.png";
 import cartucheraacolchada1 from "@/assets/escolar/cartucheraacolchada1.png";
+import portaviendas1  from "@/assets/productos1/portaviendas.png";
+
 
 const Index = () => {
   // 🔹 Estado modal temporada escolar
@@ -133,6 +145,17 @@ const Index = () => {
     asado1: asado1,
     maletas1: maletas1,
     mochila1: mochila1,
+    setherramientas1: setherramientas1,
+    setlinterna1: setlinterna1,
+    navaja1: navaja1,
+    metro1: metro1,
+    calibrador1: calibrador1,
+    mochilahielera1: mochilahielera1,
+    hielera1: hielera1,
+    setrecipiente1: setrecipientes1,
+    loncheratermica1: loncheratermica1,
+    sanduchera1: sanduchera1,
+    portaviendas1: portaviendas1, // Reutilizando imagen de set de recipientes para portaviendas
 
     // escolares
     cartucuaderno1: cartuchera1,
@@ -464,7 +487,7 @@ const Index = () => {
 
     {/* 🎨 Barra de Filtros por Categoría */}
     <div className="flex flex-wrap justify-center gap-3 mb-8">
-      {["Todos", "Maletas", "Hogar", "Cosmetiqueras y Organizadores", "Deportes", "Agendas","Bebidas", "Navidad","Belleza y Cuidado Personal", "Antiestres"].map((category) => {
+      {["Todos", "Maletas", "Hogar", "Cosmetiqueras y Organizadores", "Deportes", "Agendas","Bebidas", "Navidad","Belleza y Cuidado Personal", "Antiestres", "Herramientas", "Hieleras y Loncheras"].map((category) => {
         const filteredCount = category === "Todos" 
           ? products.length 
           : products.filter(p => p.category === category).length;

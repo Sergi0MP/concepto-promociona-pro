@@ -215,6 +215,134 @@ export const products: Product[] = [
    
 
   },
+   {
+    id: "setherramientas1",
+    sku: "CC-Herra-001",
+    name: "Set de Herramientas Multifuncional",
+    description:
+      "Set práctico y compacto que incluye desarmador con 10 puntas intercambiables, 5 llaves hexagonales, extensión, 4 dados y pinzas de punta. Viene en estuche resistente, ideal para trabajos técnicos y uso diario en campo. Material: Metal / Plástico Tamaño: 16.5 x 9 cm",
+    minUnits: 10,
+    colors: ["#000000"],
+    category: "Herramientas",
+   
+
+  },
+  {
+    id: "setlinterna1",
+    sku: "CC-Herra-002",
+    name: "Linterna Con Set De Herramientas",
+    description:
+      "Linterna multifuncional con set de herramientas integrado, ideal para uso técnico, industrial y de campo. Cuenta con batería de litio recargable, linterna desmontable y base imantada para mayor practicidad durante el trabajo. Medidas: 24 x 10 x 7,8 cm Materiales: ABS y acero al carbono Capacidad de batería: 800 mAh",
+    minUnits: 10,
+    colors: ["#000000"],
+    category: "Herramientas",
+   
+
+  },
+  {
+    id: "navaja1",
+    sku: "CC-Herra-003",
+    name: "Navaja Multifuncional 12 EN 1",
+    description:
+      "Navaja metálica multifuncional con 12 herramientas integradas, ideal para uso diario, actividades técnicas y trabajo en campo. Su diseño compacto la hace práctica y fácil de transportar. Incluye caja individual, perfecta para presentación corporativa o promocional. Material: Metal.  Tamaño: 2.6 x 9.8 x 1.7 cm",
+    minUnits: 10,
+    colors: ["#000000"],
+    category: "Herramientas",
+   
+
+  },
+  {
+    id: "metro1",
+    sku: "CC-Herra-004",
+    name: "Cinta Métrica 3 Metros",
+    description:
+      "Cinta métrica de 3 m con cinta de acero inoxidable, traba de seguridad y clip metálico. Estructura en ABS con detalle circular en bambú y correa de poliéster.Medidas: 6 x 6 x 3,4 cm Materiales: ABS, acero inoxidable, poliéster y bambú. Longitud: 3 m",
+    minUnits: 10,
+    colors: ["#000000"],
+    category: "Herramientas",
+   
+
+  },
+   {
+    id: "calibrador1",
+    sku: "CC-Herra-005",
+    name: "Calibrador De Aire Para LLantas",
+    description:
+      "Medidor de aire para llantas fabricado en aluminio, compacto y fácil de usar. Soporta una presión máxima de 50 PSI, ideal para uso automotriz y técnico. Material: Aluminio  Medidas: 8.2 x 1.6 cm  Presión máxima: 50 PSI",
+    minUnits: 10,
+    colors: ["#000000"],
+    category: "Herramientas",
+   
+
+  },
+  {
+    id: "mochilahielera1",
+    sku: "CC-Maletas-003",
+    name: "Mochila Hielera",
+    description:
+      "Hielera tipo mochila con interior impermeable, compartimento principal con cierre, bolsillo superior y bolsillos laterales de red. Incluye elástico frontal, asas ajustables, espalda acolchada y banda para trolley. Ideal para playa, pesca o actividades al aire libre. Capacidad para 24 latas.  Material: Poliuretano / Acetato de Vinilo de Polietileno / Poliéster  Tamaño: 28.5 x 45 x 19 cm",
+    minUnits: 10,
+    colors: ["#6b6b6b"],
+    category: "Maletas",
+   
+
+  },
+  {
+    id: "hielera1",
+    sku: "CC-Hieleras-001",
+    name: "Lonchera Térmica",
+    description:
+      "Lonchera térmica con interior totalmente recubierto de aluminio, ideal para conservar la temperatura de alimentos y bebidas. Cuenta con bolsillo frontal, correa extensible y cierres metálicos con tiradores de cordón para mayor resistencia y comodidad. :Medidas: 34 x 25 x 19 cm  Capacidad: 16 litros (volumen)  Material: Poliéster 600D",
+    minUnits: 10,
+    colors: ["#ad1919"],
+    category: "Hieleras y Loncheras",
+   
+
+  },
+   {
+    id: "setrecipiente1",
+    sku: "CC-Hieleras-002",
+    name: "Set de Recipiente + Botella Termica",
+    description:
+      "Set que incluye recipiente con cierre hermético y botella térmica vacuum de doble pared. Ideal para llevar alimentos y bebidas durante la jornada. La botella mantiene bebidas calientes hasta 6 h y frías hasta 12 h. Recipiente: 17,8 x 17,8 x 7,6 cm · Capacidad 1 L · Polipropileno. Botella: Ø 7,2 x 21,5 cm · Capacidad 480 ml.  Materiales botella: Acero inoxidable, polipropileno y silicona.",
+    minUnits: 10,
+    colors: ["#0e073f"],
+    category: "Hieleras y Loncheras",
+   
+  },
+  {
+    id: "loncheratermica1",
+    sku: "CC-Hieleras-003",
+    name: "Lonchera Térmica FRESHGO",
+    description:
+      "Lonchera térmica con interior metalizado que ayuda a conservar los alimentos frescos por más tiempo. Su diseño compacto y liviano incluye bolsillo frontal de fácil acceso para utensilios o snacks y asas reforzadas que brindan mayor comodidad al transportarla. Capacidad para 6 latas. Material: Poliéster.  Tamaño: 23 x 19 x 12 cm",
+    minUnits: 10,
+    colors: ["#3d3380", "#000000", "#848381", "#d41010","#2a6038"],
+    category: "Hieleras y Loncheras",
+   
+  },
+  {
+    id: "sanduchera1",
+    sku: "CC-Hieleras-004",
+    name: "Sanduchera",
+    description:
+      "Recipiente plástico en forma de rebanada de pan, con cierre a presión que mantiene el contenido protegido. Ideal para llevar sándwiches de forma práctica y compacta. Material: Plástico.  Medidas: 3,8 x 13,1 x 14,1 cm",
+    minUnits: 10,
+    colors: ["#3d3380", "#d41010","#2a6038"],
+    category: "Hieleras y Loncheras",
+   
+  },
+  {
+    id: "portaviendas1",
+    sku: "CC-Hieleras-005",
+    name: "Portaviendas",
+    description:
+      "Contenedor para alimentos con división interna para separar comidas y tapa con cierre hermético que evita derrames. Incluye cuchara y tenedor de plástico y caja individual para presentación. Material: Plástico.  Tamaño: 21.5 x 8 x 12.5 cm.  Capacidad: 1.1 litros",
+    minUnits: 10,
+    colors: ["#3d3380", "#d41010","#2a6038"],
+    category: "Hieleras y Loncheras",
+   
+  },
 ];
 
 
