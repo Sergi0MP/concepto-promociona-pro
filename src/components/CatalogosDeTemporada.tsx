@@ -8,7 +8,7 @@ const catalogos = [
   },
   {
     titulo: "Catálogo 2026",
-    portada: "/catalogo/2025.png",
+    portada: "/catalogo/2026.png",
     enlace: "/pdfs/catalogo_2025.pdf",
   },
   {
