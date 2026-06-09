@@ -189,10 +189,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Modal de video de bienvenida */}
-      <VideoIntroModal
+      {/* <VideoIntroModal
         isOpen={showIntro}
         onClose={() => setShowIntro(false)}
-      />
+      /> */}
 
       <Header />
 
@@ -487,7 +487,7 @@ const Index = () => {
 
     {/* 🎨 Barra de Filtros por Categoría */}
     <div className="flex flex-wrap justify-center gap-3 mb-8">
-      {["Todos", "Maletas", "Hogar", "Cosmetiqueras y Organizadores", "Deportes", "Agendas","Bebidas", "Navidad","Belleza y Cuidado Personal", "Antiestres", "Herramientas", "Hieleras y Loncheras"].map((category) => {
+      {["Todos", "Maletas", "Hogar", "Cosmetiqueras y Organizadores", "Deportes", "Agendas","Bebidas", "Navidad","Belleza y Cuidado Personal", "Antiestres", "Herramientas", "Hieleras y Loncheras", "Escolar"].map((category) => {
         const filteredCount = category === "Todos" 
           ? products.length 
           : products.filter(p => p.category === category).length;
