@@ -14,7 +14,7 @@ import Catalogo2025 from "@/components/Catalogo2025";
 import CatalogoAmor from "@/components/CatalogoAmor";
 import CatalogoMundial from "@/components/CatalogoMundial";
 import About from "./About";
-import VideoIntroModal from "@/components/VideoIntroModal";
+
 
 // 🔹 Nueva data de temporada escolar
 import {
