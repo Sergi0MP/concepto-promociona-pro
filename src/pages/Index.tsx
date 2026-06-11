@@ -19,7 +19,8 @@ import VideoIntroModal from "@/components/VideoIntroModal";
 // 🔹 Nueva data de temporada escolar
 import {
   productosEscolares,
-  ProductoEscolar,
+  ProductoEscolar, 
+  
 } from "@/data/productosEscolares";
 
 // 🔹 Imágenes — rutas públicas WebP (sin imports estáticos, carga lazy automática)
