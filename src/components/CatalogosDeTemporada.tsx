@@ -3,27 +3,27 @@ import React from "react";
 const catalogos = [
   {
     titulo: "Catálogo Halloween",
-    portada: "/catalogo/halloween/page1.png",
+    portada: "/catalogo/halloween/page1.webp",
     enlace: "/pdfs/catalogo_halloween.pdf",
   },
   {
     titulo: "Catálogo 2026",
-    portada: "/catalogo/2026.png",
+    portada: "/catalogo/2026.webp",
     enlace: "/pdfs/catalogo_2025.pdf",
   },
   {
     titulo: "Catálogo Amor y Amistad",
-    portada: "/catalogo/amor.png", // corregido doble .png
+    portada: "/catalogo/amor.webp", // corregido doble .png
     enlace: "/pdfs/catalogo_amor_amistad.pdf",
   },
   {
     titulo: "Catálogo Navideño 2026",
-    portada: "/catalogo/navida.png",
+    portada: "/catalogo/navida.webp",
     enlace: "/pdfs/catalogo_navidad_2025.pdf",
   },
   {
     titulo: "Catálogo Mundial",
-    portada: "/catalogo/Mundial.png",
+    portada: "/catalogo/Mundial.webp",
     enlace: "/pdfs/catalogo_mundial.pdf",
   },
   
@@ -104,7 +104,7 @@ const CatalogosDeTemporada = ({
   id="catalogos-temporada"
   className="w-full py-10 flex flex-col items-center"
   style={{
-    backgroundImage: "url('/images/fondoblanco.jpg')",
+    backgroundImage: "url('/images/fondoblanco.webp')",
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",

@@ -1,5 +1,5 @@
-import flyerCancerMama from "@/assets/flyers/flyer-cancer-mama.png";
-import flyerBienestar from "@/assets/flyers/flyer-bienestar.png";
+const flyerCancerMama = "/assets/flyers-src/flyer-cancer-mama.webp";
+const flyerBienestar = "/assets/flyers-src/flyer-bienestar.webp";
 
 export interface Flyer {
   id: string;

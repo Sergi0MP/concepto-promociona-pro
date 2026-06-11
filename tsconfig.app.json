@@ -21,7 +21,7 @@
     "noImplicitAny": false,
     "noFallthroughCasesInSwitch": false,
 
-    "baseUrl": ".",
+    "baseUrl": "www.conceptocreativopym.com",
     "paths": {
       "@/*": ["./src/*"]
     }

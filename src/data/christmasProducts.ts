@@ -1,31 +1,3 @@
-import kitBienestar1 from "@/assets/christmas/kit-bienestar-1.png";
-import kitBienestar2 from "@/assets/christmas/kit-bienestar-2.png";
-import kitSpa1 from "@/assets/christmas/kit-spa-1.png";
-import kitSpa2 from "@/assets/christmas/kit-spa-2.png";
-import kitAromaterapia1 from "@/assets/christmas/kit-aromaterapia-1.png";
-import kitAromaterapia2 from "@/assets/christmas/kit-aromaterapia-2.png";
-import kitDescanso1 from "@/assets/christmas/kit-descanso-1.png";
-import kitDescanso2 from "@/assets/christmas/kit-descanso-2.png";
-import kitCocteleria1 from "@/assets/christmas/Kit-bar.png";
-import kitYogaBeige1 from "@/assets/christmas/Kit-yoga-beige.png";
-import setCalma1 from "@/assets/christmas/Set-calma1.png";
-import setCalma2 from "@/assets/christmas/Set-calma_2.png";
-import nocheVelitas1 from "@/assets/christmas/Noche-velitas.png";
-import vinoCaliente1 from "@/assets/christmas/Kit-Vino-Caliente_1.png";
-import vinoCaliente2 from "@/assets/christmas/Kit-Vino-Caliente_2.png";
-import tablaQuesos1 from "@/assets/christmas/Kit-Tabla-Quesos.png";
-import kitGym1 from "@/assets/christmas/Kit-Gym.png";
-import kitEntretenimiento1 from "@/assets/christmas/Kit-Entretenimiento.png";
-import KitGalletas1 from "@/assets/christmas/Kit-Galletas.png";
-import KitCuidadoPersonal1 from "@/assets/christmas/Kit-cuidado1.png";
-import KitCuidadoPersonal2 from "@/assets/christmas/Kit-Cuidado2.png";
-import KitCorporativo1 from "@/assets/christmas/Kit-Corporativo1.png";
-import KitCorporativo2 from "@/assets/christmas/Kit-Corporativo2.png";
-import KitAñoViejo1 from "@/assets/christmas/Kit-Año-Viejo.png";
-import KitCorporativoPremium1 from "@/assets/christmas/Kit-Corporativo-Premium.png";
-import KitBrindis1 from "@/assets/christmas/Kit-Brindis.png";
-import KitCafe1 from "@/assets/christmas/Kit-Cafe.png";
-import KitChocolate1 from "@/assets/christmas/Kit-Chocolate.png";
 
 
 export interface ChristmasProduct {
@@ -55,10 +27,7 @@ export const christmasProducts: ChristmasProduct[] = [
       "Espejo de cristal",
       "Moño satinado"
     ],
-    images: [
-      kitBienestar1,
-      kitBienestar2
-    ]
+    images: ["/assets/christmas/kit-bienestar-1.webp", "/assets/christmas/kit-bienestar-2.webp"]
   },
   {
     id: "kit-spa",
@@ -79,10 +48,7 @@ export const christmasProducts: ChristmasProduct[] = [
       "Toalla de algodón 100%",
       "Madera certificada"
     ],
-    images: [
-      kitSpa1,
-      kitSpa2
-    ]
+    images: ["/assets/christmas/kit-spa-1.webp", "/assets/christmas/kit-spa-2.webp"]
   },
   {
     id: "kit-aromaterapia",
@@ -104,10 +70,7 @@ export const christmasProducts: ChristmasProduct[] = [
       "Madera natural",
       "Empaque ecológico"
     ],
-    images: [
-      kitAromaterapia1,
-      kitAromaterapia2
-    ]
+    images: ["/assets/christmas/kit-aromaterapia-1.webp", "/assets/christmas/kit-aromaterapia-2.webp"]
   },
   {
     id: "kit-descanso",
@@ -128,10 +91,7 @@ export const christmasProducts: ChristmasProduct[] = [
       "Forro de terciopelo",
       "Grabado en hot stamping dorado"
     ],
-    images: [
-      kitDescanso1,
-      kitDescanso2
-    ]
+    images: ["/assets/christmas/kit-descanso-1.webp", "/assets/christmas/kit-descanso-2.webp"]
   },
   {
     id: "kit-cocteleria",
@@ -151,9 +111,7 @@ export const christmasProducts: ChristmasProduct[] = [
       "Madera natural con acabado pulido",
       "Moño satinado decorativo"
     ],
-    images: [
-      kitCocteleria1
-    ]
+    images: ["/assets/christmas/Kit-bar.webp"]
   },
   {
     id: "kit-yoga-beige",
@@ -165,9 +123,7 @@ export const christmasProducts: ChristmasProduct[] = [
       "Caja de regalo decorativa con presentación premium"
     ],
     materials: [],
-    images: [
-      kitYogaBeige1
-    ]
+    images: ["/assets/christmas/Kit-yoga-beige.webp"]
   },
   {
     id: "Set-calma-lujo",
@@ -181,10 +137,7 @@ export const christmasProducts: ChristmasProduct[] = [
       "Tarjeta de felicitación “Feliz Navidad”"
     ],
     materials: [],
-    images: [
-      setCalma1,
-      setCalma2
-    ]
+    images: ["/assets/christmas/Set-calma1.webp", "/assets/christmas/Set-calma_2.webp"]
   },
   {
     id: "Noche-Velitas",
@@ -197,9 +150,7 @@ export const christmasProducts: ChristmasProduct[] = [
       "Diseño ideal para regalo corporativo o detalle navideño especial"
     ],
     materials: [],
-    images: [
-      nocheVelitas1
-    ]
+    images: ["/assets/christmas/Noche-velitas.webp"]
   },
   {
     id: "Vino-caliente",
@@ -213,10 +164,7 @@ export const christmasProducts: ChristmasProduct[] = [
       "Caja decorativa en forma de árbol de Navidad con relleno natural y moño festivo"
     ],
     materials: [],
-    images: [
-      vinoCaliente1,
-      vinoCaliente2
-    ]
+    images: ["/assets/christmas/Kit-Vino-Caliente_1.webp", "/assets/christmas/Kit-Vino-Caliente_2.webp"]
   },
   {
     id: "Tabla-quesos",
@@ -232,9 +180,7 @@ export const christmasProducts: ChristmasProduct[] = [
       "Caja de madera con moño decorativo rojo y tarjeta personalizada de felicitación"
     ],
     materials: [],
-    images: [
-      tablaQuesos1
-    ]
+    images: ["/assets/christmas/Kit-Tabla-Quesos.webp"]
   },
   {
     id: "Kit-Gym",
@@ -248,9 +194,7 @@ export const christmasProducts: ChristmasProduct[] = [
       "Gorra deportiva ajustable"
     ],
     materials: [],
-    images: [
-      kitGym1
-    ]
+    images: ["/assets/christmas/Kit-Gym.webp"]
   },
   {
     id: "Kit-Entretenimiento",
@@ -263,9 +207,7 @@ export const christmasProducts: ChristmasProduct[] = [
       "Caja rígida decorativa con diseño navideño dorado y compartimentos interiores"
     ],
     materials: [],
-    images: [
-      kitEntretenimiento1
-    ]
+    images: ["/assets/christmas/Kit-Entretenimiento.webp"]
   },
     {
     id: "Kit-Galletas",
@@ -280,9 +222,7 @@ export const christmasProducts: ChristmasProduct[] = [
       "Caja rígida premium en tono vino con moño dorado",
     ],
     materials: [],
-    images: [
-      KitGalletas1,
-    ]
+    images: ["/assets/christmas/Kit-Galletas.webp", ]
   },
   {
     id: "Kit-Cuidado-Personal",
@@ -298,10 +238,7 @@ export const christmasProducts: ChristmasProduct[] = [
       "Caja decorativa premium con mensaje navideño y moño dorado"
     ],
     materials: [],
-    images: [
-      KitCuidadoPersonal1,
-      KitCuidadoPersonal2
-    ]
+    images: ["/assets/christmas/Kit-cuidado1.webp", "/assets/christmas/Kit-Cuidado2.webp"]
   },
   {
     id: "Kit-Corporativo",
@@ -316,10 +253,7 @@ export const christmasProducts: ChristmasProduct[] = [
       
     ],
     materials: [],
-    images: [
-      KitCorporativo1,
-      KitCorporativo2
-    ]
+    images: ["/assets/christmas/Kit-Corporativo1.webp", "/assets/christmas/Kit-Corporativo2.webp"]
   },
   {
     id: "Kit-Año-Viejo",
@@ -334,10 +268,7 @@ export const christmasProducts: ChristmasProduct[] = [
       
     ],
     materials: [],
-    images: [
-      KitAñoViejo1,
-      
-    ]
+    images: ["/assets/christmas/Kit-Año-Viejo.webp", ]
   },
   {
     id: "Kit-Corporativo-Premium",
@@ -352,10 +283,7 @@ export const christmasProducts: ChristmasProduct[] = [
       
     ],
     materials: [],
-    images: [
-      KitCorporativoPremium1,
-      
-    ]
+    images: ["/assets/christmas/Kit-Corporativo-Premium.webp", ]
   },
   {
     id: "Kit-Brindis",
@@ -368,10 +296,7 @@ export const christmasProducts: ChristmasProduct[] = [
       
     ],
     materials: [],
-    images: [
-      KitBrindis1
-      
-    ]
+    images: ["/assets/christmas/Kit-Brindis.webp"]
   },
   {
     id: "Kit-Cafe",
@@ -386,10 +311,7 @@ export const christmasProducts: ChristmasProduct[] = [
       
     ],
     materials: [],
-    images: [
-      KitCafe1
-      
-    ]
+    images: ["/assets/christmas/Kit-Cafe.webp"]
   },
    {
     id: "Kit-Chocolate",
@@ -404,10 +326,7 @@ export const christmasProducts: ChristmasProduct[] = [
       
     ],
     materials: [],
-    images: [
-      KitChocolate1
-      
-    ]
+    images: ["/assets/christmas/Kit-Chocolate.webp"]
   },
 ];
 

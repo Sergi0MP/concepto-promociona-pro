@@ -1,7 +1,8 @@
 // src/data/products.ts
 import { christmasProducts } from "@/data/christmasProducts"; // ajusta la ruta si es distinta
-import jaderoller1 from "@/assets/productos1/jaderoller1.png";
-import jaderoller2 from "@/assets/productos1/jaderoller2.jpeg";
+// Imágenes en /public/assets — sin imports estáticos
+const jaderoller1 = "/assets/productos1/jaderoller1.webp";
+const jaderoller2 = "/assets/productos1/jaderoller2.webp";
 
 
 export interface Product {

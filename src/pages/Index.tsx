@@ -14,7 +14,7 @@ import Catalogo2025 from "@/components/Catalogo2025";
 import CatalogoAmor from "@/components/CatalogoAmor";
 import CatalogoMundial from "@/components/CatalogoMundial";
 import About from "./About";
-
+import VideoIntroModal from "@/components/VideoIntroModal";
 
 // 🔹 Nueva data de temporada escolar
 import {
@@ -22,61 +22,9 @@ import {
   ProductoEscolar,
 } from "@/data/productosEscolares";
 
-// 🔹 Imágenes usadas como thumbnails (generales)
-import Prensa1 from "@/assets/productos1/kit-prensa-francesa.png";
-import tazaceramica1 from "@/assets/productos1/tazaceramica.png";
-import maquillaje1 from "@/assets/productos1/set-motivacional.png";
-import termo1 from "@/assets/productos1/botella-motivador.png";
-import rollerdeluxe1 from "@/assets/productos1/rollerdeluxe.png";
-import jaderoller1 from "@/assets/productos1/jaderoller1.png";
-import jaderoller2 from "@/assets/productos1/jaderoller2.jpeg";
-import peine1 from "@/assets/productos1/peine.png";
-import brochas1 from "@/assets/productos1/brochas.png";
-import cosmetiquera1 from "@/assets/productos1/cosmetiquera.png";
-import essence1 from "@/assets/productos1/essence.png";
-import joyero1 from "@/assets/productos1/joyero.png";
-import agendas1 from "@/assets/productos1/agendas.jpg";
-import pelota1 from "@/assets/productos1/antiestres.png";
-import asado1 from "@/assets/productos1/asado.png";
-import maletas1 from "@/assets/productos1/maletas.png";
-import mochila1 from "@/assets/productos1/mochila.png";
-import setherramientas1 from "@/assets/productos1/setherramientas.png";
-import setlinterna1 from "@/assets/productos1/setlinterna.png";
-import navaja1 from "@/assets/productos1/navaja.png";
-import metro1 from "@/assets/productos1/metro.png";
-import calibrador1 from "@/assets/productos1/calibrador.png";
-import mochilahielera1 from "@/assets/productos1/mochilahielera.png";
-import hielera1 from "@/assets/productos1/hielera.png";
-import setrecipientes1 from "@/assets/productos1/setrecipiente.png";
-import loncheratermica1 from "@/assets/productos1/loncheratermica.png";
-import sanduchera1 from "@/assets/productos1/sanduchera.png";
-
-// 🔹 Escolar
-import cartuchera1 from "@/assets/escolar/cartuchera1.png";
-import cartuchera2 from "@/assets/escolar/cartuchera2.jpg";
-import lonchera1 from "@/assets/escolar/lonchera1.png";
-import lonchera2 from "@/assets/escolar/lonchera2.jpg";
-import crayolas1 from "@/assets/escolar/crayolas1.png";
-import crayolas2 from "@/assets/escolar/crayolas2.jpg";
-import tablero1 from "@/assets/escolar/tablero1.png";
-import tablero2 from "@/assets/escolar/tablero2.png";
-import lunch1 from "@/assets/escolar/lunch1.png";
-import lunch2 from "@/assets/escolar/lunch2.png";
-import libretas1 from "@/assets/escolar/libretas1.png";
-import libreta2 from "@/assets/escolar/libreta2.png";
-import kitlunch1 from "@/assets/escolar/kitlunch1.png";
-import kitlunch2 from "@/assets/escolar/kitlunch2.png";
-import termoo1 from "@/assets/escolar/termoo1.png";
-import termo2 from "@/assets/escolar/termo2.jpg";
-import kitarte from "@/assets/escolar/kitarte.png";
-import marcadores from "@/assets/escolar/marcadores.png";
-import kitescolar from "@/assets/escolar/kitescolar.png";
-import kittodoenuno from "@/assets/escolar/todoenuno.png";
-import escritura1 from "@/assets/escolar/escritura1.png";
-import post1 from "@/assets/escolar/post1.png";
-import organizador1 from "@/assets/escolar/organizador1.png";
-import cartucheraacolchada1 from "@/assets/escolar/cartucheraacolchada1.png";
-import portaviendas1  from "@/assets/productos1/portaviendas.png";
+// 🔹 Imágenes — rutas públicas WebP (sin imports estáticos, carga lazy automática)
+const P1 = "/assets/productos1/";
+const ES = "/assets/escolar/";
 
 
 const Index = () => {
@@ -126,55 +74,55 @@ const Index = () => {
   };
 
   // 🔹 Thumbnails (generales + escolar)
+  // 🚀 Rutas WebP en /public — sin imports estáticos, el browser carga solo lo visible
   const productThumbnails: { [key: string]: string } = {
     // generales
-    prensa1: Prensa1,
-    taza2: tazaceramica1,
-    maquillaje1: maquillaje1,
-    botella1: termo1,
-    rollerdeluxe1: rollerdeluxe1,
-    jaderoller1: jaderoller1,
-    jaderoller2: jaderoller2,
-    peine1: peine1,
-    brochas1: brochas1,
-    cosmetiquera1: cosmetiquera1,
-    essence1: essence1,
-    joyero1: joyero1,
-    agendas1: agendas1,
-    pelota1: pelota1,
-    asado1: asado1,
-    maletas1: maletas1,
-    mochila1: mochila1,
-    setherramientas1: setherramientas1,
-    setlinterna1: setlinterna1,
-    navaja1: navaja1,
-    metro1: metro1,
-    calibrador1: calibrador1,
-    mochilahielera1: mochilahielera1,
-    hielera1: hielera1,
-    setrecipiente1: setrecipientes1,
-    loncheratermica1: loncheratermica1,
-    sanduchera1: sanduchera1,
-    portaviendas1: portaviendas1, // Reutilizando imagen de set de recipientes para portaviendas
+    prensa1:          `${P1}kit-prensa-francesa.webp`,
+    taza2:            `${P1}tazaceramica.webp`,
+    maquillaje1:      `${P1}set-motivacional.webp`,
+    botella1:         `${P1}botella-motivador.webp`,
+    rollerdeluxe1:    `${P1}rollerdeluxe.webp`,
+    jaderoller1:      `${P1}jaderoller1.webp`,
+    jaderoller2:      `${P1}jaderoller2.webp`,
+    peine1:           `${P1}peine.webp`,
+    brochas1:         `${P1}brochas.webp`,
+    cosmetiquera1:    `${P1}cosmetiquera.webp`,
+    essence1:         `${P1}essence.webp`,
+    joyero1:          `${P1}joyero.webp`,
+    agendas1:         `${P1}agendas.webp`,
+    pelota1:          `${P1}antiestres.webp`,
+    asado1:           `${P1}asado.webp`,
+    maletas1:         `${P1}maletas.webp`,
+    mochila1:         `${P1}mochila.webp`,
+    setherramientas1: `${P1}setherramientas.webp`,
+    setlinterna1:     `${P1}setlinterna.webp`,
+    navaja1:          `${P1}navaja.webp`,
+    metro1:           `${P1}metro.webp`,
+    calibrador1:      `${P1}calibrador.webp`,
+    mochilahielera1:  `${P1}mochilahielera.webp`,
+    hielera1:         `${P1}hielera.webp`,
+    setrecipiente1:   `${P1}setrecipiente.webp`,
+    loncheratermica1: `${P1}loncheratermica.webp`,
+    sanduchera1:      `${P1}sanduchera.webp`,
+    portaviendas1:    `${P1}portaviendas.webp`,
 
     // escolares
-    cartucuaderno1: cartuchera1,
-    lonchera1: lonchera1,
-    crayolas1: crayolas1,
-    tablero1: tablero1,
-    lunch1: lunch1,
-    libreta1: libretas1,
-    kitlunch1: kitlunch1,
-    termo1: termoo1,
-    kitarte1: kitarte,
-    marcadores1: marcadores,
-    kitescolar1: kitescolar,
-    kittodoenuno1: kittodoenuno,
-    escritura1: escritura1,
-    post1: post1,
-    organizador1: organizador1,
-    cartucheraacolchada1: cartucheraacolchada1,
-
+    cartucuaderno1:      `${ES}cartuchera1.webp`,
+    lonchera1:           `${ES}lonchera1.webp`,
+    crayolas1:           `${ES}crayolas1.webp`,
+    tablero1:            `${ES}tablero1.webp`,
+    lunch1:              `${ES}lunch1.webp`,
+    libreta1:            `${ES}libretas1.webp`,
+    kitlunch1:           `${ES}kitlunch1.webp`,
+    termo1:              `${ES}termoo1.webp`,
+    kitarte1:            `${ES}kitarte.webp`,
+    marcadores1:         `${ES}marcadores.webp`,
+    kitescolar1:         `${ES}kitescolar.webp`,
+    kittodoenuno1:       `${ES}todoenuno.webp`,
+    escritura1:          `${ES}escritura1.webp`,
+    post1:               `${ES}post1.webp`,
+    organizador1:        `${ES}organizador1.webp`,
+    cartucheraacolchada1:`${ES}cartucheraacolchada1.webp`,
   };
 
   // 🔹 Desactivar clic derecho
@@ -189,10 +137,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Modal de video de bienvenida */}
-      {/* <VideoIntroModal
+      <VideoIntroModal
         isOpen={showIntro}
         onClose={() => setShowIntro(false)}
-      /> */}
+      />
 
       <Header />
 
@@ -244,7 +192,7 @@ const Index = () => {
 <section
   className="relative py-20 bg-cover bg-center bg-no-repeat"
   style={{
-    backgroundImage: "url('/images/azul.png')",
+    backgroundImage: "url('/images/azul.webp')",
     color: "#b8860b",
   }}
 >
@@ -274,6 +222,7 @@ const Index = () => {
               <img
                 src={productThumbnails[product.id] ?? product.images[0]}
                 alt={product.name}
+                loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
             </div>
@@ -305,6 +254,7 @@ const Index = () => {
               <img
                 src={productThumbnails[product.id] ?? product.images[0]}
                 alt={product.name}
+                loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
             </div>
@@ -324,8 +274,9 @@ const Index = () => {
         ))}
         <div className="lg:col-span-2 sm:col-span-2 relative group cursor-pointer animate-fade-up rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 flex flex-col justify-center">
           <img
-            src="/flyers/escolarnuevo.png"
+            src="/flyers/escolarnuevo.webp"
             alt="Promoción Escolar"
+            loading="lazy"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -351,6 +302,7 @@ const Index = () => {
               <img
                 src={productThumbnails[product.id] ?? product.images[0]}
                 alt={product.name}
+                loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
             </div>
@@ -374,8 +326,9 @@ const Index = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="lg:col-span-2 sm:col-span-2 relative group cursor-pointer animate-fade-up rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 flex flex-col justify-center">
           <img
-            src="/flyers/escolar2.png"
+            src="/flyers/escolar2.webp"
             alt="Flyer Escolar 2"
+            loading="lazy"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -397,6 +350,7 @@ const Index = () => {
               <img
                 src={productThumbnails[product.id] ?? product.images[0]}
                 alt={product.name}
+                loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
             </div>
@@ -429,7 +383,8 @@ const Index = () => {
                 <img
                   src={productThumbnails[product.id] ?? product.images[0]}
                   alt={product.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
               <div className="p-5">
@@ -487,7 +442,7 @@ const Index = () => {
 
     {/* 🎨 Barra de Filtros por Categoría */}
     <div className="flex flex-wrap justify-center gap-3 mb-8">
-      {["Todos", "Maletas", "Hogar", "Cosmetiqueras y Organizadores", "Deportes", "Agendas","Bebidas", "Navidad","Belleza y Cuidado Personal", "Antiestres", "Herramientas", "Hieleras y Loncheras", "Escolar"].map((category) => {
+      {["Todos", "Maletas", "Hogar", "Cosmetiqueras y Organizadores", "Deportes", "Agendas","Bebidas", "Navidad","Belleza y Cuidado Personal", "Antiestres", "Herramientas", "Hieleras y Loncheras"].map((category) => {
         const filteredCount = category === "Todos" 
           ? products.length 
           : products.filter(p => p.category === category).length;
@@ -543,7 +498,8 @@ const Index = () => {
     <img
       src={productThumbnails[product.id] || product.image}
       alt={product.name}
-      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+      loading="lazy"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
     />
   ) : (
     <>
