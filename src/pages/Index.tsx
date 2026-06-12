@@ -19,8 +19,7 @@ import VideoIntroModal from "@/components/VideoIntroModal";
 // 🔹 Nueva data de temporada escolar
 import {
   productosEscolares,
-  ProductoEscolar, 
-  
+  ProductoEscolar,
 } from "@/data/productosEscolares";
 
 // 🔹 Imágenes — rutas públicas WebP (sin imports estáticos, carga lazy automática)
@@ -107,7 +106,7 @@ const Index = () => {
     sanduchera1:      `${P1}sanduchera.webp`,
     portaviendas1:    `${P1}portaviendas.webp`,
 
-    // escolares
+    // escolares (IDs viejos — compatibilidad)
     cartucuaderno1:      `${ES}cartuchera1.webp`,
     lonchera1:           `${ES}lonchera1.webp`,
     crayolas1:           `${ES}crayolas1.webp`,
@@ -124,6 +123,24 @@ const Index = () => {
     post1:               `${ES}post1.webp`,
     organizador1:        `${ES}organizador1.webp`,
     cartucheraacolchada1:`${ES}cartucheraacolchada1.webp`,
+
+    // escolares en Productos Destacados (nuevos IDs)
+    "escolar-cartuchera1":         `${ES}cartuchera1.webp`,
+    "escolar-lonchera1":           `${ES}lonchera1.webp`,
+    "escolar-crayolas1":           `${ES}crayolas1.webp`,
+    "escolar-tablero1":            `${ES}tablero1.webp`,
+    "escolar-lunch1":              `${ES}lunch1.webp`,
+    "escolar-libreta1":            `${ES}libretas1.webp`,
+    "escolar-kitlunch1":           `${ES}kitlunch1.webp`,
+    "escolar-termo1":              `${ES}termoo1.webp`,
+    "escolar-kitarte1":            `${ES}kitarte.webp`,
+    "escolar-marcadores1":         `${ES}marcadores.webp`,
+    "escolar-kitescolar1":         `${ES}kitescolar.webp`,
+    "escolar-kittodoenuno1":       `${ES}todoenuno.webp`,
+    "escolar-escritura1":          `${ES}escritura1.webp`,
+    "escolar-post1":               `${ES}post1.webp`,
+    "escolar-organizador1":        `${ES}organizador1.webp`,
+    "escolar-cartucheraacolchada1":`${ES}cartucheraacolchada1.webp`,
   };
 
   // 🔹 Desactivar clic derecho
@@ -443,7 +460,7 @@ const Index = () => {
 
     {/* 🎨 Barra de Filtros por Categoría */}
     <div className="flex flex-wrap justify-center gap-3 mb-8">
-      {["Todos", "Maletas", "Hogar", "Cosmetiqueras y Organizadores", "Deportes", "Agendas","Bebidas", "Navidad","Belleza y Cuidado Personal", "Antiestres", "Herramientas", "Hieleras y Loncheras"].map((category) => {
+      {["Todos", "Escolar", "Maletas", "Hogar", "Cosmetiqueras y Organizadores", "Deportes", "Agendas","Bebidas", "Navidad","Belleza y Cuidado Personal", "Antiestres", "Herramientas", "Hieleras y Loncheras"].map((category) => {
         const filteredCount = category === "Todos" 
           ? products.length 
           : products.filter(p => p.category === category).length;
@@ -639,6 +656,5 @@ const Index = () => {
 };
 
 export default Index;
-
 
 
