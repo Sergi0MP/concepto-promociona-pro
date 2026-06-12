@@ -52,7 +52,7 @@ const Index = () => {
 
   useEffect(() => {
     // Se abre al cargar la página
-    setShowIntro(true);
+    
   }, []);
 
   const handleWhatsAppClick = (productName: string) => {
