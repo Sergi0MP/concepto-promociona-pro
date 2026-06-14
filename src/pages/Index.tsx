@@ -152,6 +152,21 @@ const Index = () => {
     return () => document.removeEventListener("contextmenu", disableContext);
   }, []);
 
+  const cards3D = [
+    { title: "Llaveros & Accesorios", desc: "Llaveros, porta-tarjetas y accesorios con tu logo. Alta resolución de detalle.", badge: "Accesorios", imgPath: "/3d/llaveros.webp", accent: "#484F9D" },
+    { title: "Exhibidores & Stands", desc: "Exhibidores, porta-folletos y displays corporativos impresos en 3D a tu medida.", badge: "⭐ Más solicitado", imgPath: "/3d/exhibidores.webp", accent: "#F4E600" },
+    { title: "Trofeos & Reconocimientos", desc: "Premios y trofeos únicos diseñados con tu identidad de marca.", badge: "Reconocimientos", imgPath: "/3d/trofeos.webp", accent: "#484F9D" },
+    { title: "Piezas Corporativas", desc: "Logos en relieve, letras volumétricas y piezas para eventos corporativos.", badge: "Corporativo", imgPath: "/3d/corporativo.webp", accent: "#F4E600" },
+    { title: "Figuras Decorativas", desc: "Mascotas corporativas y figuras temáticas que refuerzan tu identidad visual.", badge: "Decorativo", imgPath: "/3d/figuras.webp", accent: "#484F9D" },
+    { title: "Prototipado Rápido", desc: "Convierte tu idea en un prototipo funcional para presentaciones.", badge: "Prototipado", imgPath: "/3d/prototipo.webp", accent: "#F4E600" },
+  ];
+ 
+  const steps3D = [
+    { n: "01", title: "Diseño", desc: "Compártenos tu logo o idea y lo convertimos en un archivo 3D listo para imprimir.", yellow: false },
+    { n: "02", title: "Impresión", desc: "Imprimimos tu pieza con materiales de alta calidad en múltiples colores y acabados.", yellow: true },
+    { n: "03", title: "Entrega", desc: "Recibe tus piezas terminadas y listas para usar. Envío a toda Colombia.", yellow: false },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       {/* Modal de video de bienvenida */}
@@ -204,306 +219,185 @@ const Index = () => {
         }}
       />
 
+      {/* 🖨️ SECCIÓN IMPRESIÓN 3D */}
+      <section className="relative py-24 overflow-hidden" style={{ background: "#06071a" }}>
+ 
+        {/* Fondo futurista */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute inset-0" style={{
+            backgroundImage: "linear-gradient(rgba(72,79,157,0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(72,79,157,0.25) 1px, transparent 1px)",
+            backgroundSize: "48px 48px",
+          }} />
+          <div className="absolute inset-0 opacity-40" style={{
+            backgroundImage: "linear-gradient(rgba(72,79,157,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(72,79,157,0.12) 1px, transparent 1px)",
+            backgroundSize: "12px 12px",
+          }} />
+          <div className="absolute -top-20 -left-20 w-[700px] h-[700px] rounded-full opacity-20"
+            style={{ background: "radial-gradient(circle, #484F9D 0%, transparent 70%)" }} />
+          <div className="absolute -bottom-20 -right-20 w-[500px] h-[500px] rounded-full opacity-15"
+            style={{ background: "radial-gradient(circle, #F4E600 0%, transparent 70%)" }} />
+          <div className="absolute top-1/2 left-0 right-0 h-px opacity-20"
+            style={{ background: "linear-gradient(90deg, transparent, #484F9D, #F4E600, #484F9D, transparent)" }} />
+        </div>
+ 
+        <div className="relative z-10 container px-4 mx-auto">
+ 
+          {/* Título 3D */}
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-8 text-xs font-[Inter] uppercase tracking-widest"
+              style={{ border: "1px solid rgba(244,230,0,0.3)", background: "rgba(244,230,0,0.07)", color: "#F4E600" }}>
+              <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#F4E600" }} />
+              Nueva Categoría · Concepto Creativo
+            </div>
+ 
+            <div className="relative inline-block mb-8">
+              <h2 className="absolute font-[Poppins] font-black select-none pointer-events-none"
+                style={{ fontSize: "clamp(2.5rem, 8vw, 6rem)", top: "10px", left: "10px", color: "#5a5200", letterSpacing: "-0.02em", whiteSpace: "nowrap" }}>
+                IMPRESIÓN 3D
+              </h2>
+              <h2 className="absolute font-[Poppins] font-black select-none pointer-events-none"
+                style={{ fontSize: "clamp(2.5rem, 8vw, 6rem)", top: "6px", left: "6px", color: "#1a1f5c", letterSpacing: "-0.02em", whiteSpace: "nowrap" }}>
+                IMPRESIÓN 3D
+              </h2>
+              <h2 className="absolute font-[Poppins] font-black select-none pointer-events-none"
+                style={{ fontSize: "clamp(2.5rem, 8vw, 6rem)", top: "3px", left: "3px", color: "#484F9D", letterSpacing: "-0.02em", whiteSpace: "nowrap" }}>
+                IMPRESIÓN 3D
+              </h2>
+              <h2 className="relative font-[Poppins] font-black"
+                style={{
+                  fontSize: "clamp(2.5rem, 8vw, 6rem)",
+                  letterSpacing: "-0.02em",
+                  whiteSpace: "nowrap",
+                  background: "linear-gradient(135deg, #8a90d4 0%, #484F9D 30%, #6b73c9 50%, #c8b800 75%, #F4E600 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                  filter: "drop-shadow(0 0 20px rgba(244,230,0,0.3))",
+                }}>
+                IMPRESIÓN 3D
+              </h2>
+            </div>
+ 
+            <div className="flex items-center justify-center gap-4 mb-7">
+              <div className="h-px flex-1 max-w-[120px]" style={{ background: "linear-gradient(90deg, transparent, #484F9D)" }} />
+              <div className="w-3 h-3 rotate-45 border-2" style={{ borderColor: "#F4E600", background: "rgba(244,230,0,0.15)" }} />
+              <div className="h-px flex-1 max-w-[120px]" style={{ background: "linear-gradient(90deg, #484F9D, transparent)" }} />
+            </div>
+ 
+            <p className="font-[Inter] text-lg max-w-xl mx-auto leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
+              Transformamos tus ideas en objetos reales.{" "}
+              <span style={{ color: "#F4E600" }} className="font-semibold">Cada pieza, única</span>{" "}
+              y diseñada a medida para tu marca.
+            </p>
+          </div>
+ 
+          {/* Grid 6 tarjetas */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
+            {cards3D.map((card) => (
+              <div key={card.title}
+                className="group relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2"
+                style={{ border: `1px solid ${card.accent}30`, background: "rgba(255,255,255,0.02)" }}>
+ 
+                <div className="aspect-[4/3] relative overflow-hidden flex items-center justify-center"
+                  style={{ background: "linear-gradient(135deg, #0b0d28 0%, #0f1235 100%)" }}>
+                  {/* Reemplaza este bloque por <img src={card.imgPath} ... /> cuando tengas las fotos */}
+                  <div className="text-center px-6">
+                    <div className="w-16 h-16 mx-auto mb-3 rounded-xl flex items-center justify-center"
+                      style={{ border: `2px dashed ${card.accent}50` }}>
+                      <svg className="w-8 h-8" style={{ color: `${card.accent}70` }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+                          d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <p className="text-xs font-[Inter]" style={{ color: "rgba(255,255,255,0.2)" }}>Imagen próximamente</p>
+                  </div>
+ 
+                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-[Inter] font-semibold"
+                    style={{
+                      background: card.accent === "#F4E600" ? "rgba(244,230,0,0.12)" : "rgba(72,79,157,0.35)",
+                      color: card.accent,
+                      border: `1px solid ${card.accent}35`,
+                      backdropFilter: "blur(8px)",
+                    }}>
+                    {card.badge}
+                  </div>
+ 
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
+                    style={{ background: card.accent }} />
+                </div>
+ 
+                <div className="p-5">
+                  <h3 className="font-[Poppins] font-bold text-lg mb-2" style={{ color: "rgba(255,255,255,0.9)" }}>
+                    {card.title}
+                  </h3>
+                  <p className="text-sm font-[Inter] leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.4)" }}>
+                    {card.desc}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-[Inter] uppercase tracking-wider" style={{ color: card.accent }}>
+                      Personalizable
+                    </span>
+                    <span style={{ color: "rgba(255,255,255,0.2)" }}>→</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+ 
+          {/* Banner proceso */}
+          <div className="relative rounded-2xl p-8 md:p-12 mb-12 overflow-hidden"
+            style={{ border: "1px solid rgba(72,79,157,0.3)", background: "rgba(72,79,157,0.05)" }}>
+            <div className="absolute inset-0 rounded-2xl overflow-hidden" style={{
+              backgroundImage: "linear-gradient(rgba(72,79,157,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(72,79,157,0.2) 1px, transparent 1px)",
+              backgroundSize: "20px 20px",
+            }} />
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              {steps3D.map((step) => (
+                <div key={step.n} className="flex flex-col items-center gap-3">
+                  <div className="w-14 h-14 rounded-full flex items-center justify-center font-[Poppins] font-black text-xl"
+                    style={{
+                      border: `2px solid ${step.yellow ? "#F4E600" : "#484F9D"}`,
+                      background: step.yellow ? "rgba(244,230,0,0.08)" : "rgba(72,79,157,0.15)",
+                      color: step.yellow ? "#F4E600" : "#8a90d4",
+                    }}>
+                    {step.n}
+                  </div>
+                  <h4 className="font-[Poppins] font-bold text-white text-lg">{step.title}</h4>
+                  <p className="text-sm font-[Inter] max-w-xs" style={{ color: "rgba(255,255,255,0.4)" }}>{step.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+ 
+          {/* CTA */}
+          <div className="text-center">
+            <a
+              href="https://wa.me/573337013642?text=Hola,%20quiero%20información%20sobre%20impresión%203D"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-[Poppins] font-bold text-base transition-all duration-300 hover:scale-105"
+              style={{
+                background: "linear-gradient(135deg, #484F9D 0%, #2e3480 50%, #F4E600 100%)",
+                color: "#06071a",
+                boxShadow: "0 0 40px rgba(72,79,157,0.5), 0 0 80px rgba(244,230,0,0.15)",
+              }}
+            >
+              <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Cotiza tu pieza 3D por WhatsApp
+            </a>
+            <p className="mt-4 text-sm font-[Inter]" style={{ color: "rgba(255,255,255,0.25)" }}>
+              Respondemos en menos de 24 horas · Envío a toda Colombia
+            </p>
+          </div>
+ 
+        </div>
+      </section>
+
 
   
-{/* 🖨️ SECCIÓN IMPRESIÓN 3D */}
-<section className="relative py-24 overflow-hidden bg-[#0a0a0f]">
 
-  {/* Fondo animado con rejilla y gradientes */}
-  <div className="absolute inset-0 z-0">
-    {/* Rejilla tipo blueprint */}
-    <div className="absolute inset-0 opacity-10"
-      style={{
-        backgroundImage: `linear-gradient(rgba(99,102,241,0.4) 1px, transparent 1px),
-                          linear-gradient(90deg, rgba(99,102,241,0.4) 1px, transparent 1px)`,
-        backgroundSize: "40px 40px",
-      }}
-    />
-    {/* Glow de fondo */}
-    <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-indigo-600/20 rounded-full blur-[120px]" />
-    <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-cyan-500/15 rounded-full blur-[100px]" />
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-violet-500/10 rounded-full blur-[80px]" />
-  </div>
-
-  <div className="relative z-10 container px-4 mx-auto">
-
-    {/* ── TÍTULO CREATIVO ── */}
-    <div className="text-center mb-20">
-
-      {/* Badge superior */}
-      <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-indigo-500/40 bg-indigo-500/10 text-indigo-300 text-xs font-[Inter] uppercase tracking-widest mb-6">
-        <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
-        Nueva Categoría
-      </div>
-
-      {/* Título principal con efecto de capas */}
-      <div className="relative inline-block mb-4">
-        {/* Sombra decorativa desplazada */}
-        <h2 className="absolute top-1 left-1 font-[Poppins] font-black text-4xl md:text-6xl lg:text-7xl text-indigo-900/60 select-none pointer-events-none whitespace-nowrap">
-          IMPRESIÓN 3D
-        </h2>
-        {/* Texto con gradiente */}
-        <h2
-          className="relative font-[Poppins] font-black text-4xl md:text-6xl lg:text-7xl whitespace-nowrap"
-          style={{
-            background: "linear-gradient(135deg, #a5b4fc 0%, #818cf8 30%, #06b6d4 65%, #67e8f9 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            backgroundClip: "text",
-            textShadow: "none",
-            filter: "drop-shadow(0 0 30px rgba(99,102,241,0.5))",
-          }}
-        >
-          IMPRESIÓN 3D
-        </h2>
-      </div>
-
-      {/* Línea decorativa con ícono central */}
-      <div className="flex items-center justify-center gap-4 mb-6">
-        <div className="h-px w-24 bg-gradient-to-r from-transparent to-indigo-500" />
-        <div className="w-8 h-8 rounded-full border-2 border-indigo-500 flex items-center justify-center">
-          <div className="w-3 h-3 rounded-full bg-indigo-400 animate-pulse" />
-        </div>
-        <div className="h-px w-24 bg-gradient-to-l from-transparent to-indigo-500" />
-      </div>
-
-      <p className="font-[Inter] text-slate-400 text-lg max-w-xl mx-auto leading-relaxed">
-        Transformamos tus ideas en objetos reales. Cada pieza,{" "}
-        <span className="text-indigo-300 font-medium">única</span> y diseñada a medida para tu marca.
-      </p>
-    </div>
-
-    {/* ── GRID DE PRODUCTOS 3D ── */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-
-      {/* Tarjeta 1 — Llaveros y Accesorios */}
-      <div className="group relative rounded-2xl overflow-hidden border border-white/5 bg-white/3 backdrop-blur-sm hover:border-indigo-500/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(99,102,241,0.2)]">
-        {/* Espacio para imagen */}
-        <div className="aspect-[4/3] bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden flex items-center justify-center">
-          {/* Placeholder — reemplazar con <img src="/3d/llaveros.webp" ... /> cuando tengas la imagen */}
-          <div className="text-center px-6">
-            <div className="w-16 h-16 mx-auto mb-3 rounded-xl border-2 border-dashed border-indigo-500/40 flex items-center justify-center">
-              <svg className="w-8 h-8 text-indigo-400/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <p className="text-slate-500 text-xs font-[Inter]">Imagen próximamente</p>
-          </div>
-          {/* Badge de categoría */}
-          <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-indigo-600/80 backdrop-blur-sm text-white text-xs font-[Inter] font-medium">
-            Accesorios
-          </div>
-        </div>
-        <div className="p-5">
-          <h3 className="font-[Poppins] font-bold text-white text-lg mb-2 group-hover:text-indigo-300 transition-colors">
-            Llaveros & Accesorios
-          </h3>
-          <p className="text-slate-400 text-sm font-[Inter] leading-relaxed mb-4">
-            Llaveros, porta-tarjetas y accesorios personalizados con tu logo. Alta resolución de detalle.
-          </p>
-          <div className="flex items-center justify-between">
-            <span className="text-indigo-400 text-xs font-[Inter] uppercase tracking-wider">Personalizable</span>
-            <span className="text-slate-600 text-xs">→</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Tarjeta 2 — Exhibidores y Stands (destacada, más grande en md) */}
-      <div className="group relative rounded-2xl overflow-hidden border border-indigo-500/20 bg-gradient-to-b from-indigo-950/40 to-slate-900/40 backdrop-blur-sm hover:border-indigo-400/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_50px_rgba(99,102,241,0.3)] lg:row-span-1">
-        {/* Espacio para imagen */}
-        <div className="aspect-[4/3] bg-gradient-to-br from-indigo-900/50 to-slate-900 relative overflow-hidden flex items-center justify-center">
-          {/* Placeholder */}
-          <div className="text-center px-6">
-            <div className="w-16 h-16 mx-auto mb-3 rounded-xl border-2 border-dashed border-indigo-400/50 flex items-center justify-center">
-              <svg className="w-8 h-8 text-indigo-300/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <p className="text-slate-500 text-xs font-[Inter]">Imagen próximamente</p>
-          </div>
-          <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-violet-600/80 backdrop-blur-sm text-white text-xs font-[Inter] font-medium">
-            ⭐ Más solicitado
-          </div>
-        </div>
-        <div className="p-5">
-          <h3 className="font-[Poppins] font-bold text-white text-lg mb-2 group-hover:text-indigo-300 transition-colors">
-            Exhibidores & Stands
-          </h3>
-          <p className="text-slate-400 text-sm font-[Inter] leading-relaxed mb-4">
-            Exhibidores de productos, porta-folletos y displays corporativos impresos en 3D a tu medida.
-          </p>
-          <div className="flex items-center justify-between">
-            <span className="text-indigo-400 text-xs font-[Inter] uppercase tracking-wider">Personalizable</span>
-            <span className="text-slate-600 text-xs">→</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Tarjeta 3 — Trofeos y Reconocimientos */}
-      <div className="group relative rounded-2xl overflow-hidden border border-white/5 bg-white/3 backdrop-blur-sm hover:border-cyan-500/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(6,182,212,0.2)]">
-        <div className="aspect-[4/3] bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden flex items-center justify-center">
-          <div className="text-center px-6">
-            <div className="w-16 h-16 mx-auto mb-3 rounded-xl border-2 border-dashed border-cyan-500/40 flex items-center justify-center">
-              <svg className="w-8 h-8 text-cyan-400/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <p className="text-slate-500 text-xs font-[Inter]">Imagen próximamente</p>
-          </div>
-          <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-cyan-600/80 backdrop-blur-sm text-white text-xs font-[Inter] font-medium">
-            Reconocimientos
-          </div>
-        </div>
-        <div className="p-5">
-          <h3 className="font-[Poppins] font-bold text-white text-lg mb-2 group-hover:text-cyan-300 transition-colors">
-            Trofeos & Reconocimientos
-          </h3>
-          <p className="text-slate-400 text-sm font-[Inter] leading-relaxed mb-4">
-            Premios corporativos, trofeos y reconocimientos únicos diseñados con tu identidad de marca.
-          </p>
-          <div className="flex items-center justify-between">
-            <span className="text-cyan-400 text-xs font-[Inter] uppercase tracking-wider">Personalizable</span>
-            <span className="text-slate-600 text-xs">→</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Tarjeta 4 — Piezas Corporativas */}
-      <div className="group relative rounded-2xl overflow-hidden border border-white/5 bg-white/3 backdrop-blur-sm hover:border-violet-500/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(139,92,246,0.2)]">
-        <div className="aspect-[4/3] bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden flex items-center justify-center">
-          <div className="text-center px-6">
-            <div className="w-16 h-16 mx-auto mb-3 rounded-xl border-2 border-dashed border-violet-500/40 flex items-center justify-center">
-              <svg className="w-8 h-8 text-violet-400/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <p className="text-slate-500 text-xs font-[Inter]">Imagen próximamente</p>
-          </div>
-          <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-violet-600/80 backdrop-blur-sm text-white text-xs font-[Inter] font-medium">
-            Corporativo
-          </div>
-        </div>
-        <div className="p-5">
-          <h3 className="font-[Poppins] font-bold text-white text-lg mb-2 group-hover:text-violet-300 transition-colors">
-            Piezas Corporativas
-          </h3>
-          <p className="text-slate-400 text-sm font-[Inter] leading-relaxed mb-4">
-            Logos en relieve, letras volumétricas, prototipos y piezas especiales para eventos corporativos.
-          </p>
-          <div className="flex items-center justify-between">
-            <span className="text-violet-400 text-xs font-[Inter] uppercase tracking-wider">Personalizable</span>
-            <span className="text-slate-600 text-xs">→</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Tarjeta 5 — Figuras Decorativas */}
-      <div className="group relative rounded-2xl overflow-hidden border border-white/5 bg-white/3 backdrop-blur-sm hover:border-indigo-500/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(99,102,241,0.2)]">
-        <div className="aspect-[4/3] bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden flex items-center justify-center">
-          <div className="text-center px-6">
-            <div className="w-16 h-16 mx-auto mb-3 rounded-xl border-2 border-dashed border-indigo-500/40 flex items-center justify-center">
-              <svg className="w-8 h-8 text-indigo-400/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <p className="text-slate-500 text-xs font-[Inter]">Imagen próximamente</p>
-          </div>
-          <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-indigo-600/80 backdrop-blur-sm text-white text-xs font-[Inter] font-medium">
-            Decorativo
-          </div>
-        </div>
-        <div className="p-5">
-          <h3 className="font-[Poppins] font-bold text-white text-lg mb-2 group-hover:text-indigo-300 transition-colors">
-            Figuras Decorativas
-          </h3>
-          <p className="text-slate-400 text-sm font-[Inter] leading-relaxed mb-4">
-            Mascotas corporativas, figuras temáticas y decoraciones únicas que refuerzan tu identidad visual.
-          </p>
-          <div className="flex items-center justify-between">
-            <span className="text-indigo-400 text-xs font-[Inter] uppercase tracking-wider">Personalizable</span>
-            <span className="text-slate-600 text-xs">→</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Tarjeta 6 — Prototipado */}
-      <div className="group relative rounded-2xl overflow-hidden border border-white/5 bg-white/3 backdrop-blur-sm hover:border-cyan-500/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(6,182,212,0.2)]">
-        <div className="aspect-[4/3] bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden flex items-center justify-center">
-          <div className="text-center px-6">
-            <div className="w-16 h-16 mx-auto mb-3 rounded-xl border-2 border-dashed border-cyan-500/40 flex items-center justify-center">
-              <svg className="w-8 h-8 text-cyan-400/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <p className="text-slate-500 text-xs font-[Inter]">Imagen próximamente</p>
-          </div>
-          <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-cyan-600/80 backdrop-blur-sm text-white text-xs font-[Inter] font-medium">
-            Prototipado
-          </div>
-        </div>
-        <div className="p-5">
-          <h3 className="font-[Poppins] font-bold text-white text-lg mb-2 group-hover:text-cyan-300 transition-colors">
-            Prototipado Rápido
-          </h3>
-          <p className="text-slate-400 text-sm font-[Inter] leading-relaxed mb-4">
-            Convierte tu idea en un prototipo funcional. Ideal para productos en desarrollo o presentaciones.
-          </p>
-          <div className="flex items-center justify-between">
-            <span className="text-cyan-400 text-xs font-[Inter] uppercase tracking-wider">Personalizable</span>
-            <span className="text-slate-600 text-xs">→</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    {/* ── BANNER DE PROCESO ── */}
-    <div className="relative rounded-2xl overflow-hidden border border-indigo-500/20 bg-gradient-to-r from-indigo-950/60 via-slate-900/60 to-indigo-950/60 p-8 md:p-12">
-      <div className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage: `linear-gradient(rgba(99,102,241,0.6) 1px, transparent 1px),
-                            linear-gradient(90deg, rgba(99,102,241,0.6) 1px, transparent 1px)`,
-          backgroundSize: "20px 20px",
-        }}
-      />
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-        <div className="flex flex-col items-center gap-3">
-          <div className="w-12 h-12 rounded-full border border-indigo-500/50 bg-indigo-500/10 flex items-center justify-center text-indigo-400 font-[Poppins] font-bold text-lg">1</div>
-          <h4 className="font-[Poppins] font-semibold text-white">Diseño</h4>
-          <p className="text-slate-400 text-sm font-[Inter]">Nos compartes tu logo o idea y lo convertimos en un archivo 3D listo para imprimir.</p>
-        </div>
-        <div className="flex flex-col items-center gap-3">
-          <div className="w-12 h-12 rounded-full border border-indigo-500/50 bg-indigo-500/10 flex items-center justify-center text-indigo-400 font-[Poppins] font-bold text-lg">2</div>
-          <h4 className="font-[Poppins] font-semibold text-white">Impresión</h4>
-          <p className="text-slate-400 text-sm font-[Inter]">Imprimimos tu pieza con materiales de alta calidad en múltiples colores y acabados.</p>
-        </div>
-        <div className="flex flex-col items-center gap-3">
-          <div className="w-12 h-12 rounded-full border border-indigo-500/50 bg-indigo-500/10 flex items-center justify-center text-indigo-400 font-[Poppins] font-bold text-lg">3</div>
-          <h4 className="font-[Poppins] font-semibold text-white">Entrega</h4>
-          <p className="text-slate-400 text-sm font-[Inter]">Recibe tus piezas terminadas listas para usar, con envío a todo Colombia.</p>
-        </div>
-      </div>
-    </div>
-
-    {/* ── CTA ── */}
-    <div className="text-center mt-12">
-      <a
-        href="https://wa.me/573000000000?text=Hola,%20quiero%20información%20sobre%20impresión%203D"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-[Poppins] font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(99,102,241,0.5)]"
-        style={{ background: "linear-gradient(135deg, #6366f1, #06b6d4)" }}
-      >
-        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-        Cotiza tu pieza 3D por WhatsApp
-      </a>
-      <p className="text-slate-500 text-sm font-[Inter] mt-4">Respondemos en menos de 24 horas · Envío a toda Colombia</p>
-    </div>
-
-  </div>
-</section>
 
 
 
