@@ -52,7 +52,7 @@ const Index = () => {
 
   useEffect(() => {
     // Se abre al cargar la página
-    
+   
   }, []);
 
   const handleWhatsAppClick = (productName: string) => {
@@ -206,222 +206,302 @@ const Index = () => {
 
 
   
-{/* ✏️ Temporada Escolar 2026 */}
-<section
-  className="relative py-20 bg-cover bg-center bg-no-repeat"
-  style={{
-    backgroundImage: "url('/images/azul.webp')",
-    color: "#b8860b",
-  }}
->
-  <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/60 to-transparent z-[5]" />
-  <div className="absolute inset-0 bg-black/40" />
+{/* 🖨️ SECCIÓN IMPRESIÓN 3D */}
+<section className="relative py-24 overflow-hidden bg-[#0a0a0f]">
 
-  <div className="relative z-10 container px-4 text-center mb-10">
-    <h2 className="font-[Poppins] font-bold text-3xl md:text-4xl text-white mb-3">
-      Temporada Escolar 2026
-    </h2>
-    <p className="max-w-2xl mx-auto font-[Inter] text-white/80">
-      Descubre nuestros kits escolares para el regreso a clases.
-    </p>
+  {/* Fondo animado con rejilla y gradientes */}
+  <div className="absolute inset-0 z-0">
+    {/* Rejilla tipo blueprint */}
+    <div className="absolute inset-0 opacity-10"
+      style={{
+        backgroundImage: `linear-gradient(rgba(99,102,241,0.4) 1px, transparent 1px),
+                          linear-gradient(90deg, rgba(99,102,241,0.4) 1px, transparent 1px)`,
+        backgroundSize: "40px 40px",
+      }}
+    />
+    {/* Glow de fondo */}
+    <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-indigo-600/20 rounded-full blur-[120px]" />
+    <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-cyan-500/15 rounded-full blur-[100px]" />
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-violet-500/10 rounded-full blur-[80px]" />
   </div>
 
-  <div className="relative z-10 container px-4">
-    <div className="max-w-7xl mx-auto space-y-6">
-      {/* Fila 1: 4 productos (0-3) */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {productosEscolares.slice(0, 4).map((product) => (
-          <article
-            key={product.id}
-            onClick={() => handleProductClick(product)}
-            className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 cursor-pointer animate-fade-up"
-          >
-            <div className="aspect-square overflow-hidden">
-              <img
-                src={productThumbnails[product.id] ?? product.images[0]}
-                alt={product.name}
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-            </div>
-            <div className="p-5">
-              <h3 className="font-[Poppins] font-semibold text-lg mb-2 line-clamp-2 text-primary group-hover:text-secondary transition-colors">
-                {product.name}
-              </h3>
-              <p className="text-sm text-muted-foreground mb-4 font-[Inter] line-clamp-2">
-                {product.description}
-              </p>
-              <div className="flex items-center justify-center gap-2 text-primary font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <span>Ver detalles</span>
-                <span className="transform group-hover:translate-x-1 transition-transform">→</span>
-              </div>
-            </div>
-          </article>
-        ))}
+  <div className="relative z-10 container px-4 mx-auto">
+
+    {/* ── TÍTULO CREATIVO ── */}
+    <div className="text-center mb-20">
+
+      {/* Badge superior */}
+      <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-indigo-500/40 bg-indigo-500/10 text-indigo-300 text-xs font-[Inter] uppercase tracking-widest mb-6">
+        <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
+        Nueva Categoría
       </div>
 
-      {/* Fila 2: 2 productos + flyer a la derecha */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {productosEscolares.slice(4, 6).map((product) => (
-          <article
-            key={product.id}
-            onClick={() => handleProductClick(product)}
-            className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 cursor-pointer animate-fade-up"
-          >
-            <div className="aspect-square overflow-hidden">
-              <img
-                src={productThumbnails[product.id] ?? product.images[0]}
-                alt={product.name}
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-            </div>
-            <div className="p-5">
-              <h3 className="font-[Poppins] font-semibold text-lg mb-2 line-clamp-2 text-primary group-hover:text-secondary transition-colors">
-                {product.name}
-              </h3>
-              <p className="text-sm text-muted-foreground mb-4 font-[Inter] line-clamp-2">
-                {product.description}
-              </p>
-              <div className="flex items-center justify-center gap-2 text-primary font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <span>Ver detalles</span>
-                <span className="transform group-hover:translate-x-1 transition-transform">→</span>
-              </div>
-            </div>
-          </article>
-        ))}
-        <div className="lg:col-span-2 sm:col-span-2 relative group cursor-pointer animate-fade-up rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 flex flex-col justify-center">
-          <img
-            src="/flyers/escolarnuevo.webp"
-            alt="Promoción Escolar"
-            loading="lazy"
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="absolute bottom-6 left-6 right-6 text-white">
-              <h3 className="font-[Poppins] font-bold text-2xl mb-2">
-                ¡Ofertas Regreso a Clases!
-              </h3>
-              <p className="text-sm">Promociones especiales para temporada escolar</p>
-            </div>
-          </div>
+      {/* Título principal con efecto de capas */}
+      <div className="relative inline-block mb-4">
+        {/* Sombra decorativa desplazada */}
+        <h2 className="absolute top-1 left-1 font-[Poppins] font-black text-4xl md:text-6xl lg:text-7xl text-indigo-900/60 select-none pointer-events-none whitespace-nowrap">
+          IMPRESIÓN 3D
+        </h2>
+        {/* Texto con gradiente */}
+        <h2
+          className="relative font-[Poppins] font-black text-4xl md:text-6xl lg:text-7xl whitespace-nowrap"
+          style={{
+            background: "linear-gradient(135deg, #a5b4fc 0%, #818cf8 30%, #06b6d4 65%, #67e8f9 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+            textShadow: "none",
+            filter: "drop-shadow(0 0 30px rgba(99,102,241,0.5))",
+          }}
+        >
+          IMPRESIÓN 3D
+        </h2>
+      </div>
+
+      {/* Línea decorativa con ícono central */}
+      <div className="flex items-center justify-center gap-4 mb-6">
+        <div className="h-px w-24 bg-gradient-to-r from-transparent to-indigo-500" />
+        <div className="w-8 h-8 rounded-full border-2 border-indigo-500 flex items-center justify-center">
+          <div className="w-3 h-3 rounded-full bg-indigo-400 animate-pulse" />
         </div>
+        <div className="h-px w-24 bg-gradient-to-l from-transparent to-indigo-500" />
       </div>
 
-      {/* Fila 3: 4 productos (6-9) */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {productosEscolares.slice(6, 10).map((product) => (
-          <article
-            key={product.id}
-            onClick={() => handleProductClick(product)}
-            className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 cursor-pointer animate-fade-up"
-          >
-            <div className="aspect-square overflow-hidden">
-              <img
-                src={productThumbnails[product.id] ?? product.images[0]}
-                alt={product.name}
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-            </div>
-            <div className="p-5">
-              <h3 className="font-[Poppins] font-semibold text-lg mb-2 line-clamp-2 text-primary group-hover:text-secondary transition-colors">
-                {product.name}
-              </h3>
-              <p className="text-sm text-muted-foreground mb-4 font-[Inter] line-clamp-2">
-                {product.description}
-              </p>
-              <div className="flex items-center justify-center gap-2 text-primary font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <span>Ver detalles</span>
-                <span className="transform group-hover:translate-x-1 transition-transform">→</span>
-              </div>
-            </div>
-          </article>
-        ))}
-      </div>
-
-      {/* Fila 4: flyer izquierdo y 2 productos (10,11) */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="lg:col-span-2 sm:col-span-2 relative group cursor-pointer animate-fade-up rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 flex flex-col justify-center">
-          <img
-            src="/flyers/escolar2.webp"
-            alt="Flyer Escolar 2"
-            loading="lazy"
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="absolute bottom-6 left-6 right-6 text-white">
-              <h3 className="font-[Poppins] font-bold text-2xl mb-2">
-                ¡Kits para todos los grados!
-              </h3>
-              <p className="text-sm">Opciones para niños, jóvenes y ejecutivos.</p>
-            </div>
-          </div>
-        </div>
-        {productosEscolares.slice(10, 12).map((product) => (
-          <article
-            key={product.id}
-            onClick={() => handleProductClick(product)}
-            className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 cursor-pointer animate-fade-up"
-          >
-            <div className="aspect-square overflow-hidden">
-              <img
-                src={productThumbnails[product.id] ?? product.images[0]}
-                alt={product.name}
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-            </div>
-            <div className="p-5">
-              <h3 className="font-[Poppins] font-semibold text-lg mb-2 line-clamp-2 text-primary group-hover:text-secondary transition-colors">
-                {product.name}
-              </h3>
-              <p className="text-sm text-muted-foreground mb-4 font-[Inter] line-clamp-2">
-                {product.description}
-              </p>
-              <div className="flex items-center justify-center gap-2 text-primary font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <span>Ver detalles</span>
-                <span className="transform group-hover:translate-x-1 transition-transform">→</span>
-              </div>
-            </div>
-          </article>
-        ))}
-      </div>
-
-      {/* Resto de productos: 12 en adelante */}
-      {productosEscolares.length > 12 && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {productosEscolares.slice(12, 20).map((product) => (
-            <article
-              key={product.id}
-              onClick={() => handleProductClick(product)}
-              className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 cursor-pointer animate-fade-up"
-            >
-              <div className="aspect-square overflow-hidden">
-                <img
-                  src={productThumbnails[product.id] ?? product.images[0]}
-                  alt={product.name}
-                  loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
-              <div className="p-5">
-                <h3 className="font-[Poppins] font-semibold text-lg mb-2 line-clamp-2 text-primary group-hover:text-secondary transition-colors">
-                  {product.name}
-                </h3>
-                <p className="text-sm text-muted-foreground mb-4 font-[Inter] line-clamp-2">
-                  {product.description}
-                </p>
-                <div className="flex items-center justify-center gap-2 text-primary font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span>Ver detalles</span>
-                  <span className="transform group-hover:translate-x-1 transition-transform">→</span>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      )}
+      <p className="font-[Inter] text-slate-400 text-lg max-w-xl mx-auto leading-relaxed">
+        Transformamos tus ideas en objetos reales. Cada pieza,{" "}
+        <span className="text-indigo-300 font-medium">única</span> y diseñada a medida para tu marca.
+      </p>
     </div>
+
+    {/* ── GRID DE PRODUCTOS 3D ── */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+
+      {/* Tarjeta 1 — Llaveros y Accesorios */}
+      <div className="group relative rounded-2xl overflow-hidden border border-white/5 bg-white/3 backdrop-blur-sm hover:border-indigo-500/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(99,102,241,0.2)]">
+        {/* Espacio para imagen */}
+        <div className="aspect-[4/3] bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden flex items-center justify-center">
+          {/* Placeholder — reemplazar con <img src="/3d/llaveros.webp" ... /> cuando tengas la imagen */}
+          <div className="text-center px-6">
+            <div className="w-16 h-16 mx-auto mb-3 rounded-xl border-2 border-dashed border-indigo-500/40 flex items-center justify-center">
+              <svg className="w-8 h-8 text-indigo-400/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <p className="text-slate-500 text-xs font-[Inter]">Imagen próximamente</p>
+          </div>
+          {/* Badge de categoría */}
+          <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-indigo-600/80 backdrop-blur-sm text-white text-xs font-[Inter] font-medium">
+            Accesorios
+          </div>
+        </div>
+        <div className="p-5">
+          <h3 className="font-[Poppins] font-bold text-white text-lg mb-2 group-hover:text-indigo-300 transition-colors">
+            Llaveros & Accesorios
+          </h3>
+          <p className="text-slate-400 text-sm font-[Inter] leading-relaxed mb-4">
+            Llaveros, porta-tarjetas y accesorios personalizados con tu logo. Alta resolución de detalle.
+          </p>
+          <div className="flex items-center justify-between">
+            <span className="text-indigo-400 text-xs font-[Inter] uppercase tracking-wider">Personalizable</span>
+            <span className="text-slate-600 text-xs">→</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Tarjeta 2 — Exhibidores y Stands (destacada, más grande en md) */}
+      <div className="group relative rounded-2xl overflow-hidden border border-indigo-500/20 bg-gradient-to-b from-indigo-950/40 to-slate-900/40 backdrop-blur-sm hover:border-indigo-400/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_50px_rgba(99,102,241,0.3)] lg:row-span-1">
+        {/* Espacio para imagen */}
+        <div className="aspect-[4/3] bg-gradient-to-br from-indigo-900/50 to-slate-900 relative overflow-hidden flex items-center justify-center">
+          {/* Placeholder */}
+          <div className="text-center px-6">
+            <div className="w-16 h-16 mx-auto mb-3 rounded-xl border-2 border-dashed border-indigo-400/50 flex items-center justify-center">
+              <svg className="w-8 h-8 text-indigo-300/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <p className="text-slate-500 text-xs font-[Inter]">Imagen próximamente</p>
+          </div>
+          <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-violet-600/80 backdrop-blur-sm text-white text-xs font-[Inter] font-medium">
+            ⭐ Más solicitado
+          </div>
+        </div>
+        <div className="p-5">
+          <h3 className="font-[Poppins] font-bold text-white text-lg mb-2 group-hover:text-indigo-300 transition-colors">
+            Exhibidores & Stands
+          </h3>
+          <p className="text-slate-400 text-sm font-[Inter] leading-relaxed mb-4">
+            Exhibidores de productos, porta-folletos y displays corporativos impresos en 3D a tu medida.
+          </p>
+          <div className="flex items-center justify-between">
+            <span className="text-indigo-400 text-xs font-[Inter] uppercase tracking-wider">Personalizable</span>
+            <span className="text-slate-600 text-xs">→</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Tarjeta 3 — Trofeos y Reconocimientos */}
+      <div className="group relative rounded-2xl overflow-hidden border border-white/5 bg-white/3 backdrop-blur-sm hover:border-cyan-500/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(6,182,212,0.2)]">
+        <div className="aspect-[4/3] bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden flex items-center justify-center">
+          <div className="text-center px-6">
+            <div className="w-16 h-16 mx-auto mb-3 rounded-xl border-2 border-dashed border-cyan-500/40 flex items-center justify-center">
+              <svg className="w-8 h-8 text-cyan-400/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <p className="text-slate-500 text-xs font-[Inter]">Imagen próximamente</p>
+          </div>
+          <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-cyan-600/80 backdrop-blur-sm text-white text-xs font-[Inter] font-medium">
+            Reconocimientos
+          </div>
+        </div>
+        <div className="p-5">
+          <h3 className="font-[Poppins] font-bold text-white text-lg mb-2 group-hover:text-cyan-300 transition-colors">
+            Trofeos & Reconocimientos
+          </h3>
+          <p className="text-slate-400 text-sm font-[Inter] leading-relaxed mb-4">
+            Premios corporativos, trofeos y reconocimientos únicos diseñados con tu identidad de marca.
+          </p>
+          <div className="flex items-center justify-between">
+            <span className="text-cyan-400 text-xs font-[Inter] uppercase tracking-wider">Personalizable</span>
+            <span className="text-slate-600 text-xs">→</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Tarjeta 4 — Piezas Corporativas */}
+      <div className="group relative rounded-2xl overflow-hidden border border-white/5 bg-white/3 backdrop-blur-sm hover:border-violet-500/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(139,92,246,0.2)]">
+        <div className="aspect-[4/3] bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden flex items-center justify-center">
+          <div className="text-center px-6">
+            <div className="w-16 h-16 mx-auto mb-3 rounded-xl border-2 border-dashed border-violet-500/40 flex items-center justify-center">
+              <svg className="w-8 h-8 text-violet-400/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <p className="text-slate-500 text-xs font-[Inter]">Imagen próximamente</p>
+          </div>
+          <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-violet-600/80 backdrop-blur-sm text-white text-xs font-[Inter] font-medium">
+            Corporativo
+          </div>
+        </div>
+        <div className="p-5">
+          <h3 className="font-[Poppins] font-bold text-white text-lg mb-2 group-hover:text-violet-300 transition-colors">
+            Piezas Corporativas
+          </h3>
+          <p className="text-slate-400 text-sm font-[Inter] leading-relaxed mb-4">
+            Logos en relieve, letras volumétricas, prototipos y piezas especiales para eventos corporativos.
+          </p>
+          <div className="flex items-center justify-between">
+            <span className="text-violet-400 text-xs font-[Inter] uppercase tracking-wider">Personalizable</span>
+            <span className="text-slate-600 text-xs">→</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Tarjeta 5 — Figuras Decorativas */}
+      <div className="group relative rounded-2xl overflow-hidden border border-white/5 bg-white/3 backdrop-blur-sm hover:border-indigo-500/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(99,102,241,0.2)]">
+        <div className="aspect-[4/3] bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden flex items-center justify-center">
+          <div className="text-center px-6">
+            <div className="w-16 h-16 mx-auto mb-3 rounded-xl border-2 border-dashed border-indigo-500/40 flex items-center justify-center">
+              <svg className="w-8 h-8 text-indigo-400/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <p className="text-slate-500 text-xs font-[Inter]">Imagen próximamente</p>
+          </div>
+          <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-indigo-600/80 backdrop-blur-sm text-white text-xs font-[Inter] font-medium">
+            Decorativo
+          </div>
+        </div>
+        <div className="p-5">
+          <h3 className="font-[Poppins] font-bold text-white text-lg mb-2 group-hover:text-indigo-300 transition-colors">
+            Figuras Decorativas
+          </h3>
+          <p className="text-slate-400 text-sm font-[Inter] leading-relaxed mb-4">
+            Mascotas corporativas, figuras temáticas y decoraciones únicas que refuerzan tu identidad visual.
+          </p>
+          <div className="flex items-center justify-between">
+            <span className="text-indigo-400 text-xs font-[Inter] uppercase tracking-wider">Personalizable</span>
+            <span className="text-slate-600 text-xs">→</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Tarjeta 6 — Prototipado */}
+      <div className="group relative rounded-2xl overflow-hidden border border-white/5 bg-white/3 backdrop-blur-sm hover:border-cyan-500/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(6,182,212,0.2)]">
+        <div className="aspect-[4/3] bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden flex items-center justify-center">
+          <div className="text-center px-6">
+            <div className="w-16 h-16 mx-auto mb-3 rounded-xl border-2 border-dashed border-cyan-500/40 flex items-center justify-center">
+              <svg className="w-8 h-8 text-cyan-400/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <p className="text-slate-500 text-xs font-[Inter]">Imagen próximamente</p>
+          </div>
+          <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-cyan-600/80 backdrop-blur-sm text-white text-xs font-[Inter] font-medium">
+            Prototipado
+          </div>
+        </div>
+        <div className="p-5">
+          <h3 className="font-[Poppins] font-bold text-white text-lg mb-2 group-hover:text-cyan-300 transition-colors">
+            Prototipado Rápido
+          </h3>
+          <p className="text-slate-400 text-sm font-[Inter] leading-relaxed mb-4">
+            Convierte tu idea en un prototipo funcional. Ideal para productos en desarrollo o presentaciones.
+          </p>
+          <div className="flex items-center justify-between">
+            <span className="text-cyan-400 text-xs font-[Inter] uppercase tracking-wider">Personalizable</span>
+            <span className="text-slate-600 text-xs">→</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    {/* ── BANNER DE PROCESO ── */}
+    <div className="relative rounded-2xl overflow-hidden border border-indigo-500/20 bg-gradient-to-r from-indigo-950/60 via-slate-900/60 to-indigo-950/60 p-8 md:p-12">
+      <div className="absolute inset-0 opacity-5"
+        style={{
+          backgroundImage: `linear-gradient(rgba(99,102,241,0.6) 1px, transparent 1px),
+                            linear-gradient(90deg, rgba(99,102,241,0.6) 1px, transparent 1px)`,
+          backgroundSize: "20px 20px",
+        }}
+      />
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div className="flex flex-col items-center gap-3">
+          <div className="w-12 h-12 rounded-full border border-indigo-500/50 bg-indigo-500/10 flex items-center justify-center text-indigo-400 font-[Poppins] font-bold text-lg">1</div>
+          <h4 className="font-[Poppins] font-semibold text-white">Diseño</h4>
+          <p className="text-slate-400 text-sm font-[Inter]">Nos compartes tu logo o idea y lo convertimos en un archivo 3D listo para imprimir.</p>
+        </div>
+        <div className="flex flex-col items-center gap-3">
+          <div className="w-12 h-12 rounded-full border border-indigo-500/50 bg-indigo-500/10 flex items-center justify-center text-indigo-400 font-[Poppins] font-bold text-lg">2</div>
+          <h4 className="font-[Poppins] font-semibold text-white">Impresión</h4>
+          <p className="text-slate-400 text-sm font-[Inter]">Imprimimos tu pieza con materiales de alta calidad en múltiples colores y acabados.</p>
+        </div>
+        <div className="flex flex-col items-center gap-3">
+          <div className="w-12 h-12 rounded-full border border-indigo-500/50 bg-indigo-500/10 flex items-center justify-center text-indigo-400 font-[Poppins] font-bold text-lg">3</div>
+          <h4 className="font-[Poppins] font-semibold text-white">Entrega</h4>
+          <p className="text-slate-400 text-sm font-[Inter]">Recibe tus piezas terminadas listas para usar, con envío a todo Colombia.</p>
+        </div>
+      </div>
+    </div>
+
+    {/* ── CTA ── */}
+    <div className="text-center mt-12">
+      <a
+        href="https://wa.me/573000000000?text=Hola,%20quiero%20información%20sobre%20impresión%203D"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-[Poppins] font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(99,102,241,0.5)]"
+        style={{ background: "linear-gradient(135deg, #6366f1, #06b6d4)" }}
+      >
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Cotiza tu pieza 3D por WhatsApp
+      </a>
+      <p className="text-slate-500 text-sm font-[Inter] mt-4">Respondemos en menos de 24 horas · Envío a toda Colombia</p>
+    </div>
+
   </div>
 </section>
 
