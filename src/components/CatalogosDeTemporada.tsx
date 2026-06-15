@@ -184,7 +184,7 @@ const CatalogosDeTemporada = ({
           </div>
 
           {/* Mundial — archivo */}
-          <div className="group relative cursor-pointer transition-all duration-400 hover:-translate-y-2 flex flex-col items-center opacity-45 hover:opacity-70"
+          <div className="group relative cursor-pointer transition-all duration-400 hover:-translate-y-2 flex flex-col items-center"
             onClick={onOpenMundial}>
             <div className="relative rounded-xl overflow-hidden w-full"
               style={{ boxShadow: "0 10px 35px rgba(0,0,0,0.06)" }}>
@@ -193,10 +193,10 @@ const CatalogosDeTemporada = ({
                 style={{ aspectRatio: "3/4" }} />
               <div className="absolute top-2 right-2 px-2 py-0.5 rounded-full text-xs font-[Inter]"
                 style={{ background: "rgba(0,0,0,0.5)", color: "rgba(255,255,255,0.7)" }}>
-                Archivo
+                
               </div>
             </div>
-            <p className="mt-3 text-center font-[Inter] font-semibold text-sm" style={{ color: "rgba(0,0,0,0.35)" }}>
+            <p className="mt-3 text-center font-[Inter] font-semibold text-sm" style={{ color: "#484F9D" }}>
               Catálogo Mundial
             </p>
           </div>
