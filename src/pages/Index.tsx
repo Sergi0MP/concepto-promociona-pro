@@ -49,6 +49,14 @@ const Index = () => {
 
   // 🔹 Modal de video de bienvenida
   const [showIntro, setShowIntro] = useState(false);
+  // 🔹 Modal 3D
+  const [show3DModal, setShow3DModal] = useState(false);
+  const [sketchfabId, setSketchfabId] = useState("");
+
+  const open3DModal = (id: string) => {
+    setSketchfabId(id);
+    setShow3DModal(true);
+  };
 
   useEffect(() => {
     // Se abre al cargar la página
@@ -152,16 +160,16 @@ const Index = () => {
     return () => document.removeEventListener("contextmenu", disableContext);
   }, []);
 
-  const cards3D = [
-    { title: "Llaveros & Accesorios", desc: "Llaveros, porta-tarjetas y accesorios con tu logo. Alta resolución de detalle.", badge: "Accesorios", imgPath: "/3d/llaveros.webp", accent: "#484F9D" },
+const cards3D: { title: string; desc: string; badge: string; imgPath: string; accent: string; sketchfabId?: string }[] = [
+    { title: "Llaveros & Accesorios", desc: "Llaveros, porta-tarjetas y accesorios con tu logo. Alta resolución de detalle.", badge: "Accesorios", imgPath: "/3d/llaveros.webp", accent: "#484F9D", sketchfabId: "cd969cf1f9ee45c782be056e77c91d81" },
     { title: "Exhibidores & Stands", desc: "Exhibidores, porta-folletos y displays corporativos impresos en 3D a tu medida.", badge: "⭐ Más solicitado", imgPath: "/3d/exhibidores.webp", accent: "#F4E600" },
     { title: "Trofeos & Reconocimientos", desc: "Premios y trofeos únicos diseñados con tu identidad de marca.", badge: "Reconocimientos", imgPath: "/3d/trofeos.webp", accent: "#484F9D" },
     { title: "Piezas Corporativas", desc: "Logos en relieve, letras volumétricas y piezas para eventos corporativos.", badge: "Corporativo", imgPath: "/3d/corporativo.webp", accent: "#F4E600" },
     { title: "Figuras Decorativas", desc: "Mascotas corporativas y figuras temáticas que refuerzan tu identidad visual.", badge: "Decorativo", imgPath: "/3d/figuras.webp", accent: "#484F9D" },
     { title: "Prototipado Rápido", desc: "Convierte tu idea en un prototipo funcional para presentaciones.", badge: "Prototipado", imgPath: "/3d/prototipo.webp", accent: "#F4E600" },
   ];
- 
-  const steps3D = [
+
+  const steps3D: { n: string; title: string; desc: string; yellow: boolean }[] = [
     { n: "01", title: "Diseño", desc: "Compártenos tu logo o idea y lo convertimos en un archivo 3D listo para imprimir.", yellow: false },
     { n: "02", title: "Impresión", desc: "Imprimimos tu pieza con materiales de alta calidad en múltiples colores y acabados.", yellow: true },
     { n: "03", title: "Entrega", desc: "Recibe tus piezas terminadas y listas para usar. Envío a toda Colombia.", yellow: false },
@@ -253,15 +261,15 @@ const Index = () => {
             <div className="relative inline-block mb-8">
               <h2 className="absolute font-[Poppins] font-black select-none pointer-events-none"
                 style={{ fontSize: "clamp(2.5rem, 8vw, 6rem)", top: "10px", left: "10px", color: "#5a5200", letterSpacing: "-0.02em", whiteSpace: "nowrap" }}>
-                IMPRESIÓN 3D
+                DESARROLLOS 3D
               </h2>
               <h2 className="absolute font-[Poppins] font-black select-none pointer-events-none"
                 style={{ fontSize: "clamp(2.5rem, 8vw, 6rem)", top: "6px", left: "6px", color: "#1a1f5c", letterSpacing: "-0.02em", whiteSpace: "nowrap" }}>
-                IMPRESIÓN 3D
+                DESARROLLOS 3D
               </h2>
               <h2 className="absolute font-[Poppins] font-black select-none pointer-events-none"
                 style={{ fontSize: "clamp(2.5rem, 8vw, 6rem)", top: "3px", left: "3px", color: "#484F9D", letterSpacing: "-0.02em", whiteSpace: "nowrap" }}>
-                IMPRESIÓN 3D
+                DESARROLLOS 3D
               </h2>
               <h2 className="relative font-[Poppins] font-black"
                 style={{
@@ -274,7 +282,7 @@ const Index = () => {
                   backgroundClip: "text",
                   filter: "drop-shadow(0 0 20px rgba(244,230,0,0.3))",
                 }}>
-                IMPRESIÓN 3D
+                DESARROLLOS 3D
               </h2>
             </div>
  
@@ -334,11 +342,20 @@ const Index = () => {
                     {card.desc}
                   </p>
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-[Inter] uppercase tracking-wider" style={{ color: card.accent }}>
-                      Personalizable
-                    </span>
-                    <span style={{ color: "rgba(255,255,255,0.2)" }}>→</span>
-                  </div>
+  <span className="text-xs font-[Inter] uppercase tracking-wider" style={{ color: card.accent }}>
+    Personalizable
+  </span>
+  {card.sketchfabId && (
+    <button
+      onClick={() => open3DModal(card.sketchfabId!)}
+      className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-[Inter] font-semibold transition-all duration-300 hover:scale-105"
+      style={{ background: card.accent, color: "#06071a" }}
+    >
+      ↻ Ver en 3D
+    </button>
+  )}
+</div>
+                 
                 </div>
               </div>
             ))}
@@ -620,6 +637,124 @@ const Index = () => {
   isOpen={showCatalogoMundial}
   onClose={() => setShowCatalogoMundial(false)}
 />
+{/* Modal 3D */}
+{show3DModal && (
+  <div
+    className="fixed inset-0 z-[9999] flex items-center justify-center"
+    style={{ background: "rgba(0,0,0,0.85)", backdropFilter: "blur(6px)" }}
+    onClick={() => setShow3DModal(false)}
+  >
+    <div
+      className="relative rounded-2xl overflow-hidden"
+      style={{ width: "min(90vw, 800px)", boxShadow: "0 30px 80px rgba(0,0,0,0.6)" }}
+      onClick={(e) => e.stopPropagation()}
+    >
+      {/* Header */}
+      <div className="flex items-center justify-between px-5 py-3"
+        style={{ background: "#0f1235", borderBottom: "1px solid rgba(72,79,157,0.3)" }}>
+        <div>
+          <p className="font-[Poppins] font-bold text-white text-sm">Vista 360°</p>
+          <p className="font-[Inter] text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
+            Arrastra para rotar · Pellizca para hacer zoom
+          </p>
+        </div>
+        <button
+          onClick={() => setShow3DModal(false)}
+          className="w-8 h-8 rounded-full flex items-center justify-center text-white transition-colors hover:bg-white/10"
+          style={{ fontSize: "18px" }}
+        >
+          ×
+        </button>
+      </div>
+
+      {/* Visor */}
+      <div style={{ position: "relative", paddingBottom: "60%", background: "#06071a" }}>
+        <iframe
+          src={`https://sketchfab.com/models/${sketchfabId}/embed?autostart=1&ui_hint=0&ui_infos=0&ui_watermark=0&ui_ar=0&ui_help=0&ui_settings=0&ui_inspector=0&ui_annotations=0&ui_stop=0&transparent=1`}
+          style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
+          allow="autoplay; fullscreen; xr-spatial-tracking"
+          allowFullScreen
+          title="Visor 3D"
+        />
+      </div>
+
+      {/* Footer */}
+      <div className="px-5 py-3 flex items-center justify-between"
+        style={{ background: "#0f1235", borderTop: "1px solid rgba(72,79,157,0.3)" }}>
+        <p className="font-[Inter] text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>
+          Modelo 3D escaneado · Concepto Creativo
+        </p>
+        <a
+        href="https://wa.me/573337013642?text=Hola,%20quiero%20cotizar%20este%20producto%203D"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-1.5 rounded-full font-[Poppins] font-bold text-xs"
+            style={{ background: "#484F9D", color: "#F4E600" }}
+          >
+            Cotizar por WhatsApp
+          </a>
+      </div>
+    </div>
+  </div>
+)}
+{/* Modal 3D */}
+{show3DModal && (
+  <div
+    className="fixed inset-0 z-[9999] flex items-center justify-center"
+    style={{ background: "rgba(0,0,0,0.85)", backdropFilter: "blur(6px)" }}
+    onClick={() => setShow3DModal(false)}
+  >
+    <div
+      className="relative rounded-2xl overflow-hidden"
+      style={{ width: "min(90vw, 800px)", boxShadow: "0 30px 80px rgba(0,0,0,0.6)" }}
+      onClick={(e) => e.stopPropagation()}
+    >
+      <div className="flex items-center justify-between px-5 py-3"
+        style={{ background: "#0f1235", borderBottom: "1px solid rgba(72,79,157,0.3)" }}>
+        <div>
+          <p className="font-[Poppins] font-bold text-white text-sm">Vista 360°</p>
+          <p className="font-[Inter] text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
+            Arrastra para rotar · Pellizca para hacer zoom
+          </p>
+        </div>
+        <button
+          onClick={() => setShow3DModal(false)}
+          className="w-8 h-8 rounded-full flex items-center justify-center text-white transition-colors hover:bg-white/10"
+          style={{ fontSize: "18px" }}
+        >
+          ×
+        </button>
+      </div>
+
+      <div style={{ position: "relative", paddingBottom: "60%", background: "#06071a" }}>
+        <iframe
+          src={`https://sketchfab.com/models/${sketchfabId}/embed?autostart=1&ui_hint=0&ui_infos=0&ui_watermark=0&ui_ar=0&ui_help=0&ui_settings=0&ui_inspector=0&ui_annotations=0&ui_stop=0&transparent=1`}
+          style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
+          allow="autoplay; fullscreen; xr-spatial-tracking"
+          allowFullScreen
+          title="Visor 3D"
+        />
+      </div>
+
+      <div className="px-5 py-3 flex items-center justify-between"
+        style={{ background: "#0f1235", borderTop: "1px solid rgba(72,79,157,0.3)" }}>
+        <p className="font-[Inter] text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>
+          Modelo 3D escaneado · Concepto Creativo
+        </p>
+        <a
+          href="https://wa.me/573337013642?text=Hola,%20quiero%20cotizar%20este%20producto%203D"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-4 py-1.5 rounded-full font-[Poppins] font-bold text-xs"
+          style={{ background: "#484F9D", color: "#F4E600" }}
+        >
+          Cotizar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+)}
+
 
 <WhatsAppButton />
 <Footer />
