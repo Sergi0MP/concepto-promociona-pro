@@ -224,24 +224,23 @@ const SeccionTaller: React.FC = () => {
               Nueva Categoría · Concepto Creativo
             </div>
 
-            <div className="relative inline-block mb-8">
+            <div className="relative inline-block mb-8" style={{ paddingTop: "12px", paddingLeft: "12px" }}>
               <h2 className="absolute font-[Poppins] font-black select-none pointer-events-none"
-                style={{ fontSize: "clamp(1.8rem, 6vw, 5rem)", top: "10px", left: "10px", color: palette.titleLayers[0], letterSpacing: "-0.02em", whiteSpace: "nowrap" }}>
+                style={{ fontSize: "clamp(1.8rem, 5vw, 4rem)", top: "10px", left: "10px", color: palette.titleLayers[0], letterSpacing: "-0.02em" }}>
                 {sectionTitle}
               </h2>
               <h2 className="absolute font-[Poppins] font-black select-none pointer-events-none"
-                style={{ fontSize: "clamp(1.8rem, 6vw, 5rem)", top: "6px", left: "6px", color: palette.titleLayers[1], letterSpacing: "-0.02em", whiteSpace: "nowrap" }}>
+                style={{ fontSize: "clamp(1.8rem, 5vw, 4rem)", top: "6px", left: "6px", color: palette.titleLayers[1], letterSpacing: "-0.02em" }}>
                 {sectionTitle}
               </h2>
               <h2 className="absolute font-[Poppins] font-black select-none pointer-events-none"
-                style={{ fontSize: "clamp(1.8rem, 6vw, 5rem)", top: "3px", left: "3px", color: palette.titleLayers[2], letterSpacing: "-0.02em", whiteSpace: "nowrap" }}>
+                style={{ fontSize: "clamp(1.8rem, 5vw, 4rem)", top: "3px", left: "3px", color: palette.titleLayers[2], letterSpacing: "-0.02em" }}>
                 {sectionTitle}
               </h2>
               <h2 className="relative font-[Poppins] font-black"
                 style={{
-                  fontSize: "clamp(1.8rem, 6vw, 5rem)",
+                  fontSize: "clamp(1.8rem, 5vw, 4rem)",
                   letterSpacing: "-0.02em",
-                  whiteSpace: "nowrap",
                   background: palette.titleGradient,
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
