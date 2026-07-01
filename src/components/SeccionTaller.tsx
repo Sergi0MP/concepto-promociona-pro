@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-// ── TIPOS ──────────────────────────────────────────────────────────────────
 interface Card {
   title: string;
   desc: string;
@@ -16,7 +15,6 @@ interface Step {
   highlight: boolean;
 }
 
-// ── DATOS 3D ───────────────────────────────────────────────────────────────
 const cards3D: Card[] = [
   { title: "Llaveros & Accesorios", desc: "Llaveros, porta-tarjetas y accesorios con tu logo. Alta resolución de detalle.", badge: "Accesorios", accent: "#484F9D", sketchfabId: "cd969cf1f9ee45c782be056e77c91d81" },
   { title: "Exhibidores & Stands", desc: "Exhibidores, porta-folletos y displays corporativos impresos en 3D a tu medida.", badge: "⭐ Más solicitado", accent: "#F4E600" },
@@ -32,7 +30,6 @@ const steps3D: Step[] = [
   { n: "03", title: "Entrega", desc: "Recibe tus piezas terminadas y listas para usar. Envío a toda Colombia.", highlight: false },
 ];
 
-// ── DATOS MADERA ───────────────────────────────────────────────────────────
 const cardsMadera: Card[] = [
   { title: "Letras & Logos en Madera", desc: "Letras volumétricas y logos corporativos cortados en madera de alta calidad.", badge: "Decorativo", accent: "#8B4513" },
   { title: "Cuadros & Señalética", desc: "Cuadros decorativos, letreros y señalética empresarial en madera y acrílico.", badge: "⭐ Más solicitado", accent: "#D4A017" },
@@ -48,7 +45,6 @@ const stepsMadera: Step[] = [
   { n: "03", title: "Entrega", desc: "Recibes tus piezas terminadas y pulidas. Envío a toda Colombia.", highlight: false },
 ];
 
-// ── COMPONENTE ─────────────────────────────────────────────────────────────
 const SeccionTaller: React.FC = () => {
   const [tab, setTab] = useState<"3d" | "madera">("3d");
   const [show3DModal, setShow3DModal] = useState(false);
@@ -69,9 +65,8 @@ const SeccionTaller: React.FC = () => {
         badgeColor: "#F4E600",
         badgeBorder: "rgba(244,230,0,0.3)",
         dot: "#F4E600",
-        titleLayers: ["#5a5200", "#1a1f5c", "#484F9D"],
-        titleGradient: "linear-gradient(135deg, #8a90d4 0%, #484F9D 30%, #6b73c9 50%, #c8b800 75%, #F4E600 100%)",
-        titleGlow: "drop-shadow(0 0 20px rgba(244,230,0,0.3))",
+        titleColor: "#a5abf0",
+        titleShadow: "3px 3px 0 #1a1f5c, 6px 6px 0 #0d1040, 0 0 30px rgba(244,230,0,0.25)",
         separatorL: "linear-gradient(90deg, transparent, #484F9D)",
         separatorR: "linear-gradient(90deg, #484F9D, transparent)",
         diamond: "#F4E600",
@@ -80,7 +75,6 @@ const SeccionTaller: React.FC = () => {
         textColor: "rgba(255,255,255,0.5)",
         textCards: "rgba(255,255,255,0.9)",
         textCardsDesc: "rgba(255,255,255,0.4)",
-        stepTitle: "text-white",
         stepDesc: "rgba(255,255,255,0.4)",
         ctaBg: "linear-gradient(135deg, #484F9D 0%, #2e3480 50%, #F4E600 100%)",
         ctaColor: "#06071a",
@@ -95,9 +89,8 @@ const SeccionTaller: React.FC = () => {
         badgeColor: "#8B4513",
         badgeBorder: "rgba(139,69,19,0.3)",
         dot: "#8B4513",
-        titleLayers: ["rgba(139,69,19,0.15)", "rgba(139,69,19,0.3)", "rgba(139,69,19,0.5)"],
-        titleGradient: "linear-gradient(135deg, #8B4513 0%, #6b3310 40%, #a0530e 65%, #D4A017 100%)",
-        titleGlow: "drop-shadow(0 2px 8px rgba(139,69,19,0.25))",
+        titleColor: "#8B4513",
+        titleShadow: "3px 3px 0 rgba(139,69,19,0.2), 6px 6px 0 rgba(139,69,19,0.1), 0 0 20px rgba(212,160,23,0.15)",
         separatorL: "linear-gradient(90deg, transparent, #8B4513)",
         separatorR: "linear-gradient(90deg, #8B4513, transparent)",
         diamond: "#8B4513",
@@ -106,7 +99,6 @@ const SeccionTaller: React.FC = () => {
         textColor: "rgba(60,30,10,0.6)",
         textCards: "#3c1e0a",
         textCardsDesc: "rgba(60,30,10,0.6)",
-        stepTitle: "text-[#3c1e0a]",
         stepDesc: "rgba(60,30,10,0.55)",
         ctaBg: "linear-gradient(135deg, #8B4513 0%, #5c2d0d 50%, #D4A017 100%)",
         ctaColor: "#fff8ee",
@@ -129,7 +121,7 @@ const SeccionTaller: React.FC = () => {
         className="relative py-24 overflow-hidden transition-all duration-700"
         style={{ background: is3D ? "#06071a" : "#fdf6ee" }}
       >
-        {/* ── FONDO ── */}
+        {/* FONDO */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           {is3D ? (
             <>
@@ -148,23 +140,18 @@ const SeccionTaller: React.FC = () => {
             </>
           ) : (
             <>
-              {/* Vetas de madera simuladas */}
               <div className="absolute inset-0" style={{
                 backgroundImage: "repeating-linear-gradient(178deg, transparent, transparent 22px, rgba(139,90,43,0.07) 23px, rgba(139,90,43,0.07) 24px)",
               }} />
               <div className="absolute inset-0" style={{
                 backgroundImage: "repeating-linear-gradient(182deg, transparent, transparent 40px, rgba(101,60,20,0.05) 41px, rgba(101,60,20,0.05) 42px)",
               }} />
-              {/* Mancha cálida izquierda */}
               <div className="absolute -top-20 -left-20 w-[500px] h-[500px] rounded-full opacity-30"
                 style={{ background: "radial-gradient(circle, #d4956a 0%, transparent 70%)" }} />
-              {/* Mancha oscura derecha */}
               <div className="absolute -bottom-10 -right-10 w-[400px] h-[400px] rounded-full opacity-15"
                 style={{ background: "radial-gradient(circle, #7a4010 0%, transparent 70%)" }} />
-              {/* Línea superior */}
               <div className="absolute top-0 left-0 right-0 h-1"
                 style={{ background: "linear-gradient(90deg, #8B4513, #D4A017, #8B4513)" }} />
-              {/* Línea inferior */}
               <div className="absolute bottom-0 left-0 right-0 h-1"
                 style={{ background: "linear-gradient(90deg, #D4A017, #8B4513, #D4A017)" }} />
             </>
@@ -173,7 +160,7 @@ const SeccionTaller: React.FC = () => {
 
         <div className="relative z-10 container px-4 mx-auto">
 
-          {/* ── TABS ── */}
+          {/* TABS */}
           <div className="flex justify-center gap-4 mb-16">
             <button
               onClick={() => setTab("3d")}
@@ -216,7 +203,7 @@ const SeccionTaller: React.FC = () => {
             </button>
           </div>
 
-          {/* ── TÍTULO ── */}
+          {/* TÍTULO — textShadow en lugar de capas absolutas */}
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-8 text-xs font-[Inter] uppercase tracking-widest"
               style={{ border: `1px solid ${palette.badgeBorder}`, background: palette.badgeBg, color: palette.badgeColor }}>
@@ -224,32 +211,17 @@ const SeccionTaller: React.FC = () => {
               Nueva Categoría · Concepto Creativo
             </div>
 
-            <div className="relative inline-block mb-8" style={{ paddingTop: "12px", paddingLeft: "12px" }}>
-              <h2 className="absolute font-[Poppins] font-black select-none pointer-events-none"
-                style={{ fontSize: "clamp(1.8rem, 5vw, 4rem)", top: "10px", left: "10px", color: palette.titleLayers[0], letterSpacing: "-0.02em" }}>
-                {sectionTitle}
-              </h2>
-              <h2 className="absolute font-[Poppins] font-black select-none pointer-events-none"
-                style={{ fontSize: "clamp(1.8rem, 5vw, 4rem)", top: "6px", left: "6px", color: palette.titleLayers[1], letterSpacing: "-0.02em" }}>
-                {sectionTitle}
-              </h2>
-              <h2 className="absolute font-[Poppins] font-black select-none pointer-events-none"
-                style={{ fontSize: "clamp(1.8rem, 5vw, 4rem)", top: "3px", left: "3px", color: palette.titleLayers[2], letterSpacing: "-0.02em" }}>
-                {sectionTitle}
-              </h2>
-              <h2 className="relative font-[Poppins] font-black"
-                style={{
-                  fontSize: "clamp(1.8rem, 5vw, 4rem)",
-                  letterSpacing: "-0.02em",
-                  background: palette.titleGradient,
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                  filter: palette.titleGlow,
-                }}>
-                {sectionTitle}
-              </h2>
-            </div>
+            <h2
+              className="font-[Poppins] font-black mb-8 block"
+              style={{
+                fontSize: "clamp(2rem, 6vw, 5rem)",
+                letterSpacing: "-0.02em",
+                color: palette.titleColor,
+                textShadow: palette.titleShadow,
+              }}
+            >
+              {sectionTitle}
+            </h2>
 
             <div className="flex items-center justify-center gap-4 mb-7">
               <div className="h-px flex-1 max-w-[120px]" style={{ background: palette.separatorL }} />
@@ -264,7 +236,7 @@ const SeccionTaller: React.FC = () => {
             </p>
           </div>
 
-          {/* ── GRID TARJETAS ── */}
+          {/* GRID TARJETAS */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
             {cards.map((card) => (
               <div key={card.title}
@@ -330,7 +302,7 @@ const SeccionTaller: React.FC = () => {
             ))}
           </div>
 
-          {/* ── BANNER PASOS ── */}
+          {/* BANNER PASOS */}
           <div className="relative rounded-2xl p-8 md:p-12 mb-12 overflow-hidden"
             style={{
               border: `1px solid ${palette.glowL}25`,
@@ -361,7 +333,7 @@ const SeccionTaller: React.FC = () => {
             </div>
           </div>
 
-          {/* ── CTA ── */}
+          {/* CTA */}
           <div className="text-center">
             <a
               href={palette.waLink}
@@ -387,7 +359,7 @@ const SeccionTaller: React.FC = () => {
         </div>
       </section>
 
-      {/* ── MODAL 3D ── */}
+      {/* MODAL 3D */}
       {show3DModal && (
         <div
           className="fixed inset-0 z-[9999] flex items-center justify-center"
