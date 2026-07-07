@@ -6,6 +6,8 @@ interface Card {
   badge: string;
   accent: string;
   sketchfabId?: string;
+  images?: string[];
+  fullDesc?: string;
 }
 
 interface Step {
@@ -16,12 +18,55 @@ interface Step {
 }
 
 const cards3D: Card[] = [
-  { title: "Llaveros & Accesorios", desc: "Llaveros, porta-tarjetas y accesorios con tu logo. Alta resolución de detalle.", badge: "Accesorios", accent: "#484F9D", sketchfabId: "cd969cf1f9ee45c782be056e77c91d81" },
-  { title: "Exhibidores & Stands", desc: "Exhibidores, porta-folletos y displays corporativos impresos en 3D a tu medida.", badge: "⭐ Más solicitado", accent: "#F4E600" },
-  { title: "Trofeos & Reconocimientos", desc: "Premios y trofeos únicos diseñados con tu identidad de marca.", badge: "Reconocimientos", accent: "#484F9D" },
-  { title: "Piezas Corporativas", desc: "Logos en relieve, letras volumétricas y piezas para eventos corporativos.", badge: "Corporativo", accent: "#F4E600" },
-  { title: "Figuras Decorativas", desc: "Mascotas corporativas y figuras temáticas que refuerzan tu identidad visual.", badge: "Decorativo", accent: "#484F9D" },
-  { title: "Prototipado Rápido", desc: "Convierte tu idea en un prototipo funcional para presentaciones.", badge: "Prototipado", accent: "#F4E600" },
+ {
+    title: "Soporte Celular Corazón 3D",
+    desc: "Soporte de escritorio para celular en forma de corazón anatómico impreso en 3D. Ideal para médicos y personal de salud.",
+    fullDesc: "Soporte de escritorio para celular con diseño de corazón anatómico impreso en 3D con alto detalle. Sostiene el teléfono en el ángulo perfecto para videollamadas, consultas y escritorio. Ideal como regalo corporativo para médicos, cardiólogos, clínicas y hospitales. Disponible en rojo y colores personalizados. Se puede agregar tu logo en la base.",
+    badge: "Escritorio",
+    accent: "#484F9D",
+    sketchfabId: "cd969cf1f9ee45c782be056e77c91d81",
+    images: ["/3d/soporte-corazon-1.png", "/3d/soporte-corazon-2.png"],
+  },
+  {
+    title: "Soporte para Latas",
+    desc: "Soporte personalizado para latas, ideal para eventos y regalos corporativos.",
+    fullDesc: "Soporte ergonómico para latas de bebida, impreso en 3D con material resistente. Perfecto para eventos empresariales, reuniones y regalos corporativos. Disponible en negro y colores personalizados. Incluye tu logo grabado o en relieve.",
+    badge: "⭐ Más solicitado",
+    accent: "#F4E600",
+    images: ["/3d/soporte-latas-1.png", "/3d/soporte-latas-2.png"],
+  },
+  {
+    title: "Porta Pastillas Llavero",
+    desc: "Llavero funcional con compartimento para pastillas, ideal para médicos, enfermeras y personal de salud.",
+    fullDesc: "Llavero porta pastillas impreso en 3D, con tapa rosca segura y compartimento interno para guardar pastillas, vitaminas o pequeños objetos. Disponible en múltiples colores. Ideal como regalo corporativo para clínicas, hospitales, laboratorios farmacéuticos y personal de salud. Personalizable con tu logo.",
+    badge: "Llaveros",
+    accent: "#484F9D",
+    images: ["/3d/porta-pastillas-1.png", "/3d/porta-pastillas-2.png"],
+  },
+  {
+    title: "Fútbol de Mesa con los Dedos",
+    desc: "Juego de fútbol impreso en 3D para jugar con los dedos. Ideal para eventos, activaciones de marca y regalos corporativos.",
+    fullDesc: "Set de fútbol de mesa impreso en 3D compuesto por dos tacos (zapatos) que se ponen en los dedos y un balón con textura realista. Perfecto para activaciones de marca, eventos deportivos, regalos corporativos y momentos de entretenimiento en la oficina. Disponible en múltiples colores y personalizable con tu logo.",
+    badge: "Juegos",
+    accent: "#F4E600",
+    images: ["/3d/futbol-dedos-1.png", "/3d/futbol-dedos-2.png"],
+  },
+ {
+    title: "Soporte Celular Estetoscopio",
+    desc: "Soporte para celular en forma de estetoscopio impreso en 3D. Perfecto para médicos y personal de salud.",
+    fullDesc: "Soporte de escritorio para celular con diseño de estetoscopio impreso en 3D. Funcional y decorativo a la vez — sostiene el teléfono en ángulo perfecto para videollamadas o visualización. Ideal como regalo corporativo para médicos, clínicas, hospitales y laboratorios farmacéuticos. Disponible en negro y colores personalizados.",
+    badge: "Escritorio",
+    accent: "#484F9D",
+    images: ["/3d/soporte-estetoscopio-1.png", "/3d/soporte-estetoscopio-2.png"],
+  },
+  {
+    title: "Pastillero Semanal 3D",
+    desc: "Pastillero circular impreso en 3D con compartimentos para cada día de la semana. Práctico y personalizable.",
+    fullDesc: "Pastillero circular impreso en 3D con 7 compartimentos giratorios, uno por cada día de la semana (SUN, MON, TUE, WED, THU, FRI, SAT). Diseño compacto, fácil de abrir y resistente. Ideal como regalo corporativo para clínicas, hospitales, laboratorios farmacéuticos y pacientes. Personalizable con tu logo o nombre de marca en el centro o la base.",
+    badge: "Salud",
+    accent: "#F4E600",
+    images: ["/3d/pastillero-semana-1.png", "/3d/pastillero-semana-2.png"],
+  },
 ];
 
 const steps3D: Step[] = [
@@ -31,12 +76,49 @@ const steps3D: Step[] = [
 ];
 
 const cardsMadera: Card[] = [
-  { title: "Letras & Logos en Madera", desc: "Letras volumétricas y logos corporativos cortados en madera de alta calidad.", badge: "Decorativo", accent: "#8B4513" },
-  { title: "Cuadros & Señalética", desc: "Cuadros decorativos, letreros y señalética empresarial en madera y acrílico.", badge: "⭐ Más solicitado", accent: "#D4A017" },
-  { title: "Accesorios en Acrílico", desc: "Porta-tarjetas, separadores y piezas decorativas en acrílico transparente o de color.", badge: "Acrílico", accent: "#8B4513" },
-  { title: "Trofeos & Placas", desc: "Reconocimientos corporativos en madera y acrílico grabados con láser.", badge: "Reconocimientos", accent: "#D4A017" },
-  { title: "Packaging & Cajas", desc: "Cajas de madera personalizadas para regalo corporativo. Ideal para kits de empresa.", badge: "Packaging", accent: "#8B4513" },
-  { title: "Grabado Personalizado", desc: "Grabamos tu logo o mensaje en cualquier pieza de madera o acrílico con precisión láser.", badge: "Grabado", accent: "#D4A017" },
+  {
+    title: "Rompecabezas Corazón Anatómico",
+    desc: "Rompecabezas en acrílico a corte láser con diseño de corazón anatómico a todo color. Ideal para médicos y personal de salud.",
+    fullDesc: "Rompecabezas decorativo en acrílico cortado con láser con diseño anatómico detallado del corazón humano, en colores rojo, azul y rosado. Cada pieza está perfectamente cortada con precisión láser. Ideal como regalo corporativo para médicos, cardiólogos, estudiantes de medicina, clínicas y laboratorios farmacéuticos. Incluye caja de presentación. Personalizable con tu logo.",
+    badge: "⭐ Más solicitado",
+    accent: "#8B4513",
+    images: ["/3d/rompecabezas-corazon-1.png", "/3d/rompecabezas-corazon-2.png"],
+  },
+  {
+    title: "Cuadros & Señalética",
+    desc: "Cuadros decorativos, letreros y señalética empresarial en madera y acrílico.",
+    fullDesc: "Señalética corporativa, cuadros decorativos y letreros en madera y acrílico. Grabado con láser de alta precisión. Perfectos para recepciones, pasillos y espacios de trabajo. Personalización completa con tu identidad visual.",
+    badge: "⭐ Más solicitado",
+    accent: "#D4A017",
+  },
+  {
+    title: "Accesorios en Acrílico",
+    desc: "Porta-tarjetas, separadores y piezas decorativas en acrílico transparente o de color.",
+    fullDesc: "Accesorios de escritorio y decorativos en acrílico de alta calidad. Porta-tarjetas, separadores, bases y piezas personalizadas. Disponibles en acrílico transparente, blanco, negro y colores. Grabado o corte con láser.",
+    badge: "Acrílico",
+    accent: "#8B4513",
+  },
+  {
+    title: "Trofeos & Placas",
+    desc: "Reconocimientos corporativos en madera y acrílico grabados con láser.",
+    fullDesc: "Trofeos, placas y reconocimientos en madera y acrílico con grabado láser. Diseño personalizado con tu logo, texto y fecha. Acabados premium para premiaciones, reconocimientos y eventos especiales.",
+    badge: "Reconocimientos",
+    accent: "#D4A017",
+  },
+  {
+    title: "Packaging & Cajas",
+    desc: "Cajas de madera personalizadas para regalo corporativo.",
+    fullDesc: "Cajas de madera personalizadas para kits corporativos y regalos empresariales. Corte y grabado láser con tu logo. Disponibles en varios tamaños. Perfectas para presentaciones premium de productos y kits de bienvenida.",
+    badge: "Packaging",
+    accent: "#8B4513",
+  },
+  {
+    title: "Grabado Personalizado",
+    desc: "Grabamos tu logo o mensaje en cualquier pieza de madera o acrílico con precisión láser.",
+    fullDesc: "Servicio de grabado láser sobre madera, acrílico, cuero y más materiales. Alta precisión y nitidez. Ideal para personalizar productos existentes, regalos empresariales o piezas decorativas. Mínimo de unidades flexible.",
+    badge: "Grabado",
+    accent: "#D4A017",
+  },
 ];
 
 const stepsMadera: Step[] = [
@@ -49,10 +131,17 @@ const SeccionTaller: React.FC = () => {
   const [tab, setTab] = useState<"3d" | "madera">("3d");
   const [show3DModal, setShow3DModal] = useState(false);
   const [sketchfabId, setSketchfabId] = useState("");
+  const [selectedCard, setSelectedCard] = useState<Card | null>(null);
+  const [imgIndex, setImgIndex] = useState(0);
 
   const open3DModal = (id: string) => {
     setSketchfabId(id);
     setShow3DModal(true);
+  };
+
+  const openCardModal = (card: Card) => {
+    setSelectedCard(card);
+    setImgIndex(0);
   };
 
   const is3D = tab === "3d";
@@ -203,7 +292,7 @@ const SeccionTaller: React.FC = () => {
             </button>
           </div>
 
-          {/* TÍTULO — textShadow en lugar de capas absolutas */}
+          {/* TÍTULO */}
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-8 text-xs font-[Inter] uppercase tracking-widest"
               style={{ border: `1px solid ${palette.badgeBorder}`, background: palette.badgeBg, color: palette.badgeColor }}>
@@ -211,15 +300,13 @@ const SeccionTaller: React.FC = () => {
               Nueva Categoría · Concepto Creativo
             </div>
 
-            <h2
-              className="font-[Poppins] font-black mb-8 block"
+            <h2 className="font-[Poppins] font-black mb-8 block"
               style={{
                 fontSize: "clamp(2rem, 6vw, 5rem)",
                 letterSpacing: "-0.02em",
                 color: palette.titleColor,
                 textShadow: palette.titleShadow,
-              }}
-            >
+              }}>
               {sectionTitle}
             </h2>
 
@@ -239,28 +326,39 @@ const SeccionTaller: React.FC = () => {
           {/* GRID TARJETAS */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
             {cards.map((card) => (
-              <div key={card.title}
-                className="group relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2"
+              <div
+                key={card.title}
+                className="group relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 cursor-pointer"
                 style={{
                   border: `1px solid ${card.accent}30`,
                   background: is3D ? "rgba(255,255,255,0.02)" : "rgba(255,255,255,0.7)",
                   boxShadow: is3D ? "none" : "0 4px 20px rgba(139,69,19,0.08)",
-                }}>
-
+                }}
+                onClick={() => openCardModal(card)}
+              >
+                {/* Imagen o placeholder */}
                 <div className="aspect-[4/3] relative overflow-hidden flex items-center justify-center"
                   style={{ background: palette.cardBg }}>
-                  <div className="text-center px-6">
-                    <div className="w-16 h-16 mx-auto mb-3 rounded-xl flex items-center justify-center"
-                      style={{ border: `2px dashed ${card.accent}50` }}>
-                      <svg className="w-8 h-8" style={{ color: card.accent + "80" }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-                          d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
+                  {card.images ? (
+                    <img
+                      src={card.images[0]}
+                      alt={card.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="text-center px-6">
+                      <div className="w-16 h-16 mx-auto mb-3 rounded-xl flex items-center justify-center"
+                        style={{ border: `2px dashed ${card.accent}50` }}>
+                        <svg className="w-8 h-8" style={{ color: card.accent + "80" }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      <p className="text-xs font-[Inter]" style={{ color: is3D ? "rgba(255,255,255,0.2)" : "rgba(139,69,19,0.4)" }}>
+                        Imagen próximamente
+                      </p>
                     </div>
-                    <p className="text-xs font-[Inter]" style={{ color: is3D ? "rgba(255,255,255,0.2)" : "rgba(139,69,19,0.4)" }}>
-                      Imagen próximamente
-                    </p>
-                  </div>
+                  )}
 
                   <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-[Inter] font-semibold"
                     style={{
@@ -287,15 +385,9 @@ const SeccionTaller: React.FC = () => {
                     <span className="text-xs font-[Inter] uppercase tracking-wider" style={{ color: card.accent }}>
                       Personalizable
                     </span>
-                    {card.sketchfabId && (
-                      <button
-                        onClick={() => open3DModal(card.sketchfabId!)}
-                        className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-[Inter] font-semibold transition-all duration-300 hover:scale-105"
-                        style={{ background: card.accent, color: "#06071a" }}
-                      >
-                        ↻ Ver en 3D
-                      </button>
-                    )}
+                    <span className="text-xs font-[Inter]" style={{ color: card.accent + "80" }}>
+                      Ver detalles →
+                    </span>
                   </div>
                 </div>
               </div>
@@ -359,6 +451,161 @@ const SeccionTaller: React.FC = () => {
         </div>
       </section>
 
+      {/* MODAL PRODUCTO */}
+      {selectedCard && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+          style={{ background: "rgba(0,0,0,0.88)" }}
+          onClick={() => setSelectedCard(null)}
+        >
+          <div
+            className="relative w-full rounded-2xl overflow-hidden"
+            style={{
+              maxWidth: "860px",
+              background: "#ffffff",
+              boxShadow: "0 30px 80px rgba(0,0,0,0.5)",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Botón cerrar */}
+            <button
+              onClick={() => setSelectedCard(null)}
+              className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full flex items-center justify-center transition-colors hover:bg-gray-100"
+              style={{ background: "rgba(0,0,0,0.06)", fontSize: "20px", color: "#333" }}
+            >×</button>
+
+            <div className="flex flex-col md:flex-row">
+
+              {/* IZQUIERDA — Imagen(es) */}
+              <div className="md:w-[45%] flex-shrink-0">
+                {selectedCard.images && selectedCard.images.length > 0 ? (
+                  <>
+                    {/* Imagen principal */}
+                    <div className="relative overflow-hidden" style={{ aspectRatio: "1/1", background: "#f5f5f5" }}>
+                      <img
+                        src={selectedCard.images[imgIndex]}
+                        alt={selectedCard.title}
+                        className="w-full h-full object-cover"
+                      />
+                      {selectedCard.images.length > 1 && (
+                        <>
+                          <button
+                            onClick={() => setImgIndex((imgIndex - 1 + selectedCard.images!.length) % selectedCard.images!.length)}
+                            className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center font-bold text-lg"
+                            style={{ background: "rgba(0,0,0,0.5)", color: "white" }}
+                          >‹</button>
+                          <button
+                            onClick={() => setImgIndex((imgIndex + 1) % selectedCard.images!.length)}
+                            className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center font-bold text-lg"
+                            style={{ background: "rgba(0,0,0,0.5)", color: "white" }}
+                          >›</button>
+                        </>
+                      )}
+                    </div>
+                    {/* Miniaturas */}
+                    {selectedCard.images.length > 1 && (
+                      <div className="flex gap-2 p-3" style={{ background: "#f8f8f8", borderTop: "1px solid #eee" }}>
+                        {selectedCard.images.map((img, i) => (
+                          <button
+                            key={i}
+                            onClick={() => setImgIndex(i)}
+                            className="rounded-lg overflow-hidden flex-shrink-0 transition-all"
+                            style={{
+                              width: "58px",
+                              height: "58px",
+                              border: i === imgIndex ? `2px solid ${selectedCard.accent}` : "2px solid transparent",
+                              opacity: i === imgIndex ? 1 : 0.5,
+                            }}
+                          >
+                            <img src={img} alt="" className="w-full h-full object-cover" />
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  /* Placeholder si no hay imágenes */
+                  <div className="flex items-center justify-center" style={{ aspectRatio: "1/1", background: "#f0f2ff" }}>
+                    <div className="text-center px-8">
+                      <div className="w-20 h-20 mx-auto mb-3 rounded-2xl flex items-center justify-center"
+                        style={{ background: selectedCard.accent + "15", border: `2px dashed ${selectedCard.accent}40` }}>
+                        <svg className="w-10 h-10" style={{ color: selectedCard.accent + "60" }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      <p className="text-sm font-[Inter]" style={{ color: "rgba(0,0,0,0.3)" }}>Imagen próximamente</p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Botón Ver en 3D si tiene sketchfabId */}
+                {selectedCard.sketchfabId && (
+                  <button
+                    onClick={() => { setSelectedCard(null); open3DModal(selectedCard.sketchfabId!); }}
+                    className="w-full py-3 font-[Poppins] font-bold text-sm flex items-center justify-center gap-2 transition-all hover:opacity-90"
+                    style={{ background: "#484F9D", color: "#F4E600" }}
+                  >
+                    ↻ Ver modelo en 3D interactivo
+                  </button>
+                )}
+              </div>
+
+              {/* DERECHA — Información */}
+              <div className="md:w-[55%] flex flex-col p-6 md:p-8">
+
+                {/* Badge */}
+                <span className="inline-flex items-center self-start px-3 py-1 rounded-full text-xs font-[Inter] font-semibold mb-4"
+                  style={{ background: selectedCard.accent + "15", color: selectedCard.accent, border: `1px solid ${selectedCard.accent}30` }}>
+                  {selectedCard.badge}
+                </span>
+
+                {/* Título */}
+                <h2 className="font-[Poppins] font-bold text-2xl mb-3" style={{ color: "#1a1a2e" }}>
+                  {selectedCard.title}
+                </h2>
+
+                {/* Descripción larga */}
+                <p className="font-[Inter] text-sm leading-relaxed mb-6" style={{ color: "rgba(0,0,0,0.55)" }}>
+                  {selectedCard.fullDesc || selectedCard.desc}
+                </p>
+
+                {/* Info adicional */}
+                <div className="rounded-xl p-4 mb-6" style={{ background: "#f8f9ff", border: "1px solid #e8eaf6" }}>
+                  <p className="font-[Poppins] font-semibold text-sm mb-3" style={{ color: "#484F9D" }}>
+                    ℹ️ Información adicional
+                  </p>
+                  <ul className="space-y-1.5">
+                    {["Personalización con tu logo o diseño", "Ideal para regalos y eventos corporativos", "Cotización personalizada según cantidad"].map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-xs font-[Inter]" style={{ color: "rgba(0,0,0,0.5)" }}>
+                        <span style={{ color: selectedCard.accent }}>✓</span> {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Spacer */}
+                <div className="flex-1" />
+
+                {/* Botón WhatsApp */}
+                <a
+                  href={"https://wa.me/573337013642?text=Hola,%20quiero%20información%20sobre%20" + encodeURIComponent(selectedCard.title)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center gap-3 py-3.5 rounded-xl font-[Poppins] font-bold text-sm transition-all hover:scale-[1.02] hover:shadow-lg"
+                  style={{ background: "#25D366", color: "white" }}
+                >
+                  <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  </svg>
+                  Solicitar cotización por WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* MODAL 3D */}
       {show3DModal && (
         <div
@@ -383,9 +630,7 @@ const SeccionTaller: React.FC = () => {
                 onClick={() => setShow3DModal(false)}
                 className="w-8 h-8 rounded-full flex items-center justify-center text-white"
                 style={{ fontSize: "20px" }}
-              >
-                ×
-              </button>
+              >×</button>
             </div>
 
             <div style={{ position: "relative", paddingBottom: "60%", background: "#06071a" }}>
