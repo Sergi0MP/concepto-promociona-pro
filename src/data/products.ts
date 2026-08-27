@@ -40,13 +40,13 @@ export const products: Product[] = [
     category: "Bebidas",
   },
   {
-    id: "maquillaje1",
+    id: "orga1",
     sku: "CC-MA-001",
-    name: "Set de Empaques Motivacionales",
+    name: "Organizadores Varios Colores",
     description:
-      "Este es un set de dos bolsas versátiles, combinando un neceser o cosmetiquera con una bolsa de cordón, ambas con un enfoque en la practicidad y la inspiración.",
+      "Organizadores prácticos y versátiles, ideales para mantener tus objetos personales ordenados y siempre a la mano. Su diseño compacto los hace perfectos para llevar en el bolso, mochila o maleta.",
     minUnits: 10,
-    colors: ["#6e4a4aff"],
+    colors: ["rgb(223, 120, 120)", "rgb(120, 223, 120)", "rgb(120, 120, 223)"],
     category: "Cosmetiqueras y Organizadores",
   },
   {
@@ -343,6 +343,96 @@ export const products: Product[] = [
     colors: ["#3d3380", "#d41010","#2a6038"],
     category: "Hieleras y Loncheras",
   },
+      {
+    id: "bolsomarca1",
+    sku: "CC-Maletas-004",
+    name: "Bolso personalizable",
+    description: "Bolso elegante y versátil, diseñado para complementar cualquier estilo. Su diseño práctico y moderno lo convierte en el accesorio ideal para llevar tus esenciales con comodidad y estilo.",
+    minUnits: 10,
+    colors: ["#F9A8D4", "#86EFAC", "#93C5FD"],
+    category: "Maletas",
+   
+  },
+      {
+    id: "portapc1",
+    sku: "CC-Maletas-005",
+    name: "Funda Portatil",
+    description: "La funda para portátil es un accesorio esencial para proteger tu dispositivo mientras te desplazas. Su diseño elegante y funcional ofrece una protección confiable contra golpes y arañazos, manteniendo tu portátil seguro y a la moda.",
+    minUnits: 10,
+    colors: ["#F9A8D4", "#86EFAC", "#93C5FD"],
+    category: "Maletas",
+   
+  },
+    {
+    id: "cosmo1",
+    sku: "CC-MA-004",
+    name: "Cosmetiquera Personalizable",
+    description: "La cosmetiquera es un accesorio práctico y elegante, ideal para organizar tus productos de belleza y cuidado personal. Su diseño compacto y moderno permite llevar tus esenciales de manera ordenada y con estilo.",
+    minUnits: 10,
+    colors: ["#F9A8D4", "#86EFAC", "#93C5FD"],
+    category: "Cosmetiqueras y Organizadores",
+   
+  },
+    {
+    id: "porta1",
+    sku: "CC-0F-001",
+    name: "PortaPapeles Personalizable",
+    description: "El porta-papeles es un accesorio práctico y elegante, ideal para organizar tus documentos y materiales de oficina. Su diseño compacto y moderno permite llevar tus esenciales de manera ordenada y con estilo.",
+    minUnits: 10,
+    colors: ["#0c0c0c", "#24065d", "#3bc10e"],
+    category: "Oficina",
+   
+  },
+    {
+    id: "agendaestuche1",
+    sku: "CC-AG-002",
+    name: "Agenda Con Estuche",
+    description: "La agenda estuche es un accesorio práctico y elegante, ideal para organizar tus tareas y compromisos. Su diseño compacto y moderno permite llevarla donde quieras y mantener tu vida organizada.",
+    minUnits: 10,
+    colors: ["#cc0808", "#24065d", "#3bc10e"],
+    category: "Agendas",
+   
+  },
+    {
+    id: "agendacartuchera1",
+    sku: "CC-AG-003",
+    name: "Agenda + Cartuchera",
+    description: "La agenda con cartuchera es un accesorio práctico y elegante, ideal para organizar tus tareas y compromisos, además de llevar tus útiles escolares o de oficina. Su diseño compacto y moderno permite mantener todo en un solo lugar.",
+    minUnits: 10,
+    colors: ["#de3c3c", "#24065d", "#3bc10e"],
+    category: "Agendas",
+   
+  },
+    {
+    id: "iman1",
+    sku: "CC-HOGAR-003",
+    name: "Imán Impreso",
+    description: "El imán impreso es un accesorio práctico y elegante, ideal para organizar tu espacio de trabajo u hogar. Su diseño moderno y colores vibrantes lo hacen destacar en cualquier entorno.",
+    minUnits: 10,
+    colors: ["#74d189", "#24065d", "#3bc10e"],
+    category: "Hogar",
+   
+  },
+    {
+    id: "bingo1",
+    sku: "CC-JU-001",
+    name: "Juegos Bingo Personalizable",
+    description: "El juego de bingo personalizable es una opción divertida y entretenida para reuniones familiares, fiestas o eventos. Su diseño moderno y colorido permite personalizar las tarjetas y fichas, haciendo que cada partida sea única y emocionante.",
+    minUnits: 10,
+    colors: ["#e0a82f", "#efefef", "#3e8527"],
+    category: "Juegos",
+   
+  },
+    {
+    id: "agendaajedrez1",
+    sku: "CC-AG-004",
+    name: "Agenda Ajedrez",
+    description: "Disfruta escribiendo tus notas y jugando al ajedrez con esta agenda única. Su diseño combina funcionalidad y entretenimiento, permitiéndote organizar tus tareas mientras te diviertes con el clásico juego de estrategia.",
+    minUnits: 10,
+    colors: ["#496bca", "#d61c1f", "#3bc10e"],
+    category: "Agendas",
+   
+  },
 
   // ── TEMPORADA ESCOLAR ──────────────────────────────────────────────
   {
@@ -505,5 +595,7 @@ export const products: Product[] = [
     category: "Escolar",
     images: ["/assets/escolar/cartucheraacolchada1.webp", "/assets/escolar/cartucheraacolchada2.webp"],
   },
+
+
 ];
 

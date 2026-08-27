@@ -86,9 +86,18 @@ const Index = () => {
   // 🚀 Rutas WebP en /public — sin imports estáticos, el browser carga solo lo visible
   const productThumbnails: { [key: string]: string } = {
     // generales
+    bolsomarca1:       `${P1}bolsomarca.webp`,
+    iman1:            `${P1}iman.webp`,
+    agendaestuche1:    `${P1}agendaestuche.webp`,
+    bingo1:             `${P1}bingo.webp`,
+    agendaajedrez1:    `${P1}agendaajedrez.webp`,
+    agendacartuchera1: `${P1}agendacartuchera.webp`,
+    porta1:            `${P1}portatarjetas.webp`,
+    portapc1:          `${P1}portapc.webp`,
+    cosmo1:            `${P1}cosmo1.webp`,
     prensa1:          `${P1}kit-prensa-francesa.webp`,
     taza2:            `${P1}tazaceramica.webp`,
-    maquillaje1:      `${P1}set-motivacional.webp`,
+    orga1:            `${P1}organizadores.webp`,
     botella1:         `${P1}botella-motivador.webp`,
     rollerdeluxe1:    `${P1}rollerdeluxe.webp`,
     jaderoller1:      `${P1}jaderoller1.webp`,
@@ -269,7 +278,7 @@ const cards3D: { title: string; desc: string; badge: string; imgPath: string; ac
 
     {/* 🎨 Barra de Filtros por Categoría */}
     <div className="flex flex-wrap justify-center gap-3 mb-8">
-      {["Todos", "Escolar", "Maletas", "Hogar", "Cosmetiqueras y Organizadores", "Deportes", "Agendas","Bebidas", "Navidad","Belleza y Cuidado Personal", "Antiestres", "Herramientas", "Hieleras y Loncheras"].map((category) => {
+      {["Todos", "Escolar", "Maletas", "Hogar", "Cosmetiqueras y Organizadores", "Deportes", "Agendas","Bebidas", "Navidad","Belleza y Cuidado Personal", "Antiestres", "Herramientas", "Hieleras y Loncheras","Oficina","Juegos"].map((category) => {
         const filteredCount = category === "Todos" 
           ? products.length 
           : products.filter(p => p.category === category).length;
