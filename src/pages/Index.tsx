@@ -141,7 +141,7 @@ const Index = () => {
       <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
         {/* Imagen de fondo */}
         <img
-          src="/images/newfondo.png"
+          src="/images/navidaaaa.jpeg"
           alt="Fondo de bienvenida"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -156,12 +156,25 @@ const Index = () => {
           </h1>
         </div>
 
-        {/* Degradado inferior */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-black/60 z-[5]" />
+        {/* Degradado inferior: funde la imagen de hero hacia el color de fondo de SeccionNavidad */}
+        <div
+          className="absolute bottom-0 left-0 right-0 z-[5]"
+          style={{ height: "180px", background: "linear-gradient(to bottom, transparent 0%, #0d0404 100%)" }}
+        />
       </section>
 
       {/* ── 2. NAVIDAD ──────────────────────────────────────────────────────── */}
       <SeccionNavidad />
+
+      {/* ── PUENTE Navidad → Taller 3D: degradado del rojo-oscuro al azul-marino ── */}
+      <div
+        aria-hidden="true"
+        style={{
+          height: "120px",
+          background: "linear-gradient(to bottom, #0b0f02 0%, #06071a 100%)",
+          marginTop: "-2px",
+        }}
+      />
 
       {/* ── 3. TALLER 3D & LÁSER ────────────────────────────────────────────── */}
       <SeccionTaller />
@@ -380,5 +393,4 @@ const Index = () => {
 };
 
 export default Index;
-
 

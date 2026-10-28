@@ -2,42 +2,6 @@ import React, { useState } from "react";
 import { christmasProducts, ChristmasProduct } from "@/data/christmasProducts";
 import { MessageCircle } from "lucide-react";
 
-// ── COMPONENTE DE NIEVE ANIMADA ──────────────────────────────────────────────
-const FallingSnow: React.FC = () => {
-  return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-      {[...Array(35)].map((_, i) => {
-        const left = Math.random() * 100;
-        const delay = Math.random() * 8;
-        const duration = Math.random() * 10 + 10;
-        const size = Math.random() * 4 + 2;
-        return (
-          <div
-            key={i}
-            className="absolute bg-white rounded-full"
-            style={{
-              left: `${left}%`,
-              top: `-20px`,
-              width: `${size}px`,
-              height: `${size}px`,
-              animation: `snowfall ${duration}s linear ${delay}s infinite`,
-              opacity: 0,
-            }}
-          />
-        );
-      })}
-      <style>{`
-        @keyframes snowfall {
-          0% { transform: translateY(0) translateX(0); opacity: 0; }
-          10% { opacity: 0.7; }
-          90% { opacity: 0.7; }
-          100% { transform: translateY(110vh) translateX(20px); opacity: 0; }
-        }
-      `}</style>
-    </div>
-  );
-};
-
 // ── MODAL ────────────────────────────────────────────────────────────────────
 interface ModalProps {
   product: ChristmasProduct | null;
@@ -66,7 +30,7 @@ const NavidadModal: React.FC<ModalProps> = ({ product, onClose }) => {
         className="relative rounded-2xl overflow-hidden flex flex-col md:flex-row max-w-3xl w-[94vw] max-h-[90vh] overflow-y-auto"
         style={{
           background: "linear-gradient(135deg, #1a0808 0%, #220c0c 100%)",
-          border: "1px solid rgba(46, 161, 46, 0.45)", // Borde verde
+          border: "1px solid rgba(220,50,50,0.3)",
           boxShadow: "0 30px 80px rgba(0,0,0,0.7)",
         }}
         onClick={(e) => e.stopPropagation()}
@@ -126,7 +90,7 @@ const NavidadModal: React.FC<ModalProps> = ({ product, onClose }) => {
                   {product.kitContents.map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-xs font-[Inter]"
                       style={{ color: "rgba(255,255,255,0.5)" }}>
-                      <span style={{ color: "#2ea12e", flexShrink: 0 }}>+</span> {/* Viñeta verde */}
+                      <span style={{ color: "#CC1111", flexShrink: 0 }}>+</span>
                       {item}
                     </li>
                   ))}
@@ -148,77 +112,129 @@ const NavidadModal: React.FC<ModalProps> = ({ product, onClose }) => {
   );
 };
 
-// ── LOGO CSS: CC con gorro de Santa ──────────────────────────────────────────
+// ── LOGO CC NAVIDEÑO — SVG fiel al original, moderno ─────────────────────────
 const CCNavidadLogo: React.FC = () => (
-  // Se aplicó scale(1.35) para ensanchar y agrandar el logo general
-  <div className="relative select-none flex-shrink-0 mx-4" style={{ width: "160px", height: "160px", transform: "scale(1.35)", transformOrigin: "center" }}>
+  <div className="relative select-none flex-shrink-0" style={{ width: "170px", height: "190px" }}>
     <svg
-      viewBox="0 0 160 160"
-      width="160"
-      height="160"
-      style={{ position: "absolute", top: 0, left: 0 }}
+      viewBox="0 0 170 190"
+      width="170"
+      height="190"
+      style={{ overflow: "visible", filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.55))" }}
     >
-      <path
-        d="M130 80 A50 50 0 1 1 80 30"
-        fill="none"
-        stroke="#1a5c1a"
-        strokeWidth="22"
-        strokeLinecap="round"
-      />
-      <path
-        d="M110 88 A34 34 0 1 1 76 54"
-        fill="none"
-        stroke="#9b1111"
-        strokeWidth="16"
-        strokeLinecap="round"
-      />
-      <text x="118" y="34" fill="#E8A032" fontSize="14" textAnchor="middle">+</text>
-      <text x="128" y="48" fill="#E8A032" fontSize="9" textAnchor="middle">+</text>
-      <text x="122" y="128" fill="#E8A032" fontSize="11" textAnchor="middle">+</text>
-    </svg>
+      <defs>
+        {/* Gradiente verde para C exterior */}
+        <linearGradient id="gradVerde" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#2d8a2d" />
+          <stop offset="45%" stopColor="#1a6a1a" />
+          <stop offset="100%" stopColor="#0f4a0f" />
+        </linearGradient>
+        {/* Gradiente rojo para C interior */}
+        <linearGradient id="gradRojo" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#e03030" />
+          <stop offset="45%" stopColor="#b01010" />
+          <stop offset="100%" stopColor="#7a0808" />
+        </linearGradient>
+        {/* Sombra interior para dar volumen */}
+        <filter id="innerGlow">
+          <feGaussianBlur stdDeviation="2" result="blur" />
+          <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+        {/* Brillo dorado para estrellitas */}
+        <filter id="goldGlow">
+          <feGaussianBlur stdDeviation="1.5" result="blur" />
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
 
-    <div
-      style={{
-        position: "absolute",
-        top: "10px",
-        left: "28px",
-        width: "68px",
-        height: "13px",
-        background: "white",
-        borderRadius: "7px",
-        boxShadow: "0 2px 5px rgba(0,0,0,0.3)",
-        zIndex: 10,
-      }}
-    />
-    <svg
-      viewBox="0 0 80 40"
-      width="80"
-      height="40"
-      style={{ position: "absolute", top: "-18px", left: "18px", zIndex: 10 }}
-    >
-      <polygon
-        points="10,40 70,40 55,0"
-        fill="#CC1111"
-        style={{ filter: "drop-shadow(1px 1px 3px rgba(0,0,0,0.5))" }}
+      {/* ─ C EXTERIOR VERDE (grande, ocupa la mayor parte) ─ */}
+      {/* Arco principal — trazo grueso verde con degradado */}
+      <path
+        d="M148 95
+           A63 63 0 1 1 95 32"
+        fill="none"
+        stroke="url(#gradVerde)"
+        strokeWidth="26"
+        strokeLinecap="round"
       />
+      {/* Borde inferior de la C verde para dar efecto 3D */}
+      <path
+        d="M148 95
+           A63 63 0 1 1 95 32"
+        fill="none"
+        stroke="rgba(255,255,255,0.10)"
+        strokeWidth="5"
+        strokeLinecap="round"
+        strokeDasharray="0 1"
+        style={{ transform: "translate(1px, 2px)" }}
+      />
+
+      {/* ─ C INTERIOR ROJA (más pequeña, desplazada hacia abajo-derecha) ─ */}
+      <path
+        d="M138 108
+           A44 44 0 1 1 94 64"
+        fill="none"
+        stroke="url(#gradRojo)"
+        strokeWidth="20"
+        strokeLinecap="round"
+      />
+      {/* Brillo superior de la C roja */}
+      <path
+        d="M138 108
+           A44 44 0 1 1 94 64"
+        fill="none"
+        stroke="rgba(255,200,200,0.15)"
+        strokeWidth="4"
+        strokeLinecap="round"
+        style={{ transform: "translate(-1px, -1px)" }}
+      />
+
+      {/* ─ GORRO DE SANTA ─ */}
+      {/* Banda blanca base */}
+      <rect x="52" y="34" width="74" height="14" rx="7" fill="white" opacity="0.95" />
+      <rect x="52" y="34" width="74" height="7" rx="4" fill="rgba(220,220,220,0.5)" />
+
+      {/* Cuerpo del gorro (rojo, curvo y con volumen) */}
+      <path
+        d="M56 34 Q75 10 95 0 Q105 12 118 22 Q108 28 104 34 Z"
+        fill="#CC1111"
+      />
+      <path
+        d="M56 34 Q75 10 95 0 Q105 12 118 22 Q108 28 104 34 Z"
+        fill="url(#gradRojo)"
+        opacity="0.9"
+      />
+      {/* Brillo del gorro */}
+      <path
+        d="M80 8 Q85 4 92 2 Q96 8 98 14 Q90 10 80 8 Z"
+        fill="rgba(255,255,255,0.25)"
+      />
+      {/* Pliegue/doblez del gorro */}
+      <path
+        d="M104 34 Q110 30 118 22"
+        fill="none"
+        stroke="rgba(100,0,0,0.35)"
+        strokeWidth="2"
+      />
+
+      {/* Pompón blanco */}
+      <circle cx="95" cy="5" r="11" fill="white" opacity="0.95" />
+      <circle cx="92" cy="3" r="4" fill="rgba(255,255,255,0.6)" />
+      <circle cx="97" cy="7" r="2.5" fill="rgba(200,200,200,0.4)" />
+
+      {/* ─ ESTRELLITAS DORADAS decorativas ─ */}
+      <g filter="url(#goldGlow)">
+        {/* Estrella grande arriba derecha */}
+        <text x="148" y="45" fill="#E8A032" fontSize="16" textAnchor="middle" fontWeight="bold">✦</text>
+        {/* Estrella pequeña */}
+        <text x="158" y="62" fill="#E8A032" fontSize="9" textAnchor="middle">✦</text>
+        {/* Estrella abajo derecha */}
+        <text x="152" y="148" fill="#E8A032" fontSize="12" textAnchor="middle">✦</text>
+      </g>
     </svg>
-    <div
-      style={{
-        position: "absolute",
-        top: "-22px",
-        left: "59px",
-        width: "18px",
-        height: "18px",
-        borderRadius: "50%",
-        background: "white",
-        boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
-        zIndex: 11,
-      }}
-    />
   </div>
 );
 
-// ── SNOWFLAKE SVG (Para fondo fijo) ──────────────────────────────────────────
+// ── SNOWFLAKE SVG ────────────────────────────────────────────────────────────
 const Snowflake: React.FC<{ style?: React.CSSProperties }> = ({ style }) => (
   <svg viewBox="0 0 24 24" fill="none" style={{ ...style, position: "absolute", pointerEvents: "none" }}>
     <line x1="12" y1="2" x2="12" y2="22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
@@ -244,51 +260,57 @@ const SeccionNavidad: React.FC = () => {
     <>
       <section
         className="relative py-24 overflow-hidden"
-        // Fondo base rojizo más brillante
-        style={{ background: "linear-gradient(160deg, #2b0505 0%, #3d0808 50%, #0b1202 100%)" }}
+        style={{ background: "linear-gradient(160deg, #0d0404 0%, #1a0606 50%, #0b0f02 100%)", marginTop: "-2px" }}
       >
+        {/* ── DEGRADADO DE ENTRADA — funde con el Hero superior ── */}
+        <div
+          className="absolute top-0 left-0 right-0 z-[1] pointer-events-none"
+          style={{ height: "100px", background: "linear-gradient(to bottom, #0d0404 0%, transparent 100%)" }}
+        />
+
+        {/* ── DEGRADADO DE SALIDA — funde hacia SeccionTaller ── */}
+        <div
+          className="absolute bottom-0 left-0 right-0 z-[1] pointer-events-none"
+          style={{ height: "100px", background: "linear-gradient(to bottom, transparent 0%, #0b0f02 100%)" }}
+        />
+
         {/* ── FONDO decorativo ── */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <div className="absolute inset-0 opacity-[0.07]" style={{
             backgroundImage: "radial-gradient(circle, rgba(232,160,50,0.8) 1px, transparent 1px)",
             backgroundSize: "36px 36px",
           }} />
-          {/* Resplandor rojo superior más vivo y opaco */}
-          <div className="absolute -top-40 -left-40 w-[700px] h-[700px] rounded-full opacity-25"
-            style={{ background: "radial-gradient(circle, #ff1111 0%, transparent 65%)" }} />
-          <div className="absolute top-1/3 -right-40 w-[500px] h-[500px] rounded-full opacity-15"
-            style={{ background: "radial-gradient(circle, #2ea12e 0%, transparent 65%)" }} />
-          <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] opacity-15"
+          <div className="absolute -top-40 -left-40 w-[700px] h-[700px] rounded-full opacity-20"
+            style={{ background: "radial-gradient(circle, #9b1111 0%, transparent 65%)" }} />
+          <div className="absolute top-1/3 -right-40 w-[500px] h-[500px] rounded-full opacity-10"
+            style={{ background: "radial-gradient(circle, #1a5c1a 0%, transparent 65%)" }} />
+          <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] opacity-10"
             style={{ background: "radial-gradient(ellipse, #c8930a 0%, transparent 70%)" }} />
 
-          {/* Copos de nieve fijos */}
-          <Snowflake style={{ width: 28, height: 28, top: "8%", left: "5%", color: "rgba(255,255,255,0.1)", transform: "rotate(15deg)" }} />
-          <Snowflake style={{ width: 18, height: 18, top: "15%", left: "12%", color: "rgba(232,160,50,0.15)", transform: "rotate(-20deg)" }} />
-          <Snowflake style={{ width: 34, height: 34, top: "5%", right: "8%", color: "rgba(255,255,255,0.08)", transform: "rotate(30deg)" }} />
-          <Snowflake style={{ width: 20, height: 20, top: "20%", right: "15%", color: "rgba(204,17,17,0.2)", transform: "rotate(-10deg)" }} />
-          <Snowflake style={{ width: 24, height: 24, bottom: "15%", left: "7%", color: "rgba(232,160,50,0.15)", transform: "rotate(45deg)" }} />
-          <Snowflake style={{ width: 16, height: 16, bottom: "25%", right: "6%", color: "rgba(255,255,255,0.1)", transform: "rotate(20deg)" }} />
-          <Snowflake style={{ width: 22, height: 22, bottom: "10%", right: "20%", color: "rgba(204,17,17,0.15)", transform: "rotate(-30deg)" }} />
+          <Snowflake style={{ width: 28, height: 28, top: "8%", left: "5%", color: "rgba(255,255,255,0.06)", transform: "rotate(15deg)" }} />
+          <Snowflake style={{ width: 18, height: 18, top: "15%", left: "12%", color: "rgba(232,160,50,0.12)", transform: "rotate(-20deg)" }} />
+          <Snowflake style={{ width: 34, height: 34, top: "5%", right: "8%", color: "rgba(255,255,255,0.05)", transform: "rotate(30deg)" }} />
+          <Snowflake style={{ width: 20, height: 20, top: "20%", right: "15%", color: "rgba(204,17,17,0.15)", transform: "rotate(-10deg)" }} />
+          <Snowflake style={{ width: 24, height: 24, bottom: "15%", left: "7%", color: "rgba(232,160,50,0.10)", transform: "rotate(45deg)" }} />
+          <Snowflake style={{ width: 16, height: 16, bottom: "25%", right: "6%", color: "rgba(255,255,255,0.07)", transform: "rotate(20deg)" }} />
+          <Snowflake style={{ width: 22, height: 22, bottom: "10%", right: "20%", color: "rgba(204,17,17,0.10)", transform: "rotate(-30deg)" }} />
         </div>
-
-        {/* Carga el efecto de nieve cayendo */}
-        <FallingSnow />
 
         <div className="relative z-10 container px-4 mx-auto">
 
-          {/* ── HERO DEL ENCABEZADO ── */}
+          {/* ── HERO DEL ENCABEZADO — estilo logo Navidad 2026 ── */}
           <div className="flex flex-col items-center mb-16">
+
+            {/* Marca navideña — sin tarjeta, layout limpio */}
             <div
-              className="flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-14 w-full max-w-3xl mb-10 px-6 py-10 rounded-3xl"
-              style={{
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.07)",
-                backdropFilter: "blur(8px)",
-              }}
+              className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 w-full max-w-2xl mb-10 px-6 py-6"
             >
+              {/* Lado izquierdo: logo CC con gorro */}
               <CCNavidadLogo />
 
+              {/* Lado derecho: texto */}
               <div className="flex flex-col items-center sm:items-start gap-1">
+                {/* Pill badge "TEMPORADA NAVIDAD" */}
                 <div
                   className="inline-flex items-center px-4 py-1 rounded-full mb-3"
                   style={{
@@ -304,32 +326,35 @@ const SeccionNavidad: React.FC = () => {
                   Temporada Navidad
                 </div>
 
+                {/* CONCEPTO — rojo oscuro */}
                 <span
                   className="font-black leading-none"
                   style={{
                     fontFamily: "Poppins, sans-serif",
                     fontSize: "clamp(2rem, 6vw, 3.8rem)",
-                    color: "#e61919", // Rojo más brillante para el título
+                    color: "#8B0000",
                     letterSpacing: "-0.02em",
-                    textShadow: "0 2px 12px rgba(230,25,25,0.3)",
+                    textShadow: "0 2px 12px rgba(139,0,0,0.3)",
                   }}
                 >
                   CONCEPTO
                 </span>
 
+                {/* CREATIVO — verde oscuro */}
                 <span
                   className="font-black leading-none"
                   style={{
                     fontFamily: "Poppins, sans-serif",
                     fontSize: "clamp(2rem, 6vw, 3.8rem)",
-                    color: "#2ea12e", // Verde más brillante
+                    color: "#1a5c1a",
                     letterSpacing: "-0.02em",
-                    textShadow: "0 2px 12px rgba(46,161,46,0.3)",
+                    textShadow: "0 2px 12px rgba(26,92,26,0.3)",
                   }}
                 >
                   CREATIVO
                 </span>
 
+                {/* NAVIDAD 2026 — dorado metálico */}
                 <span
                   className="font-black leading-none"
                   style={{
@@ -348,16 +373,17 @@ const SeccionNavidad: React.FC = () => {
               </div>
             </div>
 
+            {/* Separador decorativo */}
             <div className="flex items-center justify-center gap-4 mb-6 w-full max-w-md">
-              <div className="h-px flex-1" style={{ background: "linear-gradient(90deg, transparent, rgba(46,161,46,0.6))" }} />
+              <div className="h-px flex-1" style={{ background: "linear-gradient(90deg, transparent, rgba(204,17,17,0.6))" }} />
               <span style={{ color: "#E8A032", fontSize: "18px" }}>*</span>
-              <span style={{ color: "rgba(255,255,255,0.25)", fontSize: "14px" }}>❄️</span>
+              <span style={{ color: "rgba(255,255,255,0.15)", fontSize: "12px" }}>🎄</span>
               <span style={{ color: "#E8A032", fontSize: "18px" }}>*</span>
-              <div className="h-px flex-1" style={{ background: "linear-gradient(90deg, rgba(46,161,46,0.6), transparent)" }} />
+              <div className="h-px flex-1" style={{ background: "linear-gradient(90deg, rgba(204,17,17,0.6), transparent)" }} />
             </div>
 
             <p className="font-[Inter] text-base max-w-lg text-center leading-relaxed"
-              style={{ color: "rgba(255,255,255,0.65)" }}>
+              style={{ color: "rgba(255,255,255,0.45)" }}>
               Kits especiales para esta temporada.{" "}
               <span style={{ color: "#E8A032" }} className="font-semibold">Cada regalo, único</span>{" "}
               y personalizado con tu logo.
@@ -372,11 +398,21 @@ const SeccionNavidad: React.FC = () => {
                 className="group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-2"
                 style={{
                   background: "linear-gradient(135deg, #1a0808 0%, #220c0c 100%)",
-                  border: "1px solid rgba(46, 161, 46, 0.45)", // Bordes verdes
-                  boxShadow: "0 4px 24px rgba(0,0,0,0.35)",
+                  border: "1px solid rgba(232,160,50,0.55)",
+                  boxShadow: "0 4px 24px rgba(0,0,0,0.35), 0 0 10px rgba(232,160,50,0.12), inset 0 0 0 1px rgba(232,160,50,0.08)",
+                  transition: "box-shadow 0.35s ease, transform 0.35s ease, border-color 0.35s ease",
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 32px rgba(0,0,0,0.5), 0 0 18px rgba(232,160,50,0.55), 0 0 40px rgba(232,160,50,0.2), inset 0 0 0 1px rgba(232,160,50,0.15)";
+                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(232,160,50,0.9)";
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 24px rgba(0,0,0,0.35), 0 0 10px rgba(232,160,50,0.12), inset 0 0 0 1px rgba(232,160,50,0.08)";
+                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(232,160,50,0.55)";
                 }}
                 onClick={() => setSelectedProduct(product)}
               >
+                {/* Imagen */}
                 <div className="aspect-square relative overflow-hidden"
                   style={{ background: "linear-gradient(135deg, #150606 0%, #1f0a0a 100%)" }}>
                   {product.images && product.images.length > 0 ? (
@@ -395,9 +431,9 @@ const SeccionNavidad: React.FC = () => {
 
                   <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-semibold backdrop-blur-sm"
                     style={{
-                      background: "rgba(46,161,46,0.18)",
-                      color: "#4ade80",
-                      border: "1px solid rgba(46,161,46,0.35)",
+                      background: "rgba(204,17,17,0.18)",
+                      color: "#ff6b6b",
+                      border: "1px solid rgba(204,17,17,0.35)",
                     }}>
                     🎁 Kit Navideño
                   </div>
@@ -409,11 +445,11 @@ const SeccionNavidad: React.FC = () => {
                     </div>
                   )}
 
-                  {/* Barra inferior que cambia de verde a dorado */}
                   <div className="absolute bottom-0 left-0 right-0 h-0.5 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
-                    style={{ background: "linear-gradient(90deg, #2ea12e, #E8A032)" }} />
+                    style={{ background: "linear-gradient(90deg, #CC1111, #E8A032)" }} />
                 </div>
 
+                {/* Contenido */}
                 <div className="p-4">
                   <h3 className="font-[Poppins] font-bold text-sm mb-1 line-clamp-2"
                     style={{ color: "rgba(255,255,255,0.92)" }}>
@@ -430,7 +466,7 @@ const SeccionNavidad: React.FC = () => {
                       {product.kitContents.slice(0, 2).map((item, i) => (
                         <p key={i} className="flex items-start gap-1 text-xs font-[Inter]"
                           style={{ color: "rgba(255,255,255,0.28)" }}>
-                          <span style={{ color: "#2ea12e", flexShrink: 0, fontSize: "8px", marginTop: "4px" }}>●</span>
+                          <span style={{ color: "#CC1111", flexShrink: 0, fontSize: "8px", marginTop: "4px" }}>●</span>
                           <span className="line-clamp-1">{item}</span>
                         </p>
                       ))}
@@ -465,11 +501,11 @@ const SeccionNavidad: React.FC = () => {
               href="https://wa.me/573337013642?text=Hola,%20quiero%20ver%20el%20cat%C3%A1logo%20de%20kits%20navide%C3%B1os%202026"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-[Poppins] font-bold text-base transition-all duration-300 hover:scale-105 relative z-10"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-[Poppins] font-bold text-base transition-all duration-300 hover:scale-105"
               style={{
-                background: "linear-gradient(135deg, #e61919 0%, #8a0000 50%, #c8930a 100%)", // Rojo más fuerte
+                background: "linear-gradient(135deg, #CC1111 0%, #8a0000 50%, #c8930a 100%)",
                 color: "white",
-                boxShadow: "0 0 40px rgba(230,25,25,0.4), 0 0 80px rgba(200,147,10,0.15)",
+                boxShadow: "0 0 40px rgba(204,17,17,0.35), 0 0 80px rgba(200,147,10,0.12)",
               }}
             >
               <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
@@ -477,10 +513,11 @@ const SeccionNavidad: React.FC = () => {
               </svg>
               Ver catálogo navideño completo
             </a>
-            <p className="mt-4 text-sm font-[Inter]" style={{ color: "rgba(255,255,255,0.35)" }}>
+            <p className="mt-4 text-sm font-[Inter]" style={{ color: "rgba(255,255,255,0.22)" }}>
               Personalización con tu logo · Envío a toda Colombia
             </p>
           </div>
+
         </div>
       </section>
 
